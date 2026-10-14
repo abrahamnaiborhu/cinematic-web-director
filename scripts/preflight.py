@@ -10,7 +10,9 @@ import argparse
 import json
 import os
 import shutil
+import struct
 import sys
+import zlib
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -20,15 +22,16 @@ GSAP_SKILLS = (
     'gsap-core', 'gsap-timeline', 'gsap-scrolltrigger', 'gsap-plugins',
     'gsap-utils', 'gsap-react', 'gsap-performance', 'gsap-frameworks'
 )
-BASE_REQUIRED_GSAP = ('gsap-core', 'gsap-timeline', 'gsap-scrolltrigger', 'gsap-plugins', 'gsap-performance')
+BASE_REQUIRED_GSAP = ('gsap-core', 'gsap-performance')
 SKILL_DIR = Path(__file__).resolve().parents[1]
 
 
 def check(id_: int, name: str, status: str, summary: str, *, evidence=None,
-          next_steps=None, blocking: bool = False) -> dict[str, Any]:
+          next_steps=None, blocking: bool = False, evidence_scope='filesystem') -> dict[str, Any]:
     return {
         'id': id_, 'name': name, 'status': status, 'blocking': blocking,
-        'summary': summary, 'evidence': evidence or [], 'next_steps': next_steps or []
+        'summary': summary, 'evidence': evidence or [], 'next_steps': next_steps or [],
+        'evidence_scope': evidence_scope
     }
 
 
@@ -40,11 +43,106 @@ def read_package(p: Path) -> dict:
         return {}
 
 
+def read_document(path: Path) -> str:
+    try:
+        return path.read_text(encoding='utf-8')
+    except (OSError, UnicodeError):
+        return ''
+
+
+def has_skill_header(text: str, expected_name: str) -> bool:
+    """Check the basic name/description scalars, without claiming full YAML validation."""
+    lines = text.splitlines()
+    if not lines or lines[0] != '---':
+        return False
+    try:
+        end = lines.index('---', 1)
+    except ValueError:
+        return False
+    fields = {}
+    for line in lines[1:end]:
+        if line.startswith(('name:', 'description:')):
+            key, value = line.split(':', 1)
+            value = value.split(' #', 1)[0].strip()
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in ('"', "'"):
+                value = value[1:-1]
+            fields[key] = value
+    return fields.get('name') == expected_name and bool(fields.get('description'))
+
+
 def package_roots(project: Path) -> list[Path]:
     candidates = [project, project / 'frontend', project / 'web', project / 'client',
                   project / 'site', project / 'apps' / 'web', project / 'apps' / 'frontend',
                   project / 'packages' / 'web']
     return [p for p in candidates if (p / 'package.json').is_file()]
+
+
+def project_path(project: Path, path: Path) -> Path:
+    path = path.expanduser()
+    return (path if path.is_absolute() else project / path).resolve()
+
+
+def select_source(project: Path, roots: list[Path], explicit: Path | None) -> Path | None:
+    if explicit is not None:
+        selected = project_path(project, explicit)
+        if not selected.is_dir() or not selected.is_relative_to(project):
+            raise ValueError('Source root must be an existing directory inside the project.')
+        return selected
+    # A workspace manifest is not necessarily the website application.
+    frontends = [p for p in roots if detect_framework(get_dependencies([p])) not in
+                 ('JavaScript / unspecified', 'NestJS')]
+    candidates = frontends or roots
+    if len(candidates) == 1:
+        return candidates[0]
+    if not candidates and (project / 'index.html').is_file():
+        return project
+    return None
+
+
+def runtime_packages(project: Path, source: Path | None, deps: dict) -> list[Path]:
+    if source is None or 'gsap' not in deps:
+        return []
+    paths = []
+    for root in (source, *source.parents):
+        if not root.is_relative_to(project):
+            break
+        path = root / 'node_modules' / 'gsap' / 'package.json'
+        pkg = read_package(path)
+        if pkg.get('name') == 'gsap' and isinstance(pkg.get('version'), str) and pkg['version'].strip():
+            paths.append(path)
+            break
+    return paths
+
+
+def validate_observations(observations: dict) -> dict[int, str]:
+    if not isinstance(observations, dict):
+        raise ValueError('Observations must be a check-ID to evidence-text object.')
+    result = {}
+    for key, value in observations.items():
+        if str(key) not in ('3', '4', '6') or not isinstance(value, str) or not value.strip():
+            raise ValueError('Only checks 3, 4 and 6 accept nonempty agent observation text.')
+        result[int(key)] = value.strip()
+    return result
+
+
+def load_observations(path: Path, project: Path, phase: str,
+                      source_root: Path | None = None) -> dict[int, str]:
+    try:
+        data = json.loads(path.expanduser().read_text(encoding='utf-8'))
+    except (OSError, UnicodeError, ValueError) as exc:
+        raise ValueError(f'Cannot read observation file: {exc}') from exc
+    if not isinstance(data, dict) or not isinstance(data.get('project_root'), str):
+        raise ValueError('Observation file must identify project_root, phase and checks.')
+    project = project.expanduser().resolve()
+    if Path(data['project_root']).expanduser().resolve() != project or data.get('phase') != phase:
+        raise ValueError('Observation file does not match this project and phase.')
+    expected_source = project_path(project, source_root) if source_root else project
+    recorded_source = data.get('source_root', data['project_root'])
+    if not isinstance(recorded_source, str) or project_path(project, Path(recorded_source)) != expected_source:
+        raise ValueError('Observation file does not match the selected source root.')
+    if 'checks' not in data:
+        raise ValueError('Observation file is missing checks.')
+    return validate_observations(data['checks'])
 
 
 def identify_agent(explicit: str) -> tuple[str, str]:
@@ -71,7 +169,8 @@ def skill_roots(project: Path, agent: str, home: Path) -> list[Path]:
     elif agent == 'cursor':
         paths = [project / '.cursor' / 'skills', home / '.cursor' / 'skills']
     elif agent == 'codex':
-        paths = [project / '.agents' / 'skills', home / '.agents' / 'skills', home / '.codex' / 'skills']
+        codex_home = Path(os.environ.get('CODEX_HOME') or home / '.codex').expanduser()
+        paths = [project / '.agents' / 'skills', home / '.agents' / 'skills', codex_home / 'skills']
     else:
         paths = [project / '.claude' / 'skills', home / '.claude' / 'skills',
                  project / '.cursor' / 'skills', home / '.cursor' / 'skills',
@@ -93,8 +192,8 @@ def available_gsap_skills(roots: list[Path]) -> dict[str, str]:
             if name not in result and p.is_file():
                 try:
                     with p.open('r', encoding='utf-8') as file:
-                        prefix = file.read(250)
-                    if prefix.startswith('---') and f'name: {name}' in prefix:
+                        prefix = file.read(8192)
+                    if has_skill_header(prefix, name):
                         result[name] = str(p)
                 except (OSError, UnicodeError):
                     pass
@@ -139,7 +238,7 @@ def get_project_script(project: Path) -> Path | None:
     for place in locations:
         for name in names:
             path = place / name
-            if path.is_file() and path.stat().st_size > 0:
+            if path.is_file() and read_document(path).strip():
                 return path
     return None
 
@@ -148,7 +247,7 @@ def detect_framework(dependencies: dict) -> str:
     for dep, label in (
         ('next', 'Next.js'), ('nuxt', 'Nuxt'), ('@sveltejs/kit', 'SvelteKit'),
         ('astro', 'Astro'), ('@angular/core', 'Angular'), ('svelte', 'Svelte'),
-        ('vue', 'Vue'), ('react', 'React'), ('vite', 'Vite'),
+        ('vue', 'Vue'), ('react', 'React'), ('vite', 'Vite'), ('@nestjs/core', 'NestJS'),
     ):
         if dep in dependencies:
             return label
@@ -177,47 +276,121 @@ def get_dependencies(roots: list[Path]) -> dict[str, str]:
     return deps
 
 
-def valid_screenshot(path: Path | None) -> bool:
-    if path is None or not path.expanduser().is_file():
-        return False
+def png_dimensions(path: Path | None) -> tuple[int, int] | None:
+    """Validate bounded, non-interlaced 8-bit PNG structure and scanline data.
+
+    This verifies an image file, not its origin, page content or visual quality.
+    Other formats/encodings stay unverified rather than accepting their signatures.
+    """
+    if path is None:
+        return None
     try:
-        p = path.expanduser()
-        if p.stat().st_size < 100:
-            return False
-        with p.open('rb') as file:
-            h = file.read(12)
-        return h.startswith(b'\x89PNG\r\n\x1a\n') or h.startswith(b'\xff\xd8\xff') or (h.startswith(b'RIFF') and h[8:12] == b'WEBP')
-    except OSError:
-        return False
+        path = path.expanduser()
+        if not path.is_file() or path.stat().st_size > 32 * 1024 * 1024:
+            return None
+        data = path.read_bytes()
+        if data[:8] != b'\x89PNG\r\n\x1a\n':
+            return None
+        offset, dimensions, row_size = 8, None, 0
+        compressed = bytearray()
+        ended_data = False
+        while offset + 12 <= len(data):
+            length = struct.unpack('>I', data[offset:offset + 4])[0]
+            kind = data[offset + 4:offset + 8]
+            end = offset + 12 + length
+            if end > len(data):
+                return None
+            payload = data[offset + 8:end - 4]
+            crc = struct.unpack('>I', data[end - 4:end])[0]
+            if zlib.crc32(kind + payload) != crc:
+                return None
+            if dimensions is None and kind != b'IHDR':
+                return None
+            if kind == b'IHDR':
+                if dimensions is not None or length != 13:
+                    return None
+                width, height, bits, color, compression, filtering, interlace = struct.unpack('>IIBBBBB', payload)
+                channels = {0: 1, 2: 3, 4: 2, 6: 4}.get(color)
+                if not channels or bits != 8 or compression or filtering or interlace or not width or not height:
+                    return None
+                row_size = width * channels + 1
+                if row_size * height > 128 * 1024 * 1024:
+                    return None
+                dimensions = width, height
+            elif kind == b'IDAT':
+                if ended_data:
+                    return None
+                compressed.extend(payload)
+            elif kind == b'IEND':
+                if length or end != len(data) or not compressed:
+                    return None
+                expected = row_size * dimensions[1]
+                decoder = zlib.decompressobj()
+                rows = decoder.decompress(bytes(compressed), expected + 1)
+                if len(rows) != expected or not decoder.eof or decoder.unused_data or decoder.unconsumed_tail:
+                    return None
+                if any(rows[pos] > 4 for pos in range(0, expected, row_size)):
+                    return None
+                return dimensions
+            elif kind == b'PLTE':
+                if compressed or color in (0, 4) or not length or length % 3 or length > 768:
+                    return None
+            elif not kind.isalpha() or not kind[0] & 32:
+                return None
+            if compressed and kind != b'IDAT':
+                ended_data = True
+            offset = end
+    except (OSError, ValueError, struct.error, zlib.error):
+        return None
+    return None
+
+
+def valid_screenshot(path: Path | None) -> bool:
+    return png_dimensions(path) is not None
 
 
 def run(project: Path, agent_arg: str, phase: str, allow_docs_fallback: bool,
         home: Path | None = None, desktop_screenshot: Path | None = None,
-        mobile_screenshot: Path | None = None, interactions_verified: bool = False) -> dict[str, Any]:
+        mobile_screenshot: Path | None = None, interactions_verified: bool = False,
+        *, extra_skill_roots: list[Path] | None = None, source_root: Path | None = None,
+        script_path: Path | None = None, gsap_required: bool = True,
+        required_gsap_skills: list[str] | None = None, observations: dict | None = None) -> dict[str, Any]:
     project = project.expanduser().resolve()
+    if not project.is_dir() or phase not in ('discovery', 'prototype', 'implementation', 'release'):
+        raise ValueError('Use an existing project directory and a supported phase.')
     home = home or Path.home()
-    implementation = phase in ('implementation', 'release')
+    implementation = phase in ('prototype', 'implementation', 'release')
     release = phase == 'release'
     agent, agent_evidence = identify_agent(agent_arg)
     roots = package_roots(project)
-    deps = get_dependencies(roots)
+    selected = select_source(project, roots, source_root)
+    if selected and (selected / 'package.json').is_file() and selected not in roots:
+        roots.append(selected)
+    deps = get_dependencies([selected]) if selected else {}
     framework = detect_framework(deps)
+    observations = validate_observations({} if observations is None else observations)
+    if required_gsap_skills and (not gsap_required or any(n not in GSAP_SKILLS for n in required_gsap_skills)):
+        raise ValueError('Select known GSAP topics only for a batch that requires GSAP.')
     results = []
 
     # 1 — Agent identification
     agent_known = agent in ('claude-code', 'cursor', 'codex', 'other')
-    results.append(check(1, 'AI agent identification', 'VERIFIED' if agent_known else 'UNVERIFIED',
+    results.append(check(1, 'AI agent identification', 'UNVERIFIED',
         f'Active agent: {agent}.', evidence=[agent_evidence],
-        next_steps=[] if agent_known else ['Pass --agent claude-code|cursor|codex|other from the active agent.']))
+        next_steps=['Confirm active-agent identity and permissions in the session; this process cannot attest them.'],
+        evidence_scope='declaration' if agent_arg != 'auto' else 'inference'))
 
     # 2 — Skill self integrity (filesystem, not runtime activation)
     skill_main = SKILL_DIR / 'SKILL.md'
-    resources = [SKILL_DIR / 'references' / 'PREFLIGHT_PROTOCOL.md',
-                 SKILL_DIR / 'references' / 'CREATIVE_WORKFLOW.md',
-                 SKILL_DIR / 'templates' / 'PROJECT_SCRIPT.md']
+    resources = [SKILL_DIR / 'references' / name for name in
+                 ('PREFLIGHT_PROTOCOL.md', 'CREATIVE_WORKFLOW.md')]
+    resources += [SKILL_DIR / 'templates' / name for name in
+                  ('PROJECT_SCRIPT.md', 'CONTINUITY_BIBLE.md', 'SCENE_TREATMENT.md', 'ITERATION_LOG.md')]
     missing = [str(p.relative_to(SKILL_DIR)) for p in [skill_main] + resources if not p.is_file()]
-    body = skill_main.read_text(encoding='utf-8') if skill_main.is_file() else ''
-    valid_header = body.startswith('---\n') and ('name: ' + SKILL_NAME) in body.split('---', 2)[1] if body.startswith('---\n') else False
+    body = read_document(skill_main)
+    missing += [str(p.relative_to(SKILL_DIR)) for p in resources
+                if p.is_file() and not read_document(p).strip()]
+    valid_header = has_skill_header(body, SKILL_NAME)
     self_pass = not missing and valid_header
     results.append(check(2, 'Cinematic Web Director Skill', 'VERIFIED' if self_pass else 'MISSING',
         'Skill entry point and required references are readable on disk.' if self_pass else 'Skill package is incomplete or SKILL.md metadata is invalid.',
@@ -227,28 +400,33 @@ def run(project: Path, agent_arg: str, phase: str, allow_docs_fallback: bool,
 
     # 3 — Official GSAP agent skills
     search_roots = skill_roots(project, agent, home)
+    search_roots += [project_path(project, p) for p in extra_skill_roots or []]
     if agent == 'claude-code':
         search_roots += claude_plugin_skill_roots(home)
     found = available_gsap_skills(search_roots)
-    required = list(BASE_REQUIRED_GSAP)
+    required = list(dict.fromkeys((*BASE_REQUIRED_GSAP, *(required_gsap_skills or []))))
     if framework in ('React', 'Next.js'):
         required.append('gsap-react')
     if framework in ('Vue', 'Nuxt', 'Svelte', 'SvelteKit'):
         required.append('gsap-frameworks')
+    required = list(dict.fromkeys(required))
     missing_required = [name for name in required if name not in found]
     missing_optional = [name for name in GSAP_SKILLS if name not in found and name not in required]
-    if not missing_required:
+    if not gsap_required:
+        skill_status = 'DEFERRED'
+        skill_message = 'This approved batch declares no GSAP work; skill requirements are deferred.'
+    elif not missing_required:
         skill_status = 'VERIFIED' if agent_known else 'UNVERIFIED'
         skill_message = f'All {len(required)} required official GSAP skill files are readable in the inspected skill directories.'
     else:
         skill_status = 'MISSING'
         skill_message = f'{len(found)}/8 official GSAP skill files found; missing required: {", ".join(missing_required)}.'
-    skill_block = bool(missing_required and implementation and not allow_docs_fallback)
-    steps = ['Active agent: explicitly read the relevant GSAP SKILL.md files and confirm they are discoverable in this session.']
-    if missing_required:
+    skill_block = bool(gsap_required and missing_required and implementation and not allow_docs_fallback)
+    steps = ['Active agent: explicitly read the relevant GSAP SKILL.md files and confirm they are discoverable in this session.'] if gsap_required else []
+    if gsap_required and missing_required:
         steps.extend(['Install the official suite with consent: npx skills add https://github.com/greensock/gsap-skills --agent ' + (agent if agent_known and agent != 'other' else '<your-agent>'),
                       'Then rerun the preflight and test actual agent access.'])
-    if allow_docs_fallback and missing_required:
+    if gsap_required and allow_docs_fallback and missing_required:
         steps.append('Explicit fallback accepted: follow and verify current official GSAP documentation instead; record this exception in the project.')
     results.append(check(3, 'GreenSock official GSAP Skills', skill_status, skill_message,
         evidence=[f'{name}: {path}' for name, path in sorted(found.items())] +
@@ -257,23 +435,29 @@ def run(project: Path, agent_arg: str, phase: str, allow_docs_fallback: bool,
         next_steps=steps, blocking=skill_block))
 
     # 4 — Project structure and package manager
-    if roots:
+    manifest = read_package(selected / 'package.json') if selected else {}
+    source_identified = bool(selected and (manifest or (selected / 'index.html').is_file()))
+    if source_identified:
         proj_status = 'VERIFIED'
-        proj_message = f'Found {len(roots)} JS package manifest(s); detected {framework}; package manager: {package_manager(project, roots)}.'
-        proj_ev = [str(root / 'package.json') for root in roots]
+        source_type = framework if manifest else 'Static HTML'
+        proj_message = (f'Selected source: {selected}; source type from local evidence: {source_type}; '
+                        f'package manager: {package_manager(project, [selected])}.')
+        proj_ev = [str(selected / ('package.json' if manifest else 'index.html'))]
     else:
         proj_status = 'UNVERIFIED'
-        proj_message = 'No package.json in the standard root/frontend/web/app locations. May be a blank project or a non-Node project.'
+        proj_message = 'Source is not identified or multiple applications are ambiguous. Supply --source-root.'
         proj_ev = [f'Project directory exists: {project.is_dir()}']
     results.append(check(4, 'Project environment', proj_status, proj_message,
         evidence=proj_ev,
-        next_steps=[] if roots else ['Identify the source root and framework; for an empty project, create the scaffold only after creative approval.'],
-        blocking=implementation and not roots))
+        next_steps=[] if source_identified else ['Select the actual application with --source-root; confirm unusual layouts using scoped observations.'],
+        blocking=implementation and not source_identified))
 
     # 5 — Project script
-    script = get_project_script(project)
+    script = project_path(project, script_path) if script_path else get_project_script(project)
+    if script and (not script.is_file() or not read_document(script).strip()):
+        script = None
     results.append(check(5, 'Project script', 'VERIFIED' if script else 'MISSING',
-        f'Found nonempty script/brief: {script.name}.' if script else 'No project-specific script or creative brief found in standard locations.',
+        f'Found readable nonempty script/brief: {script.name}.' if script else 'No readable nonempty project brief found in inspected locations.',
         evidence=[str(script)] if script else [],
         next_steps=['Read and assess the script: file presence does not guarantee narrative completeness.'] if script else
                    ['Discovery phase: collaboratively create PROJECT_SCRIPT.md using the bundled template.',
@@ -281,10 +465,12 @@ def run(project: Path, agent_arg: str, phase: str, allow_docs_fallback: bool,
         blocking=implementation and not bool(script)))
 
     # 6 — GSAP package (runtime) in target project
-    installed = [(root / 'node_modules' / 'gsap' / 'package.json') for root in roots]
-    installed = [p for p in installed if p.is_file()]
+    installed = runtime_packages(project, selected, deps)
     manifest_gsap = 'gsap' in deps
-    if installed:
+    if not gsap_required:
+        runtime_status = 'DEFERRED'
+        runtime_message = 'This approved batch declares no GSAP work; runtime requirements are deferred.'
+    elif installed:
         runtime_status = 'VERIFIED'
         runtime_message = f'Local gsap package present; declared version: {deps.get("gsap", "not specified in manifest")}.'
     elif manifest_gsap:
@@ -298,18 +484,22 @@ def run(project: Path, agent_arg: str, phase: str, allow_docs_fallback: bool,
         runtime_message = 'No local GSAP runtime detected in the inspected JavaScript projects.'
     results.append(check(6, 'GSAP runtime package', runtime_status, runtime_message,
         evidence=[str(p) for p in installed],
-        next_steps=[] if installed else ['Before implementation, check package root and run a user-approved package install if required.',
+        next_steps=[] if installed or not gsap_required else ['Before implementation, check package root and run a user-approved package install if required.',
                                          'For a CDN-based site, manually verify actual script loading and plugin availability.'],
-        blocking=implementation and not bool(installed)))
+        blocking=gsap_required and implementation and not bool(installed)))
 
     # 7 — Browser and visual test capabilities
     browser_binaries = [f'{exe}: {shutil.which(exe)}' for exe in
                         ('chromium', 'chromium-browser', 'google-chrome', 'firefox', 'playwright') if shutil.which(exe)]
     automation = [name for name in ('@playwright/test', 'playwright', 'puppeteer', 'cypress') if name in deps]
-    visuals_passed = bool(valid_screenshot(desktop_screenshot) and valid_screenshot(mobile_screenshot) and interactions_verified)
+    desktop_size = png_dimensions(desktop_screenshot)
+    mobile_size = png_dimensions(mobile_screenshot)
+    visuals_passed = bool(desktop_size and mobile_size and
+                          desktop_size[0] > mobile_size[0] and interactions_verified)
     if visuals_passed:
-        bstatus = 'VERIFIED'
-        bmsg = 'Actual desktop/mobile image artifacts exist and the running agent attests interaction checks were performed.'
+        bstatus = 'UNVERIFIED'
+        bmsg = ('PNG integrity and distinct viewport widths checked; capture provenance, '
+                'page rendering and interaction results are agent-attested, not independently verified.')
     elif automation or browser_binaries:
         bstatus = 'UNVERIFIED'
         bmsg = 'Potential browser/test tooling detected; functional desktop/mobile screenshot and interaction tests remain unverified.'
@@ -317,34 +507,60 @@ def run(project: Path, agent_arg: str, phase: str, allow_docs_fallback: bool,
         bstatus = 'MISSING'
         bmsg = 'No local browser/test tools detected; remote agent browser tools cannot be inspected here.'
     screenshot_ev = []
-    for label, path in [('Desktop screenshot', desktop_screenshot), ('Mobile screenshot', mobile_screenshot)]:
+    for label, path, size in [('Desktop screenshot', desktop_screenshot, desktop_size),
+                             ('Mobile screenshot', mobile_screenshot, mobile_size)]:
         if path is not None:
-            screenshot_ev.append(f'{label}: {path} (valid image: {valid_screenshot(path)})')
+            screenshot_ev.append(f'{label}: {path} (validated PNG dimensions: {size})')
     if interactions_verified:
         screenshot_ev.append('Interactions: explicitly attested by invoking agent/user; cannot be independently tested by this script')
     results.append(check(7, 'Browser and visual testing', bstatus, bmsg,
         evidence=automation + browser_binaries + screenshot_ev,
         next_steps=[] if visuals_passed else [
             'Agent: use browser/MCP tooling or manual QA to test a rendered website, capture desktop and mobile screenshots, and verify navigation/interaction.',
-            'On release preflight pass --desktop-screenshot PATH --mobile-screenshot PATH --interactions-verified only after those real tests pass.'],
-        blocking=release and not visuals_passed))
+            'For release supply non-interlaced 8-bit PNG captures at distinct desktop/mobile widths and attest interactions only after real QA.'],
+        blocking=release and not visuals_passed,
+        evidence_scope='filesystem+attestation' if visuals_passed else 'filesystem'))
 
     # 8 — Optional creative tooling
     candidates = ('matter-js', 'three', '@react-three/fiber', 'pixi.js', 'ogl',
                   'lottie-web', 'lenis', 'motion', 'framer-motion', '@rive-app/react-canvas')
-    optional = [name for name in candidates if name in deps]
-    optional += [f'{exe}: {shutil.which(exe)}' for exe in ('inkscape', 'magick', 'convert', 'ffmpeg') if shutil.which(exe)]
-    results.append(check(8, 'Optional creative tools', 'VERIFIED' if optional else 'DEFERRED',
-        'Some creative tooling exists.' if optional else 'No optional creative tools detected; choose tools only when the motion treatment requires them.',
+    declared_optional = [name for name in candidates if name in deps]
+    optional_binaries = [f'{exe}: {shutil.which(exe)}' for exe in
+                         ('inkscape', 'magick', 'convert', 'ffmpeg') if shutil.which(exe)]
+    optional = declared_optional + optional_binaries
+    results.append(check(8, 'Optional creative tools',
+        'UNVERIFIED' if declared_optional else ('VERIFIED' if optional_binaries else 'DEFERRED'),
+        'Optional declarations/locations found; verify functionality only when required.' if optional else
+        'No optional tools detected; choose them only when the treatment requires them.',
         evidence=optional,
-        next_steps=['Do not install physics/graphics libraries without an approved scene-level need.']))
+        evidence_scope='filesystem+declaration' if declared_optional and optional_binaries else
+                       ('declaration' if declared_optional else 'filesystem'),
+        next_steps=['Use tools required by approved scope; their declarations do not prove installation.']))
+
+    for id_, evidence in observations.items():
+        item = results[id_ - 1]
+        if item['status'] == 'DEFERRED':
+            continue
+        if id_ == 4 and selected is None:
+            raise ValueError('Agent observations cannot disambiguate applications; supply --source-root.')
+        item['local_status'] = item['status']
+        item['status'] = 'UNVERIFIED'
+        item['evidence_scope'] = 'agent-attestation'
+        item['evidence'].append('Agent reports: ' + evidence)
+        item['summary'] += ' Scoped agent evidence accepted; not independently verified by this checker.'
+        item['blocking'] = False
 
     blockers = [r['name'] for r in results if r['blocking']]
-    caveats = [r['name'] for r in results if r['status'] not in ('VERIFIED',) and not r['blocking']]
+    caveats = [r['name'] for r in results if r['id'] != 8 and
+               r['status'] not in ('VERIFIED', 'DEFERRED') and not r['blocking']]
     gate = 'BLOCKED' if blockers else ('DEGRADED' if caveats else 'READY')
     return {
-        'schema_version': '1.0', 'timestamp_utc': datetime.now(timezone.utc).isoformat(),
+        'schema_version': '1.1', 'timestamp_utc': datetime.now(timezone.utc).isoformat(),
         'skill': SKILL_NAME, 'project_root': str(project), 'phase': phase,
+        'source_root': str(selected) if selected else None,
+        'gsap_required': gsap_required, 'creative_approval_verified': False,
+        'applications': [{'root': str(p), 'framework': detect_framework(get_dependencies([p])),
+                          'declared_packages': sorted(get_dependencies([p]))} for p in roots],
         'active_agent': agent, 'overall_gate': gate, 'checks_reviewed': len(results),
         'checks_total': 8, 'blockers': blockers, 'caveats': caveats,
         'limitations': [
@@ -362,7 +578,8 @@ def render_human(report: dict[str, Any]) -> str:
              f'Project: {report["project_root"]}', f'Phase: {report["phase"]} | Agent: {report["active_agent"]}',
              f'Gate: {report["overall_gate"]} | {report["checks_reviewed"]}/{report["checks_total"]} reviewed (NOT 8/8 passed)', '']
     for r in report['results']:
-        lines.append(f'[{r["status"]}] {r["id"]}. {r["name"]}' + (' [BLOCKER]' if r['blocking'] else ''))
+        lines.append(f'[{r["status"]}; {r["evidence_scope"]}] {r["id"]}. {r["name"]}' +
+                     (' [BLOCKER]' if r['blocking'] else ''))
         lines.append('  ' + r['summary'])
         for ev in r['evidence'][:6]:
             lines.append('  evidence: ' + ev)
@@ -374,7 +591,7 @@ def render_human(report: dict[str, Any]) -> str:
     if report['blockers']:
         lines.append('Resolve blockers before proceeding to this phase: ' + '; '.join(report['blockers']))
     else:
-        lines.append('Current phase may proceed, subject to agent-side confirmation and documented caveats.')
+        lines.append('Technical scope is not blocked. Creative/prototype/sprint approvals and live QA remain agent-side gates.')
     return '\n'.join(lines)
 
 
@@ -382,7 +599,17 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--project', type=Path, default=Path.cwd(), help='Website project root (default: cwd)')
     parser.add_argument('--agent', choices=('auto', 'claude-code', 'codex', 'cursor', 'other'), default='auto')
-    parser.add_argument('--phase', choices=('discovery', 'implementation', 'release'), default='discovery')
+    parser.add_argument('--phase', choices=('discovery', 'prototype', 'implementation', 'release'), default='discovery')
+    parser.add_argument('--source-root', type=Path, help='Actual application directory, absolute or relative to project')
+    parser.add_argument('--script', type=Path, help='Existing brief/script, absolute or relative to project')
+    parser.add_argument('--skill-root', type=Path, action='append', default=[],
+                        help='Additional parent directory of official GSAP skill folders; repeatable')
+    parser.add_argument('--gsap', choices=('required', 'not-required'), default='required',
+                        help='Requirements of the approved batch; default: required')
+    parser.add_argument('--gsap-skill', choices=GSAP_SKILLS, action='append', default=[],
+                        help='Additional GSAP topic required by the approved treatment; repeatable')
+    parser.add_argument('--observations', type=Path,
+                        help='Project/source/phase-bound JSON attestations for checks 3, 4 and 6')
     parser.add_argument('--allow-gsap-docs-fallback', action='store_true',
                         help='Use only with explicit project owner approval, when official agent skills are unavailable')
     parser.add_argument('--desktop-screenshot', type=Path, help='Existing desktop screenshot from real visual QA')
@@ -394,9 +621,18 @@ def main() -> int:
     args = parser.parse_args()
     if not args.project.expanduser().is_dir():
         parser.error(f'Project directory not found: {args.project}')
-    report = run(args.project, args.agent, args.phase, args.allow_gsap_docs_fallback,
-                 desktop_screenshot=args.desktop_screenshot, mobile_screenshot=args.mobile_screenshot,
-                 interactions_verified=args.interactions_verified)
+    try:
+        project = args.project.expanduser().resolve()
+        selected = select_source(project, package_roots(project), args.source_root)
+        observations = load_observations(args.observations, project, args.phase, selected) if args.observations else {}
+        report = run(project, args.agent, args.phase, args.allow_gsap_docs_fallback,
+                     desktop_screenshot=args.desktop_screenshot, mobile_screenshot=args.mobile_screenshot,
+                     interactions_verified=args.interactions_verified, source_root=args.source_root,
+                     script_path=args.script, extra_skill_roots=args.skill_root,
+                     gsap_required=args.gsap == 'required', required_gsap_skills=args.gsap_skill,
+                     observations=observations)
+    except (ValueError, OSError, UnicodeError) as exc:
+        parser.error(str(exc))
     output = json.dumps(report, indent=2, ensure_ascii=False) if args.format == 'json' else render_human(report)
     if args.out:
         args.out.parent.mkdir(parents=True, exist_ok=True)
