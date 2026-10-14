@@ -1,29 +1,39 @@
 # Continuity Bible — [project name]
 
 Status: DRAFT — not approved
+Version / approved project-script version:
 
-## Visual language
-- Conceptual metaphor:
-- Typography roles:
-- Palette and contrast rules:
-- Graphic elements and recurring motifs:
-- Imagery and illustration treatment:
-- Depth, scale and spatial logic:
+Adapt this shared language to the website and its visitor journeys. Explain choices with representative compositions/references; do not require every page to behave as a cinematic scene.
 
-## Motion grammar
-- Primary and secondary rhythms:
-- Easing and pacing principles:
-- Permitted transitions and purposeful hard cuts:
-- Pointer/touch/keyboard interaction behaviors:
-- Scroll progress and pinning policy:
-- Reduced-motion equivalent:
-- End-of-experience / replay strategy:
+## Visual and content language
+- Central idea and how visual decisions express it:
+- Typography roles, hierarchy and readable text behavior:
+- Palette, contrast and color roles:
+- Geometry, graphic elements and recurring motifs where useful:
+- Imagery/illustration treatment and available assets:
+- Composition, depth, scale and spatial relationships:
+- Copy voice, emphasis and relationship to visual pacing:
+- Representative approved compositions and reference qualities:
 
-## Cross-scene continuity matrix
-| From → To | Carry forward | Transform | Introduce | Narrative reason | Mobile alternative |
-|---|---|---|---|---|---|
-| Scene 1 → 2 | | | | | |
+## Interaction and motion language
+- Purpose of movement; primary/secondary rhythms and pacing:
+- Easing principles described through observable behavior:
+- Pointer/touch/keyboard equivalents and focus/orientation:
+- Navigation, direct entry, browser back/forward and return from detail pages:
+- Permitted transitions and intentional cuts:
+- Scroll/pinning policy only where relevant:
+- Mobile composition and interaction changes:
+- Reduced-motion/static experience and accessible content/actions:
+- Interruption, skip, reverse, reset/replay or direct return strategy:
+- Performance constraints and progressive enhancement:
 
-## Contradiction register
-| Conflicting design decision | Affected scenes | Proposed resolution | Approved? |
+## Connections across the experience
+| From → To (page / scene / state) | Carry forward | Transform | Introduce | Visitor/narrative reason | Direct-entry/back behavior | Mobile/reduced-motion alternative |
+|---|---|---|---|---|---|---|
+
+## Consistency and revision
+- Whole-experience review points across sprints:
+- Approved freedoms/variations for independent pages or case studies:
+
+| Conflicting decision / new evidence | Affected units and approvals | Proposed resolution and expected benefit | Approval / updated versions |
 |---|---|---|---|

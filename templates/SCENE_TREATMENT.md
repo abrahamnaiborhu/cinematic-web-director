@@ -1,21 +1,55 @@
-# Scene Treatment — [project name]
+# Treatment — [project name]
 
 Status: DRAFT — not approved
+Version / project-script and continuity-bible versions:
 
-## Scene [number] — [scene name]
-- Narrative act and intended audience insight:
-- Existing elements inherited from previous scene:
-- Composition / visual hierarchy:
-- Entry state:
-- Timeline labels / motion beats:
-- Scroll trigger, scrub, pin or free-scroll behavior:
-- Interactions (click, hover, drag, keyboard, touch):
-- Exit state and transition to next scene:
-- Proposed GSAP capabilities (after motion concept approval):
-- Reverse, reset, or cinematic return behavior:
-- If physics is involved: simulation source of truth, reset plan, collision/replay trade-offs:
-- Interruption/skip behavior:
-- Small-screen version:
-- Reduced-motion/static equivalent:
-- Performance risks and progressive enhancement:
-- Acceptance tests:
+Use for a page, scene, journey or interaction needing detailed direction. Adapt or omit irrelevant fields. Describe the visitor experience before selecting animation APIs.
+
+## Unit [identifier] — [name]
+- Type and purpose / intended visitor takeaway:
+- Content/copy and asset sources; approval versions:
+- Entry points, inherited elements and direct-entry behavior:
+- Composition and visual hierarchy:
+- Connection to the wider site and onward navigation:
+
+## Storyboard and motion beats
+| State/beat | Composition, subject and copy | Visitor action or trigger | What changes and why | Continuity and interruption behavior |
+|---|---|---|---|---|
+
+- Representative frames / annotated compositions:
+- Entry state and content available before animation:
+- Motion progression and pacing in plain language:
+- Exit/settled state and bridge to other units:
+- Scroll-linked / free-scroll / navigation / input behavior as relevant:
+- Interactions and pointer/touch/keyboard equivalents:
+- Skip, interruption and browser back/forward behavior:
+- Return choice: reversible timeline / authored transition / reset-replay / recorded playback / direct navigation / other:
+- If simulation is involved: state authority, collision behavior, reset/replay plan and trade-offs:
+
+## Responsive and technical treatment
+- Small-screen composition and behavior:
+- Reduced-motion/static alternative and readable content/actions:
+- Progressive enhancement and loading/failure states:
+- Performance risks and observation/measurement conditions:
+- Relevant architecture/state/data decisions and dependencies:
+- Proposed GSAP skills/plugins or other capabilities, justified by the treatment:
+- Official technical references and runtime verification needed:
+
+## Optional bounded prototype agreement
+- Named uncertainty and decision it will inform:
+- Smallest experiment; permitted files/dependencies and exclusions:
+- Model configuration / identity evidence:
+- Expected observations and success criteria:
+- Relevant devices, input modes and reduced-motion checks:
+- Approved time/iteration boundary and stopping condition:
+- Explicit client approval / version / date:
+- Result evidence and limitations:
+- Adopt / revise / reject decision; affected artifacts/approvals:
+
+## Production acceptance and approval
+| Criterion | Required observation/test | Evidence location and conditions | Result / remaining uncertainty |
+|---|---|---|---|
+
+- Permitted refinements and their boundaries:
+- Production sprint/batch and model configuration:
+- Approval / version / date:

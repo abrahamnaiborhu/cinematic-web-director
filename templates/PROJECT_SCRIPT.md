@@ -1,41 +1,90 @@
 # Project Script — [project name]
 
 Status: DRAFT — not approved
+Version / date:
 
-## Real product and audience
-- What it does (verified facts only):
-- Audience:
-- Audience need/problem:
-- Differentiation:
-- Primary CTA:
-- Claims requiring validation:
+The director maintains this evolving brief with the client. Adapt fields to the assignment and preserve equivalent existing documents. Empty fields and a filename are not approvals.
 
-## Creative thesis
-- The one idea the visitor should remember:
-- Emotional direction:
-- Preferred narrative model (five-act / journey / exploration / other):
-- Central visual metaphor (if any):
+## Assignment, purpose and visitors
+- Build / redesign / targeted revision / resume:
+- Subject (person, practice, product, organization or other):
+- What the client wants to build or improve:
+- Website purpose and intended outcomes:
+- Visitors and their important needs/journeys:
+- Client expertise; where creative explanation is useful:
+- Constraints and required existing functionality:
+- Confirmed facts and claims needing validation:
 
-## Narrative acts
-| Act | Audience insight/change | Key message | Visual idea | Bridge to next act |
+## Sources and existing experience
+| Location/link | Role (facts / constraint / inspiration / old draft) | Relevant content or quality | Freshness/conflicts | Approval or confirmation |
 |---|---|---|---|---|
-| Hook | | | | |
-| Tension / curiosity | | | | |
-| Discovery | | | | |
-| Climax / payoff | | | | |
-| Resolution / action | | | | |
 
-## Climax and ending
-- Why the climax matters:
-- What it proves about the product:
-- How the ending motivates a useful next action:
+- Existing site/source and available rendering access:
+- Baseline evidence: actual observation / supplied capture / source-only:
+- Weaknesses and visitor impact:
+- Retain / revise / replace recommendations:
+- Missing materials and their consequences:
+- Source conflicts resolved; superseded material:
 
-## Assets and constraints
-- Existing brand assets:
-- Copy sources:
-- Accessibility, mobile, performance requirements:
-- Unknowns/assumptions:
+## Site structure and content
+| Page / collection / important unit | Purpose and visitor takeaway | Content/copy source and approval | Entry and onward navigation | Intended action, if relevant |
+|---|---|---|---|---|
 
-## Approval
-- Owner:
-- Approved version / date:
+- Sitemap / existing structure reference:
+- Important visitor journeys, including direct entry and returning:
+- Confirmed copy / draft copy / explicit placeholders:
+- Content ownership and remaining gaps:
+
+## Creative direction
+- Central idea rooted in the subject and audience:
+- Intended emotional/visual character:
+- Alternatives considered; recommendation and reasons:
+- Selected/blended direction and approved references:
+- Experience structure (guided progression / collection / case studies / multiple journeys / other):
+- Purposeful progression or connections; payoff/climax only where useful:
+- Representative compositions/storyboards:
+- Continuity bible and current version:
+- Originality rationale and risks:
+
+## Architecture and feasibility
+| Requirement | Existing solution / alternatives | Recommendation and reason | Migration/integration/deployment effects | Validation |
+|---|---|---|---|---|
+
+- Actual application roots and package boundaries:
+- Client-defined technical constraints:
+- Content/data sources, shared state and backend requirements where relevant:
+- Proposed dependencies and authorized installation scope:
+- Accessibility, mobile, performance and progressive-enhancement criteria:
+
+## Open decisions and uncertainty
+| Question or assumption | Consequence | Resolution (discussion / reference / approved prototype) | Owner | Status / affected units |
+|---|---|---|---|---|
+
+- Adjustable details and permitted boundaries:
+- Prototype agreements and results (link to treatment/log):
+
+## Model agreement
+| Configuration ID | Provider / exact model / reasoning setting | Identity evidence or unverified | Role and allowed scope | Approval / escalation conditions |
+|---|---|---|---|---|
+
+- Host switching/metadata capabilities and limitations:
+- Approved fallback configurations and reasons:
+- Handoff notices reference this agreement; unknown identity stays unverified:
+
+## Production sprint plan
+Plan version / approved batch:
+
+| Sprint | Visitor outcome / scope | Treatment and content versions | Dependencies / architecture changes | Model configuration | Acceptance criteria and required evidence | Status |
+|---|---|---|---|---|---|---|
+
+- Permitted implementation refinements and defect fixes:
+- Iteration/time boundaries and stopping/escalation conditions:
+- Explicitly approved experiments, if included (reference bounded agreement):
+- Exclusions / deferred backlog:
+- Execution: continue through approved, sufficiently specified sprints; report outcomes without mandatory boundary reapproval:
+
+## Approvals and changes
+| Decision/checkpoint | Artifact and version | Client approval / date | Conditions | Supersedes / affected approvals |
+|---|---|---|---|---|
+
+Checkpoints: A — brief/structure; B — creative direction/continuity; C — upcoming production batch. Prototype approval is scoped to its named experiment. Later changes identify affected approvals before implementation.
