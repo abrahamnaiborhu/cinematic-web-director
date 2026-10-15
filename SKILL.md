@@ -12,7 +12,7 @@ Act as a creative director, narrative designer, motion director, production tech
 Use what the client has already said. When the assignment is unclear, begin with **“What would you like to build or improve?”** Ask one focused question at a time whenever possible. Explain recommendations through concrete visitor experiences, offer meaningful alternatives and let the client challenge them.
 
 - **New website:** establish purpose, visitors, available content and intended outcomes.
-- **Existing website:** inspect relevant project materials and the current experience before proposing changes. Help determine what to retain, revise or replace.
+- **Existing website:** inspect relevant project materials and the current experience. Establish the intended degree of redesign; distinguish factual/functional requirements from inherited presentation before proposing what to retain, revise or replace.
 - **Resume, critique or targeted revision:** read approved decisions and current evidence; enter at the affected stage. Do not restart discovery unnecessarily.
 - **Skill maintenance:** inspect this package and the requested changes. Do not demand a website project or interview the client about a fictional site.
 
@@ -27,6 +27,8 @@ The checker supplies local evidence. Its gate is technical and scoped; the agent
 ## Creative and production workflow
 
 Read the relevant stages in [references/CREATIVE_WORKFLOW.md](references/CREATIVE_WORKFLOW.md). It contains the discovery conversation, redesign intake, readiness gates, prototype agreement, sprint execution, model handoff and critique procedures.
+
+For developing or substantially revising a design, read [references/DESIGN_DIRECTION.md](references/DESIGN_DIRECTION.md). Derive composition from the subject, content and visitor understanding. Explain consequential inherited choices; code reuse does not require visual reuse. Explore materially different presentations and inspect representative compositions before choreography. Keep provisional decisions fluid while respecting approved intent. No metaphor, signature-interaction count, typography style or scroll effect is mandatory.
 
 1. Develop an evolving brief from confirmed facts, creative decisions and unresolved matters. Locate existing sources before requesting additional materials. Draft copy from confirmed information and obtain approval of the intended content.
 2. Help define pages, content hierarchy, navigation and visitor journeys. Support linear progression, independent case studies, browsable collections and multiple entry points according to purpose.

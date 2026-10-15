@@ -110,6 +110,8 @@ Desktop width must exceed mobile width. One file cannot stand for both viewports
 
 ## Reports and boundaries
 
+Skill integrity includes the creative workflow, design-direction reference, preflight protocol and all four project templates. Missing or blank required guidance blocks the package check even during discovery. This establishes resource availability, not design judgment; behavioral scenarios and rendered trials are separate evaluations.
+
 ```bash
 python3 scripts/preflight.py --project /path/to/site --agent codex --phase discovery --format json
 python3 scripts/preflight.py --project /path/to/site --agent codex --phase discovery --format json --out ./preflight.json

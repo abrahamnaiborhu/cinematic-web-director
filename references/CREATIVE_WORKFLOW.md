@@ -32,15 +32,19 @@ Differentiate factual sources, mandatory brand constraints, inspiration and old 
 
 For redesigns, inspect the actual rendered site and relevant navigation/interaction states when tools permit. Otherwise label the assessment as source-only or based on supplied captures. Establish a baseline of message/story, hierarchy/navigation, visual identity, motion, accessibility and technical behavior. Explain each problem's visitor impact and identify what to retain, revise or replace. Existing implementation is evidence, not automatic creative approval. Preserve functionality the client requires and record approved changes to it.
 
+Establish the degree of reinvention from the client's intent; clarify it only when consequential and unclear. Use [design direction](DESIGN_DIRECTION.md) to separate the factual/functional baseline from inherited presentation, derive the story without borrowing the old section list, and explain consequential carryover. Component reuse does not establish a visual constraint. A targeted refresh still respects its limited scope.
+
 Recheck relevant materials before major approvals and sprint starts. New material triggers an impact review of affected decisions. Preserve unaffected approvals and continue independent authorized work.
 
-**Checkpoint A:** the client approves the purpose, visitors, content/factual basis, important constraints and proposed site structure/journeys. Consequential unresolved matters have owners and a resolution plan. Missing implementation tooling does not block this checkpoint.
+**Checkpoint A:** the client approves the purpose, visitors, content/factual basis, important constraints and proposed site structure/journeys. Identify which structural decisions are fixed and which remain provisional for creative exploration. Consequential unresolved matters have owners and a resolution plan. Missing implementation tooling does not block this checkpoint.
 
 ## 2. Structure, copy and creative exploration
 
 Help define pages, content hierarchy, navigation and visitor journeys, starting from existing approved requirements. Draft and revise copy with the client. Explore alternatives when a direction is undecided; an already approved direction does not need a new concept contest.
 
 Normally present two or three meaningfully different directions, with central idea, intended visitor experience, representative composition, content approach, continuity, originality potential, accessibility/maintenance/cost risks and implementation implications. Recommend one and explain why. Let the client reject, combine or challenge directions. Use visual references or annotated layouts where available; identify what was actually inspected and what remains illustrative.
+
+Apply [design direction](DESIGN_DIRECTION.md) during exploration and composition review. Candidates should differ in how they frame content, organize attention or support journeys, not merely in palette and naming. Develop visual language through representative content and inspectable compositions; give prominent motion a reason after the composition works. Metaphors, signature interactions, dramatic type and familiar effects are choices to evaluate, not a universal recipe.
 
 Adapt narrative to visitor behavior:
 
@@ -66,7 +70,7 @@ Create representative compositions and a storyboard before detailed technical se
 
 Use the treatment template for a page, scene or interaction: entry, intermediate states, exit, transitions, interruptions/skip, small-screen composition, reduced motion and acceptance criteria. Describe motion in plain language before naming plugins or timeline APIs. Record proposed techniques only after purpose is clear. Literal reverse is optional: consider reversible timelines, authored return transitions, reset/replay, recorded playback or direct navigation. Live physics needs an explicit state/reset or replay strategy.
 
-**Checkpoint B:** the client approves the whole site's creative structure, representative compositions, visual direction and continuity rules. Detailed choreography for later batches may remain open. Timing or feasibility uncertainties can be resolved with an approved prototype.
+**Checkpoint B:** the client approves the whole site's creative structure, representative compositions, visual direction and continuity rules. Summarize the idea's connection to actual content, consequential inherited choices and the purpose of prominent interactions. Text-only proposals do not establish completed visual review. Detailed choreography for later batches may remain open. Timing or feasibility uncertainties can be resolved with an approved prototype.
 
 ## 4. Small pre-production experiments
 
@@ -139,6 +143,8 @@ Pause affected work for consequential ambiguity, changed approved intent, unappr
 Observe actual desktop/mobile layouts, representative scroll/motion states, navigation, touch/keyboard interactions, interruptions, reduced motion and direct entry as relevant. Check whether key information and actions remain accessible. Measure performance where tooling permits, recording viewport/device and conditions rather than inventing results. Screenshots alone cannot establish motion quality or interaction correctness.
 
 Assess story/content, composition, originality, continuity, motion, usability/accessibility, responsiveness and technical performance separately. For an issue record creative intent, existing implementation, observed problem/evidence, visitor impact, proposed correction, expected improvement and validation. Distinguish functional defects, unmet creative intent and optional polish. The iteration log holds decisions and observations; the project script and bible hold current approved intent.
+
+Use the design-direction critique questions to check subject specificity, unjustified inherited presentation, access to substantive content and whether motion contributes. Review the actual compositions and observed experience; do not substitute a list of trendy techniques or an invented originality score for judgment.
 
 Periodically review the whole experience across sprints. A good isolated scene may still disrupt overall pacing, browsing or identity. Use client reactions as evidence without treating aesthetic taste as a numerical score. If a revision changes an approved decision, identify affected units/approvals, explain alternatives and obtain the necessary agreement before implementing that change.
 

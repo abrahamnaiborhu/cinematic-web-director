@@ -7,6 +7,7 @@ Record evidence and decisions as work proceeds. The project script and continuit
 - Existing implementation:
 - Observed problem and evidence (runtime / measurement / source review / client feedback):
 - Visitor impact; defect / unmet intent / optional polish:
+- Design finding where relevant: subject specificity / inherited presentation / composition / content access / motion purpose:
 - Proposed solution and hypothesis:
 - Expected improvement:
 - Validation method, viewport/device/input conditions and comparison baseline:
@@ -14,6 +15,7 @@ Record evidence and decisions as work proceeds. The project script and continuit
 - Decision: accept / refine / reject / defer:
 - Approval required/received for changed intent or scope:
 - Affected decisions, artifacts and updated versions:
+- Provisional choice revised or approved boundary affected; rationale for any retained presentation:
 - Next authorized work or stopping condition:
 
 ## Model handoff [identifier, when applicable]

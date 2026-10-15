@@ -10,6 +10,8 @@ Use for a page, scene, journey or interaction needing detailed direction. Adapt 
 - Content/copy and asset sources; approval versions:
 - Entry points, inherited elements and direct-entry behavior:
 - Composition and visual hierarchy:
+- Specific content/evidence and connection to the chosen direction:
+- Existing presentation retained or changed, if consequential, and why:
 - Connection to the wider site and onward navigation:
 
 ## Storyboard and motion beats
@@ -17,8 +19,10 @@ Use for a page, scene, journey or interaction needing detailed direction. Adapt 
 |---|---|---|---|---|
 
 - Representative frames / annotated compositions:
+- Static composition review: actual content, reading hierarchy and evidence limits:
 - Entry state and content available before animation:
 - Motion progression and pacing in plain language:
+- Purpose of prominent movement and supporting/quiet states; no required effect quota:
 - Exit/settled state and bridge to other units:
 - Scroll-linked / free-scroll / navigation / input behavior as relevant:
 - Interactions and pointer/touch/keyboard equivalents:

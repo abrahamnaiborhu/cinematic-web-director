@@ -2,6 +2,28 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
+## [0.3.0] - Unreleased
+
+### Added
+
+- Design-direction protocol for deriving presentation from subject, audience, content and intended visitor understanding.
+- Redesign-intent clarification, separation of required facts/functionality from inherited styling, and reasons for consequential retained or replaced choices.
+- Content-based concept alternatives, representative composition review before choreography, and qualitative critique of specificity, inheritance, reading comfort and motion purpose.
+- Six synthetic evaluation cases with client inputs/materials separated from reviewer criteria.
+- Project-template fields for redesign freedom, provisional structure, inherited choices, inspected compositions and design revisions.
+
+### Changed
+
+- Checkpoint A distinguishes fixed structure from provisional exploration; checkpoint B includes content fit, composition evidence and inherited-choice rationale.
+- No metaphor, signature-interaction quota, typography style or prescribed scroll effects are universal design requirements. Client-defined constraints and approved sprint boundaries remain authoritative.
+- Package integrity now requires nonempty design-direction guidance; ZIP payload includes the protocol and evaluation cases.
+
+### Validation and limits
+
+- Offline tests cover missing/blank design guidance and inclusion of the new distribution resources alongside existing preflight and packaging behavior.
+- Manual scenario review checks instruction consistency, including limited refreshes and approved-sprint continuation. Independent session evaluations and rendered redesign trials remain pending.
+- This candidate is prepared locally. Building a ZIP does not publish it or replace a previously installed v0.2.0 skill.
+
 ## [0.2.0] - 2026-10-14
 
 ### Added

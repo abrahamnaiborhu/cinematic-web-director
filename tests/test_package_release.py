@@ -14,6 +14,7 @@ from package_release import build_release
 CONTENTS = (
     'README.md', 'SKILL.md', 'TUTORIAL.md', 'CHANGELOG.md',
     'references/CREATIVE_WORKFLOW.md', 'references/PREFLIGHT_PROTOCOL.md',
+    'references/DESIGN_DIRECTION.md', 'evaluations/DESIGN_DIRECTION.md',
     'templates/PROJECT_SCRIPT.md', 'templates/CONTINUITY_BIBLE.md',
     'templates/SCENE_TREATMENT.md', 'templates/ITERATION_LOG.md',
     'scripts/preflight.py', 'scripts/package_release.py',

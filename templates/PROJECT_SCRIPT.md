@@ -9,6 +9,7 @@ The director maintains this evolving brief with the client. Adapt fields to the 
 - Build / redesign / targeted revision / resume:
 - Subject (person, practice, product, organization or other):
 - What the client wants to build or improve:
+- Degree of redesign and permitted reinvention, if relevant; use stated intent:
 - Website purpose and intended outcomes:
 - Visitors and their important needs/journeys:
 - Client expertise; where creative explanation is useful:
@@ -26,11 +27,18 @@ The director maintains this evolving brief with the client. Adapt fields to the 
 - Missing materials and their consequences:
 - Source conflicts resolved; superseded material:
 
+For redesigns, distinguish requirements and useful evidence from inherited presentation. Record consequential choices rather than every CSS value. Technical reuse does not require visual reuse.
+
+| Existing element / behavior | Factual or functional requirement / brand constraint / presentation choice | Retain / revise / replace and story/visitor reason | Required or proposed; confirmation/approval |
+|---|---|---|---|
+
 ## Site structure and content
 | Page / collection / important unit | Purpose and visitor takeaway | Content/copy source and approval | Entry and onward navigation | Intended action, if relevant |
 |---|---|---|---|---|
 
 - Sitemap / existing structure reference:
+- Structural decisions fixed by agreement / provisional for exploration; permitted flexibility:
+- Intended visitor understanding and the specific work/evidence supporting it, independent of the old section list:
 - Important visitor journeys, including direct entry and returning:
 - Confirmed copy / draft copy / explicit placeholders:
 - Content ownership and remaining gaps:
@@ -39,12 +47,16 @@ The director maintains this evolving brief with the client. Adapt fields to the 
 - Central idea rooted in the subject and audience:
 - Intended emotional/visual character:
 - Alternatives considered; recommendation and reasons:
+- How alternatives differ in content framing, composition or visitor behavior beyond palette/type:
 - Selected/blended direction and approved references:
 - Experience structure (guided progression / collection / case studies / multiple journeys / other):
 - Purposeful progression or connections; payoff/climax only where useful:
 - Representative compositions/storyboards:
+- Actual content and entry/substantive/mobile views inspected; artifact links and evidence limits:
+- Prominent interaction purpose, if useful; supporting motion and quiet moments:
 - Continuity bible and current version:
 - Originality rationale and risks:
+- Subject-specific decisions; inherited presentation reviewed; unresolved content/asset needs:
 
 ## Architecture and feasibility
 | Requirement | Existing solution / alternatives | Recommendation and reason | Migration/integration/deployment effects | Validation |

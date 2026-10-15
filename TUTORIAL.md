@@ -1,4 +1,4 @@
-# Cinematic Web Director — Getting Started (v0.2.0)
+# Cinematic Web Director — Getting Started (v0.3.0 candidate)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
@@ -20,7 +20,13 @@ Run one command, not all three unless you use all three agents. The GitHub sourc
 
 ### Install the exact ZIP release
 
-Download `cinematic-web-director-v0.2.0.zip` and `SHA256SUMS.txt` from the [v0.2.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.2.0). Save both in the same folder.
+For this unpublished candidate, build the ZIP from this repository revision:
+
+```bash
+python3 -B scripts/package_release.py --version 0.3.0 --out dist/v0.3.0
+```
+
+Use `cinematic-web-director-v0.3.0.zip` and `SHA256SUMS.txt` from that output directory. For a published version, download its matching ZIP and checksum from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases); v0.2.0 is the latest published release when this candidate is prepared. Substitute that version in the examples below. Save the archive and its matching checksum in the same folder, then run verification from that folder.
 
 Check the archive's checksum. On macOS:
 
@@ -37,19 +43,19 @@ sha256sum -c SHA256SUMS.txt
 On Windows PowerShell, compare this result with the hash in `SHA256SUMS.txt`:
 
 ```powershell
-Get-FileHash .\cinematic-web-director-v0.2.0.zip -Algorithm SHA256
+Get-FileHash .\cinematic-web-director-v0.3.0.zip -Algorithm SHA256
 ```
 
 Extract into a new folder so different releases stay separate:
 
 ```bash
-unzip cinematic-web-director-v0.2.0.zip -d cinematic-web-director-v0.2.0
+unzip cinematic-web-director-v0.3.0.zip -d cinematic-web-director-v0.3.0
 ```
 
-The extracted package is inside `cinematic-web-director-v0.2.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
+The extracted package is inside `cinematic-web-director-v0.3.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
 
 ```bash
-npx skills add "/absolute/path/to/cinematic-web-director-v0.2.0/cinematic-web-director" --agent codex
+npx skills add "/absolute/path/to/cinematic-web-director-v0.3.0/cinematic-web-director" --agent codex
 ```
 
 Choose `claude-code` or `cursor` instead if appropriate. Add `--global` for a user-wide installation. You may also copy the complete inner package directory to your agent's configured skill location. Keep its references, templates and scripts together.
@@ -65,6 +71,12 @@ Ask the agent to use Cinematic Web Director. For a new site:
 For an existing site:
 
 > Use Cinematic Web Director to redesign this website. Inspect its source and the materials in this project. Assess its story, copy, structure and visual presentation, then explore a direction with me before implementing it.
+
+State how much reinvention you want when you know it. For example:
+
+> I want a complete creative rethink of this portfolio. Use the real work and preserve contact and case-study links, but reconsider the existing layout, colors, typography and section order. Develop the story and show different ways to present it before production.
+
+For a limited refresh, name what should stay. The director should use your stated intent rather than repeatedly asking you to choose a redesign category. Existing presentation can remain when it serves the assignment; it is not automatically a requirement because it already exists.
 
 If your request is still vague, the director starts with “What would you like to build or improve?” If you already answered, it should ask the next useful question instead of restarting.
 
@@ -93,6 +105,12 @@ The director should help establish three checkpoints:
 3. **Upcoming production batch:** detailed treatments, architecture changes, model responsibilities, acceptance criteria and sprint scope.
 
 A landing page can use a focused sequence. A portfolio can use independent case studies and exploratory browsing. A product website can offer several routes. A dramatic climax, a single CTA and scroll-driven scenes are optional.
+
+Ask what visitors should understand and which actual work or evidence supports it. During exploration, the director should show alternatives that differ in content framing, composition or browsing behavior, rather than changing only palette and fonts. Fixed constraints stay explicit; provisional structure can evolve with the direction.
+
+Review representative compositions using real content, including substantive work and smaller-screen views where relevant. Text descriptions explain a proposal but do not prove its visual quality. If a coded study is needed to judge composition, agree on a bounded prototype before it is built. You can approve or reject the composition separately from unresolved motion details.
+
+A central metaphor and a signature interaction can be helpful; neither is required. Huge type, small body text, pinning, text reveals and marquees are not a recipe for every project. Ask how each prominent choice helps people understand or use this particular website. The [design-direction reference](references/DESIGN_DIRECTION.md) explains the process.
 
 The director maintains approved versions using the [project script](templates/PROJECT_SCRIPT.md), [continuity bible](templates/CONTINUITY_BIBLE.md), [treatment](templates/SCENE_TREATMENT.md) and [iteration log](templates/ITERATION_LOG.md), or equivalent documents you already use. You do not need to fill out all templates before the conversation begins.
 
@@ -163,7 +181,10 @@ Before releasing your website, the agent should observe its actual layouts, moti
 | Agent starts building too soon | Point it to the missing checkpoint or unapproved experiment/sprint scope |
 | Agent reports a model switch without evidence | Ask for host confirmation or an explicit unverified identity record |
 | Story or design still feels weak | Ask for evidence, visitor impact, alternatives and a recommended correction |
+| Redesign repeats the old layout | Ask which inherited presentation choices are required, which are proposed, and how each serves the new story |
+| Alternatives look like the same template | Compare content framing, composition and visitor behavior, using representative real content |
+| Agent adds effects from a style recipe | Ask for each effect's purpose and compare a calmer alternative before expanding the treatment |
 
 ## What this release establishes
 
-v0.2.0 is a development pre-release of the methodology. Automated tests validate the local checker and release packaging. Six scenario walkthroughs review the instructions; they are not independent agent executions. Live portability and rendered-site trials remain to be performed. The skill offers a structured creative process and makes no promise of awards.
+v0.3.0 is an unpublished development candidate focused on design judgment. Automated tests validate the local checker and release packaging; the [design scenarios](evaluations/DESIGN_DIRECTION.md) support behavioral evaluation. Manual walkthroughs are not independent agent executions or rendered website trials. v0.2.0 was installed and discovered in Codex, but independent v0.3 session evaluations and rendered redesign trials remain pending. The skill offers a structured creative process and makes no promise of awards.

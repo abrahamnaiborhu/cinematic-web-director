@@ -14,9 +14,12 @@ Adapt this shared language to the website and its visitor journeys. Explain choi
 - Composition, depth, scale and spatial relationships:
 - Copy voice, emphasis and relationship to visual pacing:
 - Representative approved compositions and reference qualities:
+- How reference qualities are interpreted for this subject; actual inspection versus client description:
+- Retained brand/presentation constraints and reasons; provisional choices still open:
 
 ## Interaction and motion language
 - Purpose of movement; primary/secondary rhythms and pacing:
+- Prominent interaction(s), if useful, and visitor purpose; supporting/quiet states:
 - Easing principles described through observable behavior:
 - Pointer/touch/keyboard equivalents and focus/orientation:
 - Navigation, direct entry, browser back/forward and return from detail pages:
@@ -34,6 +37,8 @@ Adapt this shared language to the website and its visitor journeys. Explain choi
 ## Consistency and revision
 - Whole-experience review points across sprints:
 - Approved freedoms/variations for independent pages or case studies:
+- Subject specificity, substantive content, reading comfort and inherited-presentation findings:
+- Evidence supporting revised composition/motion choices; affected approvals and remaining uncertainty:
 
 | Conflicting decision / new evidence | Affected units and approvals | Proposed resolution and expected benefit | Approval / updated versions |
 |---|---|---|---|

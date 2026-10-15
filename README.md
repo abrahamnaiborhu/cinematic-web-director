@@ -1,10 +1,12 @@
-# Cinematic Web Director (v0.2.0)
+# Cinematic Web Director (v0.3.0)
 
 An Agent Skills-format creative production partner for creating or redesigning landing pages, portfolios and product websites. It guides discovery, content and copy, site structure, art direction, purposeful motion, approved experiments, production sprints and critique. It accommodates experienced developers who are new to motion design.
 
 The package contains agent instructions and adaptable templates, plus an executable offline eight-check preflight. Creative effectiveness requires real use and rendered website evaluation; the checker does not generate a website or certify its design quality.
 
-Download the [v0.2.0 release and ZIP](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.2.0), follow the [beginner tutorial](TUTORIAL.md), or read the [changelog](CHANGELOG.md). This is a development pre-release.
+This revision prepares the v0.3.0 development candidate; it is not a published release. The latest published package is the [v0.2.0 release and ZIP](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.2.0). Follow the [beginner tutorial](TUTORIAL.md) or read the [changelog](CHANGELOG.md).
+
+v0.3 focuses on design judgment: establish the freedom to redesign, extract the story independently of the old section list, explain inherited presentation, explore different ways to frame real content, and inspect composition before choreography. A metaphor, signature-interaction count, visual style or scroll-effect checklist is never mandatory. See [design direction](references/DESIGN_DIRECTION.md).
 
 ## Start a project or redesign
 
@@ -31,12 +33,16 @@ npx skills add https://github.com/abrahamnaiborhu/cinematic-web-director --agent
 
 Add `--global` to reuse the skill across projects. For an exact version, install the extracted release directory as a local source; see the tutorial.
 
+GitHub installation follows the remote default branch. To try this candidate before publication, install a local copy of this revision or its generated ZIP; the commands above do not select this unpublished branch automatically.
+
 For manual installation, copy the complete directory to the target agent's configured skills location and confirm that the session can read it. This repository revision does not install the skill or external tools into your agent.
 
 ## Package guide
 
 - [SKILL.md](SKILL.md): role, entry points, principles and routing.
 - [Creative workflow](references/CREATIVE_WORKFLOW.md): discovery, redesign, storyboarding, approvals, prototypes, architecture, model handoff, sprints and critique.
+- [Design direction](references/DESIGN_DIRECTION.md): redesign freedom, story/content, inherited choices, concept alternatives, composition, motion emphasis and design critique.
+- [Design evaluation scenarios](evaluations/DESIGN_DIRECTION.md): synthetic client requests, minimal materials and separate review criteria for fresh-session trials.
 - [Preflight protocol](references/PREFLIGHT_PROTOCOL.md): evidence meanings, phases, paths, observations and release requirements.
 - [Project script](templates/PROJECT_SCRIPT.md): evolving brief, sources, copy/content, journeys, architecture, approvals, model agreement and sprint plan.
 - [Continuity bible](templates/CONTINUITY_BIBLE.md): shared identity and connections across pages, scenes and states.
@@ -90,10 +96,10 @@ This skill owns creative direction and production coordination; the official sui
 Update the README version and changelog entry, run the tests, then build the archive:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.2.0 --out dist
+python3 -B scripts/package_release.py --version 0.3.0 --out dist/v0.3.0
 ```
 
-This produces `dist/cinematic-web-director-v0.2.0.zip` and `dist/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, scripts and tests. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded.
+This produces `dist/v0.3.0/cinematic-web-director-v0.3.0.zip` and `dist/v0.3.0/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts and tests. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
 
 ## Validation scope
 
@@ -116,7 +122,9 @@ The revised instructions were also reviewed against the scenarios below. This wa
 | Model unavailable or fallback requested | Disclose configuration/evidence, apply scoped authorization or pause dependent work |
 | Interactive physics experiment | Explicit prototype scope and appropriate reset/replay/return choice |
 
-Live portability tests in Claude Code, Cursor and Codex, independent behavioral evaluations, and rendered website trials remain necessary to establish real-world creative effectiveness. The bundled external skill validator requires PyYAML; when it is unavailable, do not claim that validator passed. Frontmatter, local links and package consistency can still be inspected without installing dependencies.
+The [v0.3 design scenarios](evaluations/DESIGN_DIRECTION.md) add a complete portfolio rethink, constrained refresh, brand-constrained product redesign, optional effect recipe, approved-sprint correction and conflicting reference qualities. They have received a manual instruction walkthrough; independent execution and rendered trials are pending. Their criteria remain separate from the input given to an evaluated agent.
+
+Local installation and discovery in Codex were confirmed for v0.2.0. That does not establish v0.3 behavioral quality or live portability in other hosts. Independent session evaluations and rendered website trials remain necessary to establish creative effectiveness. The optional external skill validator requires PyYAML; when it is unavailable, do not claim that validator passed. Frontmatter, local links and package consistency can still be inspected without installing dependencies.
 
 References:
 
