@@ -8,6 +8,7 @@ Record evidence and decisions as work proceeds. The project script and continuit
 - Observed problem and evidence (runtime / measurement / source review / client feedback):
 - Visitor impact; defect / unmet intent / optional polish:
 - Design finding where relevant: subject specificity / inherited presentation / composition / content access / motion purpose:
+- Motion initiative where relevant: proposal/recommendation offered, client response and remaining uncertainty:
 - Proposed solution and hypothesis:
 - Expected improvement:
 - Validation method, viewport/device/input conditions and comparison baseline:

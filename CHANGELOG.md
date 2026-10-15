@@ -2,6 +2,30 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
+## [0.4.0] - Unreleased
+
+### Added
+
+- Proactive motion-direction protocol: initiate discussion, discover opportunities in actual content, propose concrete temporal alternatives, recommend an approach and ask informed experiential questions.
+- Whole-experience motion language, relationships between units, atmosphere and deliberate quiet moments alongside individual animations.
+- Explicit acknowledgment of client-originated ideas and a requirement for substantive director contributions while exploration is open.
+- Five motion evaluation cases and a bounded record of the client-provided website inspection that grounded the update.
+- Proposal/decision fields in the project script and motion-initiative fields in the continuity bible, treatment and iteration log.
+
+### Changed
+
+- Motion intent develops alongside composition during concept exploration; static-state review still precedes detailed choreography.
+- Checkpoint B includes proposed motion character, director recommendation and client decision. Absent client animation ideas do not imply a static-site preference.
+- Proposals and discussion proceed within discovery; coding experiments, scope expansion and model changes retain their existing authorization boundaries. Explicit static-site choices are respected.
+- Preflight requires nonempty motion-direction guidance, and the release archive includes the protocol and evaluation cases.
+
+### Validation and limits
+
+- Offline regressions cover missing/blank motion guidance and complete archive contents alongside existing checker behavior.
+- Manual instruction review covers initiative, sparse briefs, client-originated animations, static constraints and sprint scope. Independent candidate-agent execution remains pending.
+- The public client website received partial desktop/mobile inspection. Proposed new motion was not implemented or validated; no claim about creative authorship is inferred from the resulting site alone.
+- This is a local development candidate. ZIP construction does not publish a release or update an installation.
+
 ## [0.3.0] - Unreleased
 
 ### Added

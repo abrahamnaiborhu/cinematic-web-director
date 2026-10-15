@@ -108,24 +108,27 @@ class PreflightTests(unittest.TestCase):
             r = self.result()
         self.assertIn('Cinematic Web Director Skill', r['blockers'])
 
-    def test_missing_or_blank_design_direction_blocks_discovery(self):
+    def test_missing_or_blank_direction_guidance_blocks_discovery(self):
         skill = self.base / 'skill'
         for source in preflight.SKILL_DIR.rglob('*.md'):
             target = skill / source.relative_to(preflight.SKILL_DIR)
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(source.read_bytes())
-        guidance = skill / 'references/DESIGN_DIRECTION.md'
-        for state in ('missing', 'blank'):
-            with self.subTest(state=state):
-                if state == 'missing':
-                    guidance.unlink()
-                else:
-                    guidance.write_text(' \n')
-                with patch('preflight.SKILL_DIR', skill):
-                    report = self.result()
-                self.assertIn('Cinematic Web Director Skill', report['blockers'])
-                self.assertEqual(report['results'][1]['status'], 'MISSING')
-                self.assertIn('Missing: references/DESIGN_DIRECTION.md', report['results'][1]['evidence'])
+        for name in ('DESIGN_DIRECTION.md', 'MOTION_DIRECTION.md'):
+            guidance = skill / 'references' / name
+            original = guidance.read_bytes()
+            for state in ('missing', 'blank'):
+                with self.subTest(resource=name, state=state):
+                    if state == 'missing':
+                        guidance.unlink()
+                    else:
+                        guidance.write_text(' \n')
+                    with patch('preflight.SKILL_DIR', skill):
+                        report = self.result()
+                    self.assertIn('Cinematic Web Director Skill', report['blockers'])
+                    self.assertEqual(report['results'][1]['status'], 'MISSING')
+                    self.assertIn(f'Missing: references/{name}', report['results'][1]['evidence'])
+            guidance.write_bytes(original)
 
     def test_optional_tools_are_not_readiness_caveats(self):
         self.provision()

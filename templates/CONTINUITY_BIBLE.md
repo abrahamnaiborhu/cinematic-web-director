@@ -18,7 +18,9 @@ Adapt this shared language to the website and its visitor journeys. Explain choi
 - Retained brand/presentation constraints and reasons; provisional choices still open:
 
 ## Interaction and motion language
+- Selected motion approach, intended feeling and director's recommendation/client decision:
 - Purpose of movement; primary/secondary rhythms and pacing:
+- Recurring transformations, handoffs and changes of scale across units where useful:
 - Prominent interaction(s), if useful, and visitor purpose; supporting/quiet states:
 - Easing principles described through observable behavior:
 - Pointer/touch/keyboard equivalents and focus/orientation:

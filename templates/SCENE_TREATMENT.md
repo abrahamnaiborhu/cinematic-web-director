@@ -13,6 +13,7 @@ Use for a page, scene, journey or interaction needing detailed direction. Adapt 
 - Specific content/evidence and connection to the chosen direction:
 - Existing presentation retained or changed, if consequential, and why:
 - Connection to the wider site and onward navigation:
+- Motion idea: client input and director's proposed interpretation/alternative; recommendation and decision:
 
 ## Storyboard and motion beats
 | State/beat | Composition, subject and copy | Visitor action or trigger | What changes and why | Continuity and interruption behavior |
@@ -22,6 +23,7 @@ Use for a page, scene, journey or interaction needing detailed direction. Adapt 
 - Static composition review: actual content, reading hierarchy and evidence limits:
 - Entry state and content available before animation:
 - Motion progression and pacing in plain language:
+- Start → transformation/order → settled state and intended attention; trigger and visitor control:
 - Purpose of prominent movement and supporting/quiet states; no required effect quota:
 - Exit/settled state and bridge to other units:
 - Scroll-linked / free-scroll / navigation / input behavior as relevant:

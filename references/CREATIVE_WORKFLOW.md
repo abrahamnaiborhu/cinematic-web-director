@@ -4,7 +4,7 @@
 
 Develop a purposeful website with a client who may understand engineering well and motion design poorly. Adapt the work to the assignment: landing page, portfolio, product website, redesign or targeted revision. A project can combine these. Read only the stages needed for the current work; resume from approved artifacts instead of repeating an interview.
 
-This reference covers: intake and discovery; concept and structure; art direction and storyboarding; prototypes; architecture; readiness; model handoff; sprints; critique and revision.
+This reference covers: intake and discovery; concept and structure; art and motion direction; storyboarding; prototypes; architecture; readiness; model handoff; sprints; critique and revision.
 
 ## 1. Intake and adaptive discovery
 
@@ -21,6 +21,8 @@ Maintain an evolving brief in the project script with three distinctions:
 | Unresolved matters | Explain consequences; resolve through discussion, references or an approved experiment |
 
 When the client is unsure, propose understandable alternatives and recommend one. Introduce technical creative vocabulary only when it helps a decision. For example: “Keeping the project image visible while its explanation changes may connect the result with your contribution. We can test whether that remains clear on a phone.” Periodically reflect the brief back, expose contradictions and invite correction. Client approval applies to identified material and versions, not an unspecified “looks good.”
+
+Once useful subject/content context exists, initiate the motion conversation using [motion direction](MOTION_DIRECTION.md). Offer concrete possibilities and an informed question about the visitor experience. Do not require the client to supply animation ideas, reference websites or plugin names before the director can contribute. Respect explicit no-motion preferences and avoid adding a motion interview to an unrelated targeted task.
 
 ### Existing sites and materials
 
@@ -44,7 +46,7 @@ Help define pages, content hierarchy, navigation and visitor journeys, starting 
 
 Normally present two or three meaningfully different directions, with central idea, intended visitor experience, representative composition, content approach, continuity, originality potential, accessibility/maintenance/cost risks and implementation implications. Recommend one and explain why. Let the client reject, combine or challenge directions. Use visual references or annotated layouts where available; identify what was actually inspected and what remains illustrative.
 
-Apply [design direction](DESIGN_DIRECTION.md) during exploration and composition review. Candidates should differ in how they frame content, organize attention or support journeys, not merely in palette and naming. Develop visual language through representative content and inspectable compositions; give prominent motion a reason after the composition works. Metaphors, signature interactions, dramatic type and familiar effects are choices to evaluate, not a universal recipe.
+Apply [design direction](DESIGN_DIRECTION.md) and [motion direction](MOTION_DIRECTION.md) during exploration. Candidates should differ in how they frame content, organize attention or support journeys, not merely in palette and naming. Develop composition and motion intent together using actual content; inspect representative static states before detailed choreography. Bring a recommendation on temporal character, important connections and promising moments. Metaphors, signature interactions, dramatic type and familiar effects are choices to evaluate, not a universal recipe.
 
 Adapt narrative to visitor behavior:
 
@@ -70,7 +72,7 @@ Create representative compositions and a storyboard before detailed technical se
 
 Use the treatment template for a page, scene or interaction: entry, intermediate states, exit, transitions, interruptions/skip, small-screen composition, reduced motion and acceptance criteria. Describe motion in plain language before naming plugins or timeline APIs. Record proposed techniques only after purpose is clear. Literal reverse is optional: consider reversible timelines, authored return transitions, reset/replay, recorded playback or direct navigation. Live physics needs an explicit state/reset or replay strategy.
 
-**Checkpoint B:** the client approves the whole site's creative structure, representative compositions, visual direction and continuity rules. Summarize the idea's connection to actual content, consequential inherited choices and the purpose of prominent interactions. Text-only proposals do not establish completed visual review. Detailed choreography for later batches may remain open. Timing or feasibility uncertainties can be resolved with an approved prototype.
+**Checkpoint B:** the client approves the whole site's creative structure, representative compositions, visual direction and continuity rules. Summarize the idea's connection to actual content, consequential inherited choices and the proposed motion character/opportunities, including the director's recommendation and the client's decision. Record a deliberately static direction when selected; do not silently infer one from absent client ideas. Text-only proposals do not establish completed visual review. Detailed choreography for later batches may remain open. Timing or feasibility uncertainties can be resolved with an approved prototype.
 
 ## 4. Small pre-production experiments
 
@@ -145,6 +147,8 @@ Observe actual desktop/mobile layouts, representative scroll/motion states, navi
 Assess story/content, composition, originality, continuity, motion, usability/accessibility, responsiveness and technical performance separately. For an issue record creative intent, existing implementation, observed problem/evidence, visitor impact, proposed correction, expected improvement and validation. Distinguish functional defects, unmet creative intent and optional polish. The iteration log holds decisions and observations; the project script and bible hold current approved intent.
 
 Use the design-direction critique questions to check subject specificity, unjustified inherited presentation, access to substantive content and whether motion contributes. Review the actual compositions and observed experience; do not substitute a list of trendy techniques or an invented originality score for judgment.
+
+Review creative initiative separately: did the director offer concrete motion ideas, alternatives and a recommendation while the direction was open, or only implement client ideas? Correct a gap through relevant proposals and discussion, not by adding unapproved effects. Inspect actual motion over time before claiming that pacing or continuity works.
 
 Periodically review the whole experience across sprints. A good isolated scene may still disrupt overall pacing, browsing or identity. Use client reactions as evidence without treating aesthetic taste as a numerical score. If a revision changes an approved decision, identify affected units/approvals, explain alternatives and obtain the necessary agreement before implementing that change.
 

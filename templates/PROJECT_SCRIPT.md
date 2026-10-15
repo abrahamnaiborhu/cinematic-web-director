@@ -58,6 +58,17 @@ For redesigns, distinguish requirements and useful evidence from inherited prese
 - Originality rationale and risks:
 - Subject-specific decisions; inherited presentation reviewed; unresolved content/asset needs:
 
+## Motion exploration and decision
+- Desired visitor understanding/feeling, motion appetite and relevant constraints; informed question/response:
+- Content-specific opportunities, including connections across units and deliberate quiet moments:
+- Client ideas already supplied; director's additions/alternatives and recommendation:
+
+| Proposed approach / actual content | Start → change → settled state; trigger/control | Intended benefit and connection to the whole | Mobile/reduced-motion treatment; uncertainty/experiment | Recommendation / client select, revise or defer decision |
+|---|---|---|---|---|
+
+- Selected temporal character and representative beats; deliberately static direction if chosen:
+- Composition changes implied by motion; provisional choices and affected approvals:
+
 ## Architecture and feasibility
 | Requirement | Existing solution / alternatives | Recommendation and reason | Migration/integration/deployment effects | Validation |
 |---|---|---|---|---|

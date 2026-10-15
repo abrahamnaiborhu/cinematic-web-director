@@ -1,4 +1,4 @@
-# Cinematic Web Director — Getting Started (v0.3.0 candidate)
+# Cinematic Web Director — Getting Started (v0.4.0 candidate)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
@@ -23,10 +23,10 @@ Run one command, not all three unless you use all three agents. The GitHub sourc
 For this unpublished candidate, build the ZIP from this repository revision:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.3.0 --out dist/v0.3.0
+python3 -B scripts/package_release.py --version 0.4.0 --out dist/v0.4.0
 ```
 
-Use `cinematic-web-director-v0.3.0.zip` and `SHA256SUMS.txt` from that output directory. For a published version, download its matching ZIP and checksum from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases); v0.2.0 is the latest published release when this candidate is prepared. Substitute that version in the examples below. Save the archive and its matching checksum in the same folder, then run verification from that folder.
+Use `cinematic-web-director-v0.4.0.zip` and `SHA256SUMS.txt` from that output directory. For a published version, download its matching ZIP and checksum from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases). Substitute that version in the examples below. Save the archive and its matching checksum in the same folder, then run verification from that folder.
 
 Check the archive's checksum. On macOS:
 
@@ -43,19 +43,19 @@ sha256sum -c SHA256SUMS.txt
 On Windows PowerShell, compare this result with the hash in `SHA256SUMS.txt`:
 
 ```powershell
-Get-FileHash .\cinematic-web-director-v0.3.0.zip -Algorithm SHA256
+Get-FileHash .\cinematic-web-director-v0.4.0.zip -Algorithm SHA256
 ```
 
 Extract into a new folder so different releases stay separate:
 
 ```bash
-unzip cinematic-web-director-v0.3.0.zip -d cinematic-web-director-v0.3.0
+unzip cinematic-web-director-v0.4.0.zip -d cinematic-web-director-v0.4.0
 ```
 
-The extracted package is inside `cinematic-web-director-v0.3.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
+The extracted package is inside `cinematic-web-director-v0.4.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
 
 ```bash
-npx skills add "/absolute/path/to/cinematic-web-director-v0.3.0/cinematic-web-director" --agent codex
+npx skills add "/absolute/path/to/cinematic-web-director-v0.4.0/cinematic-web-director" --agent codex
 ```
 
 Choose `claude-code` or `cursor` instead if appropriate. Add `--global` for a user-wide installation. You may also copy the complete inner package directory to your agent's configured skill location. Keep its references, templates and scripts together.
@@ -111,6 +111,14 @@ Ask what visitors should understand and which actual work or evidence supports i
 Review representative compositions using real content, including substantive work and smaller-screen views where relevant. Text descriptions explain a proposal but do not prove its visual quality. If a coded study is needed to judge composition, agree on a bounded prototype before it is built. You can approve or reject the composition separately from unresolved motion details.
 
 A central metaphor and a signature interaction can be helpful; neither is required. Huge type, small body text, pinning, text reveals and marquees are not a recipe for every project. Ask how each prominent choice helps people understand or use this particular website. The [design-direction reference](references/DESIGN_DIRECTION.md) explains the process.
+
+### Expect the director to bring motion ideas
+
+You do not need to arrive with animation ideas or references. Once the subject and some content are understood, the director should initiate a motion discussion: offer concrete possibilities, explain what viewers see first, what changes and where attention lands, recommend an approach, and ask which experience feels closer to your intent. It should discuss motion while composition is still open, rather than waiting to decorate a finished static site.
+
+For example, a portfolio about connecting applications and their supporting systems could explore visual continuity between those responsibilities, or a quieter editorial approach. These are possible interpretations, not required diagrams or effects. Atmosphere, character and rhythm are legitimate purposes alongside explanation and feedback.
+
+If you supply an idea, the director should acknowledge it, develop it critically and bring useful alternatives or connections. Repeating your existing animation as a new proposal is insufficient. You remain free to prefer a calm or static site. Proposals do not authorize implementation; explicitly bounded motion studies and approved sprint plans still govern coding. See [motion direction](references/MOTION_DIRECTION.md).
 
 The director maintains approved versions using the [project script](templates/PROJECT_SCRIPT.md), [continuity bible](templates/CONTINUITY_BIBLE.md), [treatment](templates/SCENE_TREATMENT.md) and [iteration log](templates/ITERATION_LOG.md), or equivalent documents you already use. You do not need to fill out all templates before the conversation begins.
 
@@ -184,7 +192,8 @@ Before releasing your website, the agent should observe its actual layouts, moti
 | Redesign repeats the old layout | Ask which inherited presentation choices are required, which are proposed, and how each serves the new story |
 | Alternatives look like the same template | Compare content framing, composition and visitor behavior, using representative real content |
 | Agent adds effects from a style recipe | Ask for each effect's purpose and compare a calmer alternative before expanding the treatment |
+| Agent waits for you to invent every animation | Point to motion direction: it should bring content-specific alternatives, a recommendation and an informed experiential question |
 
 ## What this release establishes
 
-v0.3.0 is an unpublished development candidate focused on design judgment. Automated tests validate the local checker and release packaging; the [design scenarios](evaluations/DESIGN_DIRECTION.md) support behavioral evaluation. Manual walkthroughs are not independent agent executions or rendered website trials. v0.2.0 was installed and discovered in Codex, but independent v0.3 session evaluations and rendered redesign trials remain pending. The skill offers a structured creative process and makes no promise of awards.
+v0.4.0 is an unpublished development candidate focused on creative initiative in motion, building on v0.3 design judgment. Automated tests validate the local checker and release packaging; the [design scenarios](evaluations/DESIGN_DIRECTION.md) and [motion cases](evaluations/MOTION_DIRECTION.md) support behavioral evaluation. Manual walkthroughs and a partial inspection of a client website are not independent candidate-agent executions or validation of new motion. Independent session evaluations and rendered candidate-site trials remain pending. The skill offers a structured creative process and makes no promise of awards.

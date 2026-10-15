@@ -51,7 +51,9 @@ Study references by quality: hierarchy, image treatment, transitions, atmosphere
 
 For example, if confirmed work supports the thesis “I make complex systems understandable,” an architect's portfolio might explore a relationship map that reveals how projects connect, or an editorial collection exposing decisions and tradeoffs in independent case studies. These are illustrative possibilities, not required metaphors, layouts or claims for engineering portfolios.
 
-## Develop composition before choreography
+## Develop composition alongside motion intent
+
+Use [motion direction](MOTION_DIRECTION.md) to initiate motion ideas during concept exploration. Consider relationships, temporal character and expressive possibilities while layouts are still provisional. Inspect static states before detailed choreography; do not postpone all motion thinking until a static design is finished.
 
 Use representative real content to examine hierarchy, readable text, imagery, spacing, density, scale and navigation. Show enough of the entry, substantive content and smaller-screen experience to judge the proposed direction; a hero alone rarely establishes how case studies or product information will work. Adapt the views to the actual journeys rather than prescribing a fixed number of frames.
 
@@ -59,7 +61,7 @@ Use inspectable sketches, annotated layouts, mockups or other available visual t
 
 Develop the visual language through these studies. Choose typography roles and reading rhythm, palette roles, imagery treatment, geometry and spatial relationships for this direction. Extreme type, asymmetry, restrained color or deliberate grid breaks are possible choices, not universal requirements. Body text must remain comfortable to read; display drama must not obscure necessary content or actions. A familiar font or a useful feature grid is not inherently a failure.
 
-Then decide where movement contributes orientation, explanation, emphasis, atmosphere or feedback. A signature interaction may help a concept, but no fixed count is required. Give prominent moments room to register and supporting motion a proportionate role. Pinning, marquees, word reveals, smooth scrolling, 3D objects and fixed easing/duration recipes require a project-specific purpose; none is a default checklist. Choose implementation tools after the intended behavior is clear.
+Develop concrete proposals for movement that contributes orientation, explanation, emphasis, atmosphere or feedback. A signature interaction may help a concept, but no fixed count is required. Give prominent moments room to register and supporting motion a proportionate role. Pinning, marquees, word reveals, smooth scrolling, 3D objects and fixed easing/duration recipes require a project-specific purpose; none is a default checklist. Recommend an approach and invite informed feedback; restraint must not substitute for ideation. Choose implementation tools after the intended behavior is clear.
 
 Client-requested visual constraints remain valid inputs. Explain conflicts with content or usability and seek agreement on alternatives instead of silently ignoring them. Treat requests for award-level craft as an ambition; do not claim personal awards, clients or professional history.
 
