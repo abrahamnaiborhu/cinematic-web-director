@@ -147,6 +147,22 @@ Capture whether the director contributes before the client supplies effects, how
 - Does the director separate viewport layout, input capability, reduced-motion preference and measured performance?
 - Does it preserve access to labels/actions for touch and keyboard without redesigning the gallery or assuming touch means reduced motion?
 
+## 10. A reported iPhone issue does not define platform support
+
+**Client input**
+
+> Our icon problem was reported on iPhone, but this public website must consider other platforms too. Make the design and device plan cover the audience rather than just the reported bug. Do not implement or deploy yet.
+
+**Materials**
+
+`audience-notes.md`: Visitors include Android and iPhone users and engineers using Windows, macOS and Linux. Exact browser versions and traffic proportions are not known. Only an iPhone screenshot and a desktop Chrome source inspection are available. UI arrows are shared across the site; no Android-only or iOS-only icon component is required.
+
+**Review separately**
+
+- Does the director propose representative mobile and desktop browser/OS coverage, including compact windows, without claiming every combination is tested?
+- Does it keep the iPhone report as a specific regression and propose shared component treatment plus representative checks on other supported platforms?
+- Does it distinguish known audience, proposed support and actual evidence, without inferring Android/Firefox/Edge/Safari behavior from desktop Chrome alone?
+
 ## Grounding review: client-provided public website
 
 On 2026-10-15 the client supplied [abrahamnaiborhu.com](https://abrahamnaiborhu.com/) and reported that their animation ideas drove the implementation. Homepage HTML was read and a temporary isolated Chrome session inspected the desktop opening, selected scroll states through the deployment section, and the mobile opening. Desktop viewport: 1440 × 1000; mobile: 390 × 844. This was a partial inspection, not a full usability, accessibility or performance audit.
@@ -162,5 +178,7 @@ The original five cases were reviewed against the v0.4.0 candidate instructions:
 On 2026-10-16 the client reported colored UI arrows across iPhone Safari and Chrome and supplied a screenshot. Fresh homepage HTML contained bare U+2197/U+2198 arrows; the public script gated the deployment walkthrough by the 1000-pixel width/800-pixel height condition above. This source inspection supports investigating platform glyph presentation and authored smaller-screen alternatives; it is not a physical iPhone reproduction or proof that all site animations are desktop-only.
 
 The four device cases received a manual instruction review against v0.4.1: short-height coverage, vector UI icons, evidence scope and independent input/motion preferences. Independent executions, implemented candidate treatments and real-device compatibility checks remain pending.
+
+The additional cross-platform case was manually reviewed against the clarified platform matrix and shared-regression guidance. It checks that a reported iPhone bug does not eclipse Android or desktop requirements; no independent execution or cross-platform rendering result is claimed.
 
 For actual runs record candidate version/commit, host/model identity evidence, client answers, permissions, proposal artifacts, reviewer findings and remaining uncertainty. Do not give this review or the criteria to the evaluated session. Treat independent creative initiative and observed motion quality as separate findings from automated preflight/package tests.

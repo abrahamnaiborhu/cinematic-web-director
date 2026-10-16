@@ -9,6 +9,7 @@ Versioned GitHub releases use three-part tags. v0.2.0 is the first published rel
 - Generic mobile requirements now lead to explicit phone, compact-laptop/short-height and larger-screen composition/motion treatments from early design.
 - Important effects gated to large viewports require a justified smaller-screen alternative rather than an automatic scaled or static version.
 - Device coverage distinguishes viewport size, input capability, reduced-motion preference, browser/OS and measured hardware behavior.
+- Platform planning explicitly considers Android, iOS/iPadOS, Windows, macOS and Linux where relevant, with representative browser/version targets and shared-component regression checks beyond the platform of a reported issue.
 - Functional UI glyphs receive cross-platform review; existing SVG icons or a reusable vector component are preferred when stable geometry/color is needed. Intentional content emoji remain valid.
 - Release guidance explicitly separates the two-PNG preflight floor from the agreed device/browser acceptance matrix.
 
@@ -16,6 +17,7 @@ Versioned GitHub releases use three-part tags. v0.2.0 is the first published rel
 
 - Device-experience reference with representative viewport coverage and an accessible decorative SVG-arrow example.
 - Four evaluation cases for responsive choreography, iPhone arrow presentation, incomplete QA evidence and wide touch devices.
+- Additional platform-scope evaluation to prevent a reported iPhone bug from narrowing Android and desktop design/testing requirements.
 - Template fields for supported versus tested environments, device-specific choreography, icon rendering and remaining evidence gaps.
 
 ### Validation and limits

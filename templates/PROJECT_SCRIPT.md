@@ -18,12 +18,14 @@ The director maintains this evolving brief with the client. Adapt fields to the 
 
 ## Audience devices and coverage
 - Known audience/device priorities or stated assumptions; phone and compact-laptop design alongside larger screens:
+- Platform/browser families considered: Android, iOS/iPadOS, Windows, macOS and Linux where relevant; supported versions and reasons for scope choices:
 
 | Browser/OS and device or emulation | CSS viewport / available height | Input and motion preference | Intended composition/motion | Required evidence | Actual observation / limitation |
 |---|---|---|---|---|---|
 
 - Supported versus actually tested environments; short-height/resize/orientation cases:
 - Reported platform/font/icon issues and their evidence source:
+- Shared fixes and representative cross-platform regression checks; reported versus actually reproduced environments:
 
 ## Sources and existing experience
 | Location/link | Role (facts / constraint / inspiration / old draft) | Relevant content or quality | Freshness/conflicts | Approval or confirmation |

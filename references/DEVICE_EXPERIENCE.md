@@ -22,7 +22,17 @@ Adapt these starting points to the audience, actual breakpoints and approved sco
 | Larger laptop/desktop | 1440 × 900 or the approved reference size | Larger composition/enhancements without making them the only complete experience |
 | Tablet, landscape or hybrid input | Select when relevant | Orientation changes, touch plus mouse, keyboard and layout transitions |
 
-Record browser/OS, input, motion preference, viewport, intended treatment, required evidence and actual result. Include iPhone Safari and Android Chrome for a general mobile audience unless the supported scope says otherwise; add other browsers reported by the client or relevant to the audience. A report affecting iPhone Safari and Chrome needs those environments considered explicitly. Keep device targets distinct from environments actually tested.
+Record browser/OS, input, motion preference, viewport, intended treatment, required evidence and actual result. Consider mobile and desktop platform families explicitly rather than making the platform of a reported bug the whole target. For a general public audience, propose a representative baseline from the following; adjust it to the audience, agreed support and reported problems. These are planning examples, not an assertion that every browser/version/OS combination has been tested.
+
+| Platform family | Browser examples to consider | Coverage emphasis |
+|---|---|---|
+| Android phones/tablets | Chrome; Samsung Internet or Firefox where relevant | Touch, browser controls, glyph/fonts, motion and available-device performance |
+| iOS/iPadOS | Safari; Chrome or other browsers relevant to the audience/reports | Phone/tablet layout, browser controls, touch, glyphs and motion |
+| Windows | Edge, Chrome and Firefox | Compact/large windows, keyboard/mouse or touch, fonts and scroll behavior |
+| macOS | Safari, Chrome and Firefox | Compact/large windows, keyboard/trackpad, fonts and motion |
+| Linux, when relevant to the audience | Firefox and Chrome/Chromium | Desktop layout/input, font fallback and motion behavior |
+
+Name the actual supported browser/OS versions in the project plan rather than claiming coverage of all historical versions. Include phones and compact laptops as well as larger screens; include tablets, landscape and hybrid input where relevant. An iPhone report needs its reported browsers checked, while an Android or desktop report needs its corresponding environments. Do not treat another browser, a shared browser brand or an assumed engine as proof of equivalent behavior. Keep device targets distinct from environments actually tested.
 
 Browser emulation is useful for dimensions, layout and some input/media-query behavior. Desktop Chrome resized to a phone width is not an iPhone Safari or Android hardware test. Label it as emulated and leave OS font rendering, browser-specific behavior and hardware performance unverified until observed in the relevant environment. Record client-supplied captures/observations separately from agent-run checks. Missing device access does not prevent planning; do not claim complete QA or silently waive an approved acceptance criterion.
 
@@ -57,8 +67,10 @@ For example, this decorative arrow can accompany a link whose visible text alrea
 
 Keep the icon's size, alignment, stroke and spacing consistent. Decorative icons should not duplicate spoken link text; icon-only controls still need accessible names. See [W3C decorative-image guidance](https://www.w3.org/WAI/tutorials/images/decorative/). Verify the implemented component in the reported environments; a valid SVG example does not prove a live website has been fixed.
 
+Treat a platform-specific report as a regression case for a shared component. Check the reported environment and representative other supported platforms for appearance, labeling and interaction where tools permit. Avoid an iOS-only or Android-only replacement when a shared vector component solves the intended presentation; use browser-specific workarounds only for an identified issue with a justified, tested scope. Record unavailable checks as unverified.
+
 ## Approval and evidence
 
 Before production, include representative phone and compact-laptop compositions/treatments and the agreed coverage matrix. Scope experiments to the devices/input conditions that will decide the uncertainty. During an approved sprint, fix relevant responsive defects within scope; propose consequential new choreography or scope changes for the affected decision.
 
-Before website release, account for each required row with actual evidence or an explicitly agreed limitation. The preflight checker's desktop/mobile PNG requirement is a technical floor, not full device coverage or cross-browser certification. Passing that check does not prove compact-laptop motion, iPhone icon rendering or real-device performance. Use the project script, treatments and iteration log to retain the actual acceptance/evidence record.
+Before website release, account for each required platform/browser/viewport row with actual evidence or an explicitly agreed limitation. The preflight checker's desktop/mobile PNG requirement is a technical floor, not full device coverage or cross-browser certification. Passing that check does not prove compact-laptop motion, platform-specific icon rendering or real-device performance. Use the project script, treatments and iteration log to retain the actual acceptance/evidence record.

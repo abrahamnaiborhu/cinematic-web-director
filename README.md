@@ -12,6 +12,8 @@ v0.4 adds proactive [motion direction](references/MOTION_DIRECTION.md). The dire
 
 v0.4.1 makes [device experience](references/DEVICE_EXPERIENCE.md) explicit: develop phones and compact laptop windows from the start, author suitable motion adaptations, consider available height/input/browser behavior, and keep emulation distinct from real-device evidence. Reuse vector UI icons when consistent geometry is needed instead of relying on platform emoji presentation. Supported device/browser coverage follows the assignment, not a promise to test every device.
 
+The platform plan explicitly considers Android, iOS/iPadOS, Windows, macOS and Linux where relevant, with representative browser/version targets. A report on one platform remains a regression case within that broader plan; shared icon/motion fixes need relevant cross-platform checks, not an OS-only assumption.
+
 ## Start a project or redesign
 
 Invoke the installed skill and describe what you want to build or improve. For example:
@@ -134,6 +136,8 @@ The [v0.3 design scenarios](evaluations/DESIGN_DIRECTION.md) add a complete port
 The [v0.4 motion cases](evaluations/MOTION_DIRECTION.md) add five scenarios with separate reviewer criteria. A partial desktop/mobile inspection of a client-provided public website grounded the change and two motion proposals. It does not establish that another agent follows the candidate instructions or that the proposed motion succeeds. Independent session execution and implemented candidate-motion trials remain pending.
 
 v0.4.1 adds four device scenarios: short-laptop/phone motion, iPhone emoji-style arrows, incomplete device evidence and wide touch input. A client screenshot/browser report and fresh public-source inspection grounded the compatibility changes. They do not establish a reproduced or fixed iPhone issue. Independent scenario execution and real-device candidate-site checks remain pending; two preflight PNGs do not certify the agreed matrix.
+
+An additional platform-scope scenario checks that the iPhone report does not displace Android and desktop coverage. It has received manual instruction review only.
 
 Local installation and discovery in Codex were confirmed for v0.2.0, and the v0.3 candidate was installed locally. Those observations do not establish candidate behavioral quality or live portability in other hosts. Independent session evaluations and rendered candidate-site trials remain necessary to establish creative effectiveness. The optional external skill validator requires PyYAML; when it is unavailable, do not claim that validator passed. Frontmatter, local links and package consistency can still be inspected without installing dependencies.
 

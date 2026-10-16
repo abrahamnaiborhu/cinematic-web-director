@@ -37,6 +37,7 @@ Use for a page, scene, journey or interaction needing detailed direction. Adapt 
 - Breakpoint/input conditions and rationale; what replaces a gated effect:
 - Touch/keyboard controls, orientation/browser-chrome changes and readable exits:
 - UI icon/glyph rendering in supported browsers; reused component and accessible names:
+- Reported platform regression and representative checks on other supported platforms:
 - Reduced-motion/static alternative and readable content/actions:
 - Progressive enhancement and loading/failure states:
 - Performance risks and observation/measurement conditions:
