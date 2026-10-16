@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moss Studio — motion study</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="study.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#workshop">Skip to workshop</a>
+  <header class="masthead"><a class="wordmark" href="#workshop">Moss Studio</a><a href="#visit">Plan your visit</a></header>
+  <main id="workshop">
+    <section class="opening" aria-labelledby="invitation">
+      <div class="invitation">
+        <p class="eyebrow">Beginner hand-building</p>
+        <h1 id="invitation">A little time.<br>A shape of<br>your own.</h1>
+        <p class="intro">Your first hand-building session, in a small neighborhood studio.</p>
+        <p class="facts">Two hours. Materials included.<br>Six places per session.</p>
+        <p class="price">45 fictional currency units</p>
+        <a class="booking" href="#booking-note">Find a date <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        <p class="booking-hint">Booking placeholder for this study.</p>
+      </div>
+      <figure>
+        <!-- Derived from the supplied ceramics-study.svg. Vessel geometry is intact;
+             grouping separates the vessel from its shadow for this approved study. -->
+        <svg id="illustration" viewBox="0 0 600 450" role="img" aria-labelledby="art-title art-description">
+          <title id="art-title">An illustrated clay vessel</title>
+          <desc id="art-description">A simple clay-colored vessel with a curved handle resting above an oval shadow.</desc>
+          <rect width="600" height="450" fill="#e9ddc8"/>
+          <ellipse id="shadow" cx="280" cy="350" rx="180" ry="25" fill="#c8b99f"/>
+          <g id="vessel">
+            <path d="M180 155H345L325 330H200Z" fill="#ad7257"/>
+            <ellipse cx="262" cy="155" rx="83" ry="22" fill="#734b3a"/>
+            <path d="M345 190C430 180 420 285 335 275" fill="none" stroke="#ad7257" stroke-width="22"/>
+          </g>
+          <path d="M130 340H420" stroke="#6b775c" stroke-width="8"/>
+        </svg>
+        <figcaption>Illustration study · a small welcome, then stillness</figcaption>
+        <div id="controls" hidden aria-label="Motion study controls">
+          <button id="replay" type="button">Replay welcome</button>
+          <button id="settle" type="button">Show still version</button>
+          <span id="motion-status" role="status" aria-live="polite">Still composition</span>
+        </div>
+      </figure>
+    </section>
+    <section class="visit" id="visit" aria-labelledby="visit-title">
+      <h2 id="visit-title">Before you come</h2>
+      <p>This is a synthetic workshop brief. Dates, location, access information and firing arrangements still need confirmation.</p>
+      <p id="booking-note" tabindex="-1">Booking is a placeholder in this study. No dates or seats can be booked here.</p>
+    </section>
+  </main>
+  <aside class="study-review" aria-label="Motion study controls">
+    <p><strong>Bounded motion study</strong> · Compare the settling gesture with stillness. Workshop illustration; no real venue or booking service.</p>
+    <noscript>The complete still composition is shown. Workshop information and the booking placeholder remain available.</noscript>
+  </aside>
+</body>
+</html>

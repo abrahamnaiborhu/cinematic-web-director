@@ -11,7 +11,7 @@ The checker is offline and read-only unless `--out` is supplied. It reports loca
 | # | Check | Local evidence | Agent responsibility and stage consequence |
 |---|---|---|---|
 | 1 | AI agent identification | Explicit declaration or tentative environment inference | Confirm the active agent and permissions in-session; declarations/inferences remain UNVERIFIED in the script |
-| 2 | Cinematic Web Director Skill | Readable entry point, two references and four templates; basic name metadata | Confirm loaded instructions; an incomplete package blocks every phase |
+| 2 | Cinematic Web Director Skill | Readable entry point, required references and templates; basic name metadata | Confirm loaded instructions; an incomplete package blocks every phase |
 | 3 | Official GreenSock Skills | Relevant readable skill files in configured roots | Confirm active access and read relevant resources; missing required topics block GSAP prototype/production unless scoped access evidence or an approved docs fallback is supplied |
 | 4 | Project environment | Individual manifests or a static `index.html`; selected application root | Confirm real sources, architecture and unusual layouts; ambiguity blocks coding until a source is selected |
 | 5 | Project script | Readable nonempty script/brief, including an explicitly supplied path | Read facts, readiness, approval versions and scope; missing brief is normal in discovery and blocks coding; file presence never proves approval |

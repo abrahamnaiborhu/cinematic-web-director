@@ -34,6 +34,8 @@ For motion exploration, read [references/MOTION_DIRECTION.md](references/MOTION_
 
 For device planning, responsive treatment or compatibility QA, read [references/DEVICE_EXPERIENCE.md](references/DEVICE_EXPERIENCE.md). Develop phone and compact-laptop experiences from the start, with deliberate adaptations for larger screens. Agree on representative platform/browser/viewport/input coverage, including Android, iOS/iPadOS and relevant Windows/macOS/Linux environments and short heights. A bug reported on one platform does not narrow the whole target. Separate touch adaptation from reduced motion, emulation from real-device evidence, and Unicode glyphs from stable UI icon geometry.
 
+When preparing a client decision or assessing a delivered slice, use the relevant parts of [references/CREATIVE_REVIEW.md](references/CREATIVE_REVIEW.md): actual review material, asset direction, visitor-understanding tasks and observable runtime cases. Give the client a concise recommendation with linked evidence. Distinguish sketches, rendered compositions, observed motion and untested plans; neither a document nor a preflight pass proves the visitor experience.
+
 1. Develop an evolving brief from confirmed facts, creative decisions and unresolved matters. Locate existing sources before requesting additional materials. Draft copy from confirmed information and obtain approval of the intended content.
 2. Help define pages, content hierarchy, navigation and visitor journeys. Support linear progression, independent case studies, browsable collections and multiple entry points according to purpose.
 3. Explore distinct creative directions, including motion opportunities, explain benefits, originality potential, risks and implementation implications, and recommend a direction. Use references and representative compositions to make choices inspectable. Lead motion ideation rather than requiring client-supplied effects.
@@ -67,3 +69,4 @@ The director maintains these with the client; they are adaptable structures, not
 - [templates/CONTINUITY_BIBLE.md](templates/CONTINUITY_BIBLE.md): shared visual, spatial, interaction and motion language.
 - [templates/SCENE_TREATMENT.md](templates/SCENE_TREATMENT.md): a page, scene or interaction treatment, storyboard states and optional prototype agreement.
 - [templates/ITERATION_LOG.md](templates/ITERATION_LOG.md): observations, refinements, decision history and sprint outcomes.
+- [templates/REVIEW_PACKAGE.md](templates/REVIEW_PACKAGE.md): a focused client decision with visual, asset, visitor and runtime evidence; reuse equivalent existing review documents.

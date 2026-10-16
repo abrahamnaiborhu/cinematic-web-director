@@ -72,6 +72,8 @@ For important connections document: what carries forward, what transforms, what 
 
 Create representative compositions and a storyboard before detailed technical sequencing. For each important state show subject, hierarchy/copy, continuity elements, visitor action and intended result. Inspect static composition first, then discuss what movement contributes. Use available sketches, annotated screenshots or visual tools; textual plans remain labeled as plans and cannot substantiate a rendered visual review.
 
+Prepare a focused review using [creative review](CREATIVE_REVIEW.md): link the actual board, describe the decision in plain language, direct the available imagery and turn missing assets into specific next actions. Include meaningful content beyond the opening. Distinguish a client preference from approval of an inspected version.
+
 Use the treatment template for a page, scene or interaction: entry, intermediate states, exit, transitions, interruptions/skip, small-screen composition, reduced motion and acceptance criteria. Describe motion in plain language before naming plugins or timeline APIs. Record proposed techniques only after purpose is clear. Literal reverse is optional: consider reversible timelines, authored return transitions, reset/replay, recorded playback or direct navigation. Live physics needs an explicit state/reset or replay strategy.
 
 Include representative phone and compact-laptop compositions, short-height behavior and authored adaptations of important motion. Consider touch/keyboard separately from reduced-motion preference. Review UI symbols across the supported platforms; use deliberate vector icons when consistent geometry matters.
@@ -147,6 +149,8 @@ Pause affected work for consequential ambiguity, changed approved intent, unappr
 ## 9. Evidence-based critique and release
 
 Observe actual desktop/mobile layouts, representative scroll/motion states, navigation, touch/keyboard interactions, interruptions, reduced motion and direct entry as relevant. Check whether key information and actions remain accessible. Measure performance where tooling permits, recording viewport/device and conditions rather than inventing results. Screenshots alone cannot establish motion quality or interaction correctness.
+
+Use the relevant [creative-review procedures](CREATIVE_REVIEW.md) to capture visitor-task responses and runtime cases with expected/observed results. Label synthetic reviews and untested cases. A direction can be promising while its human comprehension or device behavior still needs evidence.
 
 Account for the agreed device coverage, including compact/short laptop windows and reported platform issues. Resized desktop Chrome is viewport emulation, not evidence of iPhone Safari or Android hardware behavior. Keep client captures, agent-run checks and untested rows distinct; two preflight PNGs do not certify the whole matrix.
 

@@ -1,4 +1,4 @@
-# Cinematic Web Director — Getting Started (v0.4.1 candidate)
+# Cinematic Web Director — Getting Started (v0.5.0 candidate)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
@@ -23,10 +23,10 @@ Run one command, not all three unless you use all three agents. The GitHub sourc
 For this unpublished candidate, build the ZIP from this repository revision:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.4.1 --out dist/v0.4.1
+python3 -B scripts/package_release.py --version 0.5.0 --out dist/v0.5.0
 ```
 
-Use `cinematic-web-director-v0.4.1.zip` and `SHA256SUMS.txt` from that output directory. For a published version, download its matching ZIP and checksum from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases). Substitute that version in the examples below. Save the archive and its matching checksum in the same folder, then run verification from that folder.
+Use `cinematic-web-director-v0.5.0.zip` and `SHA256SUMS.txt` from that output directory. For a published version, download its matching ZIP and checksum from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases). Substitute that version in the examples below. Save the archive and its matching checksum in the same folder, then run verification from that folder.
 
 Check the archive's checksum. On macOS:
 
@@ -43,19 +43,19 @@ sha256sum -c SHA256SUMS.txt
 On Windows PowerShell, compare this result with the hash in `SHA256SUMS.txt`:
 
 ```powershell
-Get-FileHash .\cinematic-web-director-v0.4.1.zip -Algorithm SHA256
+Get-FileHash .\cinematic-web-director-v0.5.0.zip -Algorithm SHA256
 ```
 
 Extract into a new folder so different releases stay separate:
 
 ```bash
-unzip cinematic-web-director-v0.4.1.zip -d cinematic-web-director-v0.4.1
+unzip cinematic-web-director-v0.5.0.zip -d cinematic-web-director-v0.5.0
 ```
 
-The extracted package is inside `cinematic-web-director-v0.4.1/cinematic-web-director/`. From your website project, install that local source (replace the example path):
+The extracted package is inside `cinematic-web-director-v0.5.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
 
 ```bash
-npx skills add "/absolute/path/to/cinematic-web-director-v0.4.1/cinematic-web-director" --agent codex
+npx skills add "/absolute/path/to/cinematic-web-director-v0.5.0/cinematic-web-director" --agent codex
 ```
 
 Choose `claude-code` or `cursor` instead if appropriate. Add `--global` for a user-wide installation. You may also copy the complete inner package directory to your agent's configured skill location. Keep its references, templates and scripts together.
@@ -131,6 +131,14 @@ That matrix should consider Android and iOS/iPadOS, plus Windows, macOS and Linu
 If UI arrows become colorful emoji, inspect the actual characters and use the existing vector icon system or a reusable SVG icon when consistent geometry/color is intended. Preserve meaningful link labels and intentional content emoji. The [device-experience reference](references/DEVICE_EXPERIENCE.md) includes a small decorative-arrow example and evidence guidance. A skill update does not itself patch a separate live website.
 
 The director maintains approved versions using the [project script](templates/PROJECT_SCRIPT.md), [continuity bible](templates/CONTINUITY_BIBLE.md), [treatment](templates/SCENE_TREATMENT.md) and [iteration log](templates/ITERATION_LOG.md), or equivalent documents you already use. You do not need to fill out all templates before the conversation begins.
+
+### Review a concrete package
+
+Expect a concise recommendation, a clear decision and links to the actual material. The [review package](templates/REVIEW_PACKAGE.md) can combine content, compositions, storyboard states and asset decisions without making you assemble the answer from multiple technical documents. Early document sketches are useful; they do not establish rendered visual quality or motion feel. Review meaningful content beyond the opening and its phone/compact-laptop treatment.
+
+The director should explain which images support the story, how they will be treated and what specifically is missing. A conceptual diagram is not a real product screenshot, and an illustration is not a workshop photograph. Missing assets need a next action and an explanation of which decision they block.
+
+Define a few visitor tasks before judging the result, then record what an actual newcomer understands or does without supplying the answers. Label an AI-only review as synthetic. For implemented work, ask for expected versus observed behavior during loading, movement, interruption, resize/input and reduced motion where relevant. Proposed checks and actual results belong in separate columns. See [creative review](references/CREATIVE_REVIEW.md).
 
 ## 5. Approve a small motion experiment when needed
 
@@ -208,4 +216,4 @@ Before releasing your website, the agent should observe its actual layouts, moti
 
 ## What this release establishes
 
-v0.4.1 is an unpublished development candidate refining responsive motion and UI icon compatibility, building on v0.4 creative initiative and v0.3 design judgment. Automated tests validate the local checker and release packaging; the [design scenarios](evaluations/DESIGN_DIRECTION.md) and [motion/device cases](evaluations/MOTION_DIRECTION.md) support behavioral evaluation. Manual walkthroughs, public-source inspection and client captures are not independent candidate-agent executions or proof of a live-device fix. Independent session evaluations and rendered candidate-site trials remain pending. The skill offers a structured creative process and makes no promise of awards.
+v0.5.0 is an unpublished development candidate adding concrete review evidence, asset direction, visitor tasks and runtime acceptance to the existing design, motion and device guidance. The [result report](evaluations/V0_5_RESULTS.md) records six actual discovery trials, an approved rendered study and its limits; [open the study](studies/v0.5-moss/index.html) to compare replay with stillness. Automated checks validate the local checker and archive. Small discovery trials, synthetic reviewers and Chrome emulation do not establish human satisfaction, end-to-end site delivery, cross-host portability or physical-device compatibility. The skill offers a creative process and makes no promise of awards.

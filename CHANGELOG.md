@@ -2,6 +2,21 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
+## [0.5.0] - Unreleased
+
+### Added
+
+- A conditional creative-review guide and adaptable review-package template connecting a focused client decision to actual material, imagery direction, visitor tasks and observable runtime cases.
+- Synthetic portfolio, landing-page and product fixtures and a controlled fresh-context evaluation plan. Baseline and candidate outcomes are recorded separately from human/client and device evidence.
+- Review-resource integrity and packaging checks, preserving all eight preflight categories and existing approval/model boundaries.
+
+### Validation and limits
+
+- Offline checks validate the checker and archive, not design quality. Behavioral and rendered-study evidence is reported with its actual scope and unresolved criteria.
+- Three baseline and three candidate fresh-context discovery trials are complete; both versions originated motion ideas. Candidate follow-ups made visitor/runtime planning explicit, while baseline product supplied generated visual boards. No causal quality improvement is inferred from these small samples.
+- One client-approved synthetic motion study received a design refinement, 15 passing local Chrome checks and an independent synthetic newcomer review. Human/client adoption and cross-browser/physical-device evidence remain open; see the result report.
+- This is a development candidate. Packaging, installation and public release are separate actions; no live client website is changed by this skill update.
+
 ## [0.4.1] - Unreleased
 
 ### Fixed

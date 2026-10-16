@@ -114,7 +114,8 @@ class PreflightTests(unittest.TestCase):
             target = skill / source.relative_to(preflight.SKILL_DIR)
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(source.read_bytes())
-        for name in ('DESIGN_DIRECTION.md', 'MOTION_DIRECTION.md', 'DEVICE_EXPERIENCE.md'):
+        for name in ('DESIGN_DIRECTION.md', 'MOTION_DIRECTION.md', 'DEVICE_EXPERIENCE.md',
+                     'CREATIVE_REVIEW.md'):
             guidance = skill / 'references' / name
             original = guidance.read_bytes()
             for state in ('missing', 'blank'):
@@ -129,6 +130,18 @@ class PreflightTests(unittest.TestCase):
                     self.assertEqual(report['results'][1]['status'], 'MISSING')
                     self.assertIn(f'Missing: references/{name}', report['results'][1]['evidence'])
             guidance.write_bytes(original)
+
+    def test_missing_review_template_blocks_discovery(self):
+        skill = self.base / 'skill'
+        for source in preflight.SKILL_DIR.rglob('*.md'):
+            target = skill / source.relative_to(preflight.SKILL_DIR)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(source.read_bytes())
+        template = skill / 'templates' / 'REVIEW_PACKAGE.md'
+        template.unlink(missing_ok=True)
+        with patch('preflight.SKILL_DIR', skill):
+            report = self.result()
+        self.assertIn('Cinematic Web Director Skill', report['blockers'])
 
     def test_optional_tools_are_not_readiness_caveats(self):
         self.provision()

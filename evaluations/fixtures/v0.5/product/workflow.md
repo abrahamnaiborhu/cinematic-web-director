@@ -1,0 +1,1 @@
+Illustrative workflow, not an actual product UI: Incident reported → owner assigned → timeline entries recorded → status update published. Do not claim automatic resolution, monitoring integrations or measured time savings. A conceptual demonstration can be labeled as such.

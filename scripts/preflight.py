@@ -384,9 +384,10 @@ def run(project: Path, agent_arg: str, phase: str, allow_docs_fallback: bool,
     skill_main = SKILL_DIR / 'SKILL.md'
     resources = [SKILL_DIR / 'references' / name for name in
                  ('PREFLIGHT_PROTOCOL.md', 'CREATIVE_WORKFLOW.md', 'DESIGN_DIRECTION.md',
-                  'MOTION_DIRECTION.md', 'DEVICE_EXPERIENCE.md')]
+                  'MOTION_DIRECTION.md', 'DEVICE_EXPERIENCE.md', 'CREATIVE_REVIEW.md')]
     resources += [SKILL_DIR / 'templates' / name for name in
-                  ('PROJECT_SCRIPT.md', 'CONTINUITY_BIBLE.md', 'SCENE_TREATMENT.md', 'ITERATION_LOG.md')]
+                  ('PROJECT_SCRIPT.md', 'CONTINUITY_BIBLE.md', 'SCENE_TREATMENT.md',
+                   'ITERATION_LOG.md', 'REVIEW_PACKAGE.md')]
     missing = [str(p.relative_to(SKILL_DIR)) for p in [skill_main] + resources if not p.is_file()]
     body = read_document(skill_main)
     missing += [str(p.relative_to(SKILL_DIR)) for p in resources

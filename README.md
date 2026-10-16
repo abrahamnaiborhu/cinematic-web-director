@@ -1,10 +1,14 @@
-# Cinematic Web Director (v0.4.1)
+# Cinematic Web Director (v0.5.0)
 
 An Agent Skills-format creative production partner for creating or redesigning landing pages, portfolios and product websites. It guides discovery, content and copy, site structure, art direction, purposeful motion, approved experiments, production sprints and critique. It accommodates experienced developers who are new to motion design.
 
 The package contains agent instructions and adaptable templates, plus an executable offline eight-check preflight. Creative effectiveness requires real use and rendered website evaluation; the checker does not generate a website or certify its design quality.
 
-This revision prepares the v0.4.1 development candidate; it is not a published release. Previously published packages are available through [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases), including [v0.2.0](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.2.0). Follow the [beginner tutorial](TUTORIAL.md) or read the [changelog](CHANGELOG.md).
+This revision prepares the v0.5.0 development candidate; it is not a published release. Previously published packages are available through [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases), including [v0.2.0](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.2.0). Follow the [beginner tutorial](TUTORIAL.md) or read the [changelog](CHANGELOG.md).
+
+v0.5 focuses on making creative decisions reviewable: a concise client recommendation with actual visual material, asset direction, visitor-understanding tasks and observable runtime cases. The [creative-review guide](references/CREATIVE_REVIEW.md) and [adaptable review package](templates/REVIEW_PACKAGE.md) connect proposals to evidence. Fresh-context discovery trials use synthetic portfolio, landing-page and product briefs; controls and limits are recorded in the [evaluation plan](evaluations/V0_5_PLAN.md). Test results do not promise creative quality or universal device support.
+
+The [observed results](evaluations/V0_5_RESULTS.md) cover three baseline and three candidate discovery sessions, an approved [interactive motion study](studies/v0.5-moss/index.html), 15 local Chrome cases and a synthetic newcomer review. Both versions proposed motion proactively; candidate follow-ups made visitor/runtime planning more explicit. Human/client judgment and real-device/cross-browser checks remain open. The companion evidence ZIP preserves the full trial artifacts and captures separately from the skill package.
 
 v0.3 focuses on design judgment: establish the freedom to redesign, extract the story independently of the old section list, explain inherited presentation, explore different ways to frame real content, and inspect composition before choreography. A metaphor, signature-interaction count, visual style or scroll-effect checklist is never mandatory. See [design direction](references/DESIGN_DIRECTION.md).
 
@@ -50,6 +54,7 @@ For manual installation, copy the complete directory to the target agent's confi
 - [Design direction](references/DESIGN_DIRECTION.md): redesign freedom, story/content, inherited choices, concept alternatives, composition, motion emphasis and design critique.
 - [Motion direction](references/MOTION_DIRECTION.md): creative initiative, opportunity discovery, concrete temporal proposals, recommendations, client discussion and motion critique.
 - [Device experience](references/DEVICE_EXPERIENCE.md): audience coverage, phone/compact-laptop/large-screen treatments, input, browser chrome, UI icons and evidence limits.
+- [Creative review](references/CREATIVE_REVIEW.md): decision evidence, imagery, visitor tasks and runtime acceptance; [review package](templates/REVIEW_PACKAGE.md).
 - [Design evaluation scenarios](evaluations/DESIGN_DIRECTION.md): synthetic client requests, minimal materials and separate review criteria for fresh-session trials.
 - [Motion evaluation cases](evaluations/MOTION_DIRECTION.md): absent client ideas, existing client-originated animations, sparse briefs, static-site constraints and approved-sprint scope.
 - [Preflight protocol](references/PREFLIGHT_PROTOCOL.md): evidence meanings, phases, paths, observations and release requirements.
@@ -105,10 +110,10 @@ This skill owns creative direction and production coordination; the official sui
 Update the README version and changelog entry, run the tests, then build the archive:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.4.1 --out dist/v0.4.1
+python3 -B scripts/package_release.py --version 0.5.0 --out dist/v0.5.0
 ```
 
-This produces `dist/v0.4.1/cinematic-web-director-v0.4.1.zip` and `dist/v0.4.1/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts and tests. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
+This produces `dist/v0.5.0/cinematic-web-director-v0.5.0.zip` and `dist/v0.5.0/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts and tests. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
 
 ## Validation scope
 
@@ -120,7 +125,7 @@ python3 -B -m unittest discover -s tests -v
 
 They cover release packaging and phase gates, custom/agent skill locations, static and multi-application projects, scoped observations, selected GSAP requirements, runtime metadata, release evidence and CLI behavior. Fixtures and generated PNGs validate checker behavior, not a real website's creative quality.
 
-The revised instructions were also reviewed against the scenarios below. This was a manual instruction walkthrough, not an independent agent execution or rendered-site trial:
+Earlier revisions were reviewed against the scenarios below. This historical record is a manual instruction walkthrough, distinct from the actual bounded v0.5 trials:
 
 | Scenario | Workflow response reviewed |
 |---|---|
@@ -139,7 +144,7 @@ v0.4.1 adds four device scenarios: short-laptop/phone motion, iPhone emoji-style
 
 An additional platform-scope scenario checks that the iPhone report does not displace Android and desktop coverage. It has received manual instruction review only.
 
-Local installation and discovery in Codex were confirmed for v0.2.0, and the v0.3 candidate was installed locally. Those observations do not establish candidate behavioral quality or live portability in other hosts. Independent session evaluations and rendered candidate-site trials remain necessary to establish creative effectiveness. The optional external skill validator requires PyYAML; when it is unavailable, do not claim that validator passed. Frontmatter, local links and package consistency can still be inspected without installing dependencies.
+Local installation and discovery were confirmed for earlier revisions. The bounded v0.5 evidence above does not cover every older scenario, an entire production build or live portability in other hosts. Broader real-client work remains necessary to establish creative effectiveness. The optional external skill validator requires PyYAML; when it is unavailable, do not claim that validator passed. Frontmatter, local links and package consistency can still be inspected without installing dependencies.
 
 References:
 
