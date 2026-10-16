@@ -1,14 +1,16 @@
-# Cinematic Web Director (v0.4.0)
+# Cinematic Web Director (v0.4.1)
 
 An Agent Skills-format creative production partner for creating or redesigning landing pages, portfolios and product websites. It guides discovery, content and copy, site structure, art direction, purposeful motion, approved experiments, production sprints and critique. It accommodates experienced developers who are new to motion design.
 
 The package contains agent instructions and adaptable templates, plus an executable offline eight-check preflight. Creative effectiveness requires real use and rendered website evaluation; the checker does not generate a website or certify its design quality.
 
-This revision prepares the v0.4.0 development candidate; it is not a published release. Previously published packages are available through [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases), including [v0.2.0](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.2.0). Follow the [beginner tutorial](TUTORIAL.md) or read the [changelog](CHANGELOG.md).
+This revision prepares the v0.4.1 development candidate; it is not a published release. Previously published packages are available through [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases), including [v0.2.0](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.2.0). Follow the [beginner tutorial](TUTORIAL.md) or read the [changelog](CHANGELOG.md).
 
 v0.3 focuses on design judgment: establish the freedom to redesign, extract the story independently of the old section list, explain inherited presentation, explore different ways to frame real content, and inspect composition before choreography. A metaphor, signature-interaction count, visual style or scroll-effect checklist is never mandatory. See [design direction](references/DESIGN_DIRECTION.md).
 
 v0.4 adds proactive [motion direction](references/MOTION_DIRECTION.md). The director initiates motion discussion, develops concrete ideas from content and journeys, offers alternatives, recommends an approach and asks an informed experiential question. Composition and motion intent develop together; static-state review precedes detailed choreography. Clients need not invent effects or supply references. Explicit static-site choices and all scoped implementation approvals remain authoritative.
+
+v0.4.1 makes [device experience](references/DEVICE_EXPERIENCE.md) explicit: develop phones and compact laptop windows from the start, author suitable motion adaptations, consider available height/input/browser behavior, and keep emulation distinct from real-device evidence. Reuse vector UI icons when consistent geometry is needed instead of relying on platform emoji presentation. Supported device/browser coverage follows the assignment, not a promise to test every device.
 
 ## Start a project or redesign
 
@@ -45,6 +47,7 @@ For manual installation, copy the complete directory to the target agent's confi
 - [Creative workflow](references/CREATIVE_WORKFLOW.md): discovery, redesign, storyboarding, approvals, prototypes, architecture, model handoff, sprints and critique.
 - [Design direction](references/DESIGN_DIRECTION.md): redesign freedom, story/content, inherited choices, concept alternatives, composition, motion emphasis and design critique.
 - [Motion direction](references/MOTION_DIRECTION.md): creative initiative, opportunity discovery, concrete temporal proposals, recommendations, client discussion and motion critique.
+- [Device experience](references/DEVICE_EXPERIENCE.md): audience coverage, phone/compact-laptop/large-screen treatments, input, browser chrome, UI icons and evidence limits.
 - [Design evaluation scenarios](evaluations/DESIGN_DIRECTION.md): synthetic client requests, minimal materials and separate review criteria for fresh-session trials.
 - [Motion evaluation cases](evaluations/MOTION_DIRECTION.md): absent client ideas, existing client-originated animations, sparse briefs, static-site constraints and approved-sprint scope.
 - [Preflight protocol](references/PREFLIGHT_PROTOCOL.md): evidence meanings, phases, paths, observations and release requirements.
@@ -100,10 +103,10 @@ This skill owns creative direction and production coordination; the official sui
 Update the README version and changelog entry, run the tests, then build the archive:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.4.0 --out dist/v0.4.0
+python3 -B scripts/package_release.py --version 0.4.1 --out dist/v0.4.1
 ```
 
-This produces `dist/v0.4.0/cinematic-web-director-v0.4.0.zip` and `dist/v0.4.0/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts and tests. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
+This produces `dist/v0.4.1/cinematic-web-director-v0.4.1.zip` and `dist/v0.4.1/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts and tests. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
 
 ## Validation scope
 
@@ -129,6 +132,8 @@ The revised instructions were also reviewed against the scenarios below. This wa
 The [v0.3 design scenarios](evaluations/DESIGN_DIRECTION.md) add a complete portfolio rethink, constrained refresh, brand-constrained product redesign, optional effect recipe, approved-sprint correction and conflicting reference qualities. They have received a manual instruction walkthrough; independent execution and rendered trials are pending. Their criteria remain separate from the input given to an evaluated agent.
 
 The [v0.4 motion cases](evaluations/MOTION_DIRECTION.md) add five scenarios with separate reviewer criteria. A partial desktop/mobile inspection of a client-provided public website grounded the change and two motion proposals. It does not establish that another agent follows the candidate instructions or that the proposed motion succeeds. Independent session execution and implemented candidate-motion trials remain pending.
+
+v0.4.1 adds four device scenarios: short-laptop/phone motion, iPhone emoji-style arrows, incomplete device evidence and wide touch input. A client screenshot/browser report and fresh public-source inspection grounded the compatibility changes. They do not establish a reproduced or fixed iPhone issue. Independent scenario execution and real-device candidate-site checks remain pending; two preflight PNGs do not certify the agreed matrix.
 
 Local installation and discovery in Codex were confirmed for v0.2.0, and the v0.3 candidate was installed locally. Those observations do not establish candidate behavioral quality or live portability in other hosts. Independent session evaluations and rendered candidate-site trials remain necessary to establish creative effectiveness. The optional external skill validator requires PyYAML; when it is unavailable, do not claim that validator passed. Frontmatter, local links and package consistency can still be inspected without installing dependencies.
 

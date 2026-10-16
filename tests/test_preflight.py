@@ -114,7 +114,7 @@ class PreflightTests(unittest.TestCase):
             target = skill / source.relative_to(preflight.SKILL_DIR)
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(source.read_bytes())
-        for name in ('DESIGN_DIRECTION.md', 'MOTION_DIRECTION.md'):
+        for name in ('DESIGN_DIRECTION.md', 'MOTION_DIRECTION.md', 'DEVICE_EXPERIENCE.md'):
             guidance = skill / 'references' / name
             original = guidance.read_bytes()
             for state in ('missing', 'blank'):

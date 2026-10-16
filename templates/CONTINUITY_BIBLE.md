@@ -16,6 +16,7 @@ Adapt this shared language to the website and its visitor journeys. Explain choi
 - Representative approved compositions and reference qualities:
 - How reference qualities are interpreted for this subject; actual inspection versus client description:
 - Retained brand/presentation constraints and reasons; provisional choices still open:
+- UI icon components, geometry/color/alignment and accessible labeling; intentional content emoji:
 
 ## Interaction and motion language
 - Selected motion approach, intended feeling and director's recommendation/client decision:
@@ -27,7 +28,8 @@ Adapt this shared language to the website and its visitor journeys. Explain choi
 - Navigation, direct entry, browser back/forward and return from detail pages:
 - Permitted transitions and intentional cuts:
 - Scroll/pinning policy only where relevant:
-- Mobile composition and interaction changes:
+- Phone, compact-laptop/short-height and larger-screen composition/interaction adaptations:
+- Supported browser/input matrix; touch equivalents and browser-chrome/resize behavior:
 - Reduced-motion/static experience and accessible content/actions:
 - Interruption, skip, reverse, reset/replay or direct return strategy:
 - Performance constraints and progressive enhancement:

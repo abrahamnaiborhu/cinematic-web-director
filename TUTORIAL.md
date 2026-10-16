@@ -1,4 +1,4 @@
-# Cinematic Web Director — Getting Started (v0.4.0 candidate)
+# Cinematic Web Director — Getting Started (v0.4.1 candidate)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
@@ -23,10 +23,10 @@ Run one command, not all three unless you use all three agents. The GitHub sourc
 For this unpublished candidate, build the ZIP from this repository revision:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.4.0 --out dist/v0.4.0
+python3 -B scripts/package_release.py --version 0.4.1 --out dist/v0.4.1
 ```
 
-Use `cinematic-web-director-v0.4.0.zip` and `SHA256SUMS.txt` from that output directory. For a published version, download its matching ZIP and checksum from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases). Substitute that version in the examples below. Save the archive and its matching checksum in the same folder, then run verification from that folder.
+Use `cinematic-web-director-v0.4.1.zip` and `SHA256SUMS.txt` from that output directory. For a published version, download its matching ZIP and checksum from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases). Substitute that version in the examples below. Save the archive and its matching checksum in the same folder, then run verification from that folder.
 
 Check the archive's checksum. On macOS:
 
@@ -43,19 +43,19 @@ sha256sum -c SHA256SUMS.txt
 On Windows PowerShell, compare this result with the hash in `SHA256SUMS.txt`:
 
 ```powershell
-Get-FileHash .\cinematic-web-director-v0.4.0.zip -Algorithm SHA256
+Get-FileHash .\cinematic-web-director-v0.4.1.zip -Algorithm SHA256
 ```
 
 Extract into a new folder so different releases stay separate:
 
 ```bash
-unzip cinematic-web-director-v0.4.0.zip -d cinematic-web-director-v0.4.0
+unzip cinematic-web-director-v0.4.1.zip -d cinematic-web-director-v0.4.1
 ```
 
-The extracted package is inside `cinematic-web-director-v0.4.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
+The extracted package is inside `cinematic-web-director-v0.4.1/cinematic-web-director/`. From your website project, install that local source (replace the example path):
 
 ```bash
-npx skills add "/absolute/path/to/cinematic-web-director-v0.4.0/cinematic-web-director" --agent codex
+npx skills add "/absolute/path/to/cinematic-web-director-v0.4.1/cinematic-web-director" --agent codex
 ```
 
 Choose `claude-code` or `cursor` instead if appropriate. Add `--global` for a user-wide installation. You may also copy the complete inner package directory to your agent's configured skill location. Keep its references, templates and scripts together.
@@ -119,6 +119,14 @@ You do not need to arrive with animation ideas or references. Once the subject a
 For example, a portfolio about connecting applications and their supporting systems could explore visual continuity between those responsibilities, or a quieter editorial approach. These are possible interpretations, not required diagrams or effects. Atmosphere, character and rhythm are legitimate purposes alongside explanation and feedback.
 
 If you supply an idea, the director should acknowledge it, develop it critically and bring useful alternatives or connections. Repeating your existing animation as a new proposal is insufficient. You remain free to prefer a calm or static site. Proposals do not authorize implementation; explicitly bounded motion studies and approved sprint plans still govern coding. See [motion direction](references/MOTION_DIRECTION.md).
+
+### Agree on the device experience
+
+For a new or substantial public-site design, the director should consider phones and compact laptop windows from the beginning, then develop larger-screen enhancements. Important motion needs an intentional treatment at the supported sizes; it need not use the same pinning or choreography everywhere. A static phone fallback is a choice to discuss, not automatic completion.
+
+Ask to see the same moment in a narrow phone, a short laptop window and a larger composition. Available height matters as well as width. Touch input, keyboard access and reduced-motion preference are separate considerations. The director should propose a practical browser/device coverage matrix and record what was actually checked. Resizing desktop Chrome does not establish how iPhone Safari renders or how Android hardware performs.
+
+If UI arrows become colorful emoji, inspect the actual characters and use the existing vector icon system or a reusable SVG icon when consistent geometry/color is intended. Preserve meaningful link labels and intentional content emoji. The [device-experience reference](references/DEVICE_EXPERIENCE.md) includes a small decorative-arrow example and evidence guidance. A skill update does not itself patch a separate live website.
 
 The director maintains approved versions using the [project script](templates/PROJECT_SCRIPT.md), [continuity bible](templates/CONTINUITY_BIBLE.md), [treatment](templates/SCENE_TREATMENT.md) and [iteration log](templates/ITERATION_LOG.md), or equivalent documents you already use. You do not need to fill out all templates before the conversation begins.
 
@@ -193,7 +201,9 @@ Before releasing your website, the agent should observe its actual layouts, moti
 | Alternatives look like the same template | Compare content framing, composition and visitor behavior, using representative real content |
 | Agent adds effects from a style recipe | Ask for each effect's purpose and compare a calmer alternative before expanding the treatment |
 | Agent waits for you to invent every animation | Point to motion direction: it should bring content-specific alternatives, a recommendation and an informed experiential question |
+| Motion only works on a large screen | Review width and height gates; ask for an authored phone/compact-laptop treatment and the relevant runtime evidence |
+| Link arrows render as emoji | Confirm the reported OS/browser and actual glyphs; reuse deliberate vector icons and verify in those environments |
 
 ## What this release establishes
 
-v0.4.0 is an unpublished development candidate focused on creative initiative in motion, building on v0.3 design judgment. Automated tests validate the local checker and release packaging; the [design scenarios](evaluations/DESIGN_DIRECTION.md) and [motion cases](evaluations/MOTION_DIRECTION.md) support behavioral evaluation. Manual walkthroughs and a partial inspection of a client website are not independent candidate-agent executions or validation of new motion. Independent session evaluations and rendered candidate-site trials remain pending. The skill offers a structured creative process and makes no promise of awards.
+v0.4.1 is an unpublished development candidate refining responsive motion and UI icon compatibility, building on v0.4 creative initiative and v0.3 design judgment. Automated tests validate the local checker and release packaging; the [design scenarios](evaluations/DESIGN_DIRECTION.md) and [motion/device cases](evaluations/MOTION_DIRECTION.md) support behavioral evaluation. Manual walkthroughs, public-source inspection and client captures are not independent candidate-agent executions or proof of a live-device fix. Independent session evaluations and rendered candidate-site trials remain pending. The skill offers a structured creative process and makes no promise of awards.

@@ -16,6 +16,15 @@ The director maintains this evolving brief with the client. Adapt fields to the 
 - Constraints and required existing functionality:
 - Confirmed facts and claims needing validation:
 
+## Audience devices and coverage
+- Known audience/device priorities or stated assumptions; phone and compact-laptop design alongside larger screens:
+
+| Browser/OS and device or emulation | CSS viewport / available height | Input and motion preference | Intended composition/motion | Required evidence | Actual observation / limitation |
+|---|---|---|---|---|---|
+
+- Supported versus actually tested environments; short-height/resize/orientation cases:
+- Reported platform/font/icon issues and their evidence source:
+
 ## Sources and existing experience
 | Location/link | Role (facts / constraint / inspiration / old draft) | Relevant content or quality | Freshness/conflicts | Approval or confirmation |
 |---|---|---|---|---|
@@ -63,7 +72,7 @@ For redesigns, distinguish requirements and useful evidence from inherited prese
 - Content-specific opportunities, including connections across units and deliberate quiet moments:
 - Client ideas already supplied; director's additions/alternatives and recommendation:
 
-| Proposed approach / actual content | Start → change → settled state; trigger/control | Intended benefit and connection to the whole | Mobile/reduced-motion treatment; uncertainty/experiment | Recommendation / client select, revise or defer decision |
+| Proposed approach / actual content | Start → change → settled state; trigger/control | Intended benefit and connection to the whole | Phone/compact-laptop/large-screen adaptations; reduced motion; uncertainty | Recommendation / client select, revise or defer decision |
 |---|---|---|---|---|
 
 - Selected temporal character and representative beats; deliberately static direction if chosen:

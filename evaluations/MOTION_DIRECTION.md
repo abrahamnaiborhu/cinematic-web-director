@@ -84,6 +84,69 @@ Capture whether the director contributes before the client supplies effects, how
 - If it notices a useful connection, does it record a concrete optional proposal rather than silently implementing it or claiming inability to propose without permission?
 - Does creative initiative preserve the scope and model agreement?
 
+## 6. Phone and compact-laptop motion
+
+**Client input**
+
+> Our deployment story only gets its animated treatment on a large screen. I want phones and smaller laptop windows to feel equally considered. Develop device-specific proposals before coding; the story and contact/navigation must remain usable.
+
+**Materials**
+
+`current-behavior.md`: The animated walkthrough is gated by `(min-width: 1000px) and (min-height: 800px)`. Below that condition it becomes a static flow. Visitors use phones and laptop windows; browser distribution is unknown. No alternative mobile choreography or hardware-performance evidence has been supplied. Reference viewports: 360 × 640, 390 × 844, 1280 × 720 and 1440 × 900 CSS pixels.
+
+**Review separately**
+
+- Does the director recognize that short laptop windows can miss a height gate even at desktop widths?
+- Does it propose an authored phone/compact-laptop treatment that preserves the story, rather than simply scaling the diagram, disabling all motion or copying desktop pinning blindly?
+- Does it establish a representative browser/input/evidence matrix and keep reduced motion distinct from phone use?
+
+## 7. UI arrows render as emoji on iPhone
+
+**Client input**
+
+> These link arrows turn into colored emoji on iPhone Safari and Chrome. Propose a consistent monochrome fix without replacing intentional emoji in the content. There is no physical iPhone connected to this session.
+
+**Materials**
+
+`link.html`: `<a href="/resume.html">Read my resume ↗</a>`. The client supplies a screenshot with colored boxed arrows. No SVG icon component is present in this isolated fixture. Other project components should be inspected before introducing a new icon dependency.
+
+**Review separately**
+
+- Does the director connect the bare Unicode glyph with possible platform presentation, without claiming the screenshot proves the OS or reproducing iPhone behavior in desktop Chrome?
+- Does it propose a reusable vector icon with stable geometry/color and appropriate accessible treatment, preserving visible link text and intentional content emoji?
+- Does it avoid unnecessary libraries and distinguish a proposed/source fix from verified live-device behavior?
+
+## 8. Two PNGs are not complete device evidence
+
+**Client input**
+
+> Review whether this motion batch meets our approved device acceptance criteria. Do not deploy anything.
+
+**Materials**
+
+`qa-notes.md`: The approved matrix requires phone touch behavior, iPhone Safari glyph rendering, compact-laptop motion at 1280 × 720 and desktop navigation. Two valid PNGs, 390 × 844 and 1440 × 900, came from desktop Chrome. The local preflight release gate accepts them with an interaction attestation. No compact-laptop recording, iPhone check or physical-device performance observation is supplied.
+
+**Review separately**
+
+- Does the director identify which dimensions/input conditions were observed and which browser/device criteria remain unverified?
+- Does it distinguish technical preflight coverage from accepted creative/runtime/device criteria, without inventing evidence or silently waiving requirements?
+- Does it report the smallest relevant remaining checks instead of restarting discovery or demanding unrelated tests?
+
+## 9. Wide touch device and independent motion preference
+
+**Client input**
+
+> The same gallery should work with a mouse, keyboard or touch. Touch users should still get the selected motion, and reduced-motion users should get the approved alternative. Keep the approved gallery structure.
+
+**Materials**
+
+`gallery-notes.md`: A wide tablet can have a coarse pointer and no hover. A compact laptop can have a fine pointer. Existing labels appear only on hover above a width breakpoint. No actual hardware performance result is available.
+
+**Review separately**
+
+- Does the director separate viewport layout, input capability, reduced-motion preference and measured performance?
+- Does it preserve access to labels/actions for touch and keyboard without redesigning the gallery or assuming touch means reduced motion?
+
 ## Grounding review: client-provided public website
 
 On 2026-10-15 the client supplied [abrahamnaiborhu.com](https://abrahamnaiborhu.com/) and reported that their animation ideas drove the implementation. Homepage HTML was read and a temporary isolated Chrome session inspected the desktop opening, selected scroll states through the deployment section, and the mobile opening. Desktop viewport: 1440 × 1000; mobile: 390 × 844. This was a partial inspection, not a full usability, accessibility or performance audit.
@@ -94,6 +157,10 @@ Two proposals were discussed to ground this update: carrying an application's vi
 
 ## Manual instruction review
 
-The five cases were reviewed against the candidate instructions: proactive proposals for open directions; a contribution beyond existing client ideas; provisional ideas alongside sparse-brief questions; explicit static-site constraints; and scope-preserving sprint continuation. The intended paths are represented. This review does not establish that a separate agent session follows them or that a rendered result succeeds.
+The original five cases were reviewed against the v0.4.0 candidate instructions: proactive proposals for open directions; a contribution beyond existing client ideas; provisional ideas alongside sparse-brief questions; explicit static-site constraints; and scope-preserving sprint continuation. The intended paths are represented. This review does not establish that a separate agent session follows them or that a rendered result succeeds.
+
+On 2026-10-16 the client reported colored UI arrows across iPhone Safari and Chrome and supplied a screenshot. Fresh homepage HTML contained bare U+2197/U+2198 arrows; the public script gated the deployment walkthrough by the 1000-pixel width/800-pixel height condition above. This source inspection supports investigating platform glyph presentation and authored smaller-screen alternatives; it is not a physical iPhone reproduction or proof that all site animations are desktop-only.
+
+The four device cases received a manual instruction review against v0.4.1: short-height coverage, vector UI icons, evidence scope and independent input/motion preferences. Independent executions, implemented candidate treatments and real-device compatibility checks remain pending.
 
 For actual runs record candidate version/commit, host/model identity evidence, client answers, permissions, proposal artifacts, reviewer findings and remaining uncertainty. Do not give this review or the criteria to the evaluated session. Treat independent creative initiative and observed motion quality as separate findings from automated preflight/package tests.

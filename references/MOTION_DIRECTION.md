@@ -38,7 +38,7 @@ For each serious proposal describe:
 | Trigger and control | Scroll, navigation, input or elapsed time; how visitors skip, interrupt or return |
 | Relationship to the whole | What connects to neighboring content and how supporting motion/stillness makes this moment register |
 | Alternatives and recommendation | Meaningfully different treatment, tradeoffs and why one suits the direction |
-| Mobile and reduced motion | An intentional smaller-screen and reduced-motion/static treatment that preserves substance |
+| Devices, input and reduced motion | Authored phone, compact-laptop and larger-screen treatments, including short heights and touch/keyboard; reduced motion is a separate preference |
 | Feasibility and uncertainty | Available assets, likely effort/performance risks, unknowns and the smallest useful observation or experiment |
 
 Use plain descriptions first. For example, “the project image stays visible as its surrounding context expands” is inspectable intent; “use ScrollTrigger” is an implementation choice. Exact timings and easing can remain provisional until they can be judged. Offer descriptive beats, sketches or reference clips when available, labeling what was actually inspected. A storyboard describes time; it does not prove that motion feels good.
@@ -46,6 +46,8 @@ Use plain descriptions first. For example, “the project image stays visible as
 Recommend an approach rather than handing every choice back to the client. Explain what would be gained and what might be lost. A restrained approach can be the strongest recommendation, but justify it against an explored opportunity; “motion must be purposeful” is not a sufficient reason to skip ideation. Do not equate originality with unfamiliar effects or require a signature interaction.
 
 ## Develop composition and motion together
+
+Use [device experience](DEVICE_EXPERIENCE.md) to develop phone and compact-laptop choreography alongside larger-screen proposals. Explain breakpoint-gated effects and their intentional alternatives. A static phone fallback is not automatic completion of a motion-led direction; neither is copying the desktop pin onto every device. Review the supported browser/input matrix, UI icons and actual evidence limits.
 
 Discuss promising motion during concept exploration, before the layout and story are treated as immovable. Motion can influence space, hierarchy, image framing and the relationship between units. Inspect representative static states before committing to detailed choreography, and revisit composition when an approved motion experiment reveals a better approach. “Composition before choreography” must not mean “finish a static site, then add animation.”
 

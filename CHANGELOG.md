@@ -2,6 +2,28 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
+## [0.4.1] - Unreleased
+
+### Fixed
+
+- Generic mobile requirements now lead to explicit phone, compact-laptop/short-height and larger-screen composition/motion treatments from early design.
+- Important effects gated to large viewports require a justified smaller-screen alternative rather than an automatic scaled or static version.
+- Device coverage distinguishes viewport size, input capability, reduced-motion preference, browser/OS and measured hardware behavior.
+- Functional UI glyphs receive cross-platform review; existing SVG icons or a reusable vector component are preferred when stable geometry/color is needed. Intentional content emoji remain valid.
+- Release guidance explicitly separates the two-PNG preflight floor from the agreed device/browser acceptance matrix.
+
+### Added
+
+- Device-experience reference with representative viewport coverage and an accessible decorative SVG-arrow example.
+- Four evaluation cases for responsive choreography, iPhone arrow presentation, incomplete QA evidence and wide touch devices.
+- Template fields for supported versus tested environments, device-specific choreography, icon rendering and remaining evidence gaps.
+
+### Validation and limits
+
+- Offline regressions cover required device guidance and complete packaging alongside existing behavior.
+- Client-supplied screenshot/browser report and fresh public-source inspection grounded the update. Real iPhone reproduction, live website fixes and candidate device-motion trials remain pending.
+- The update is a local skill candidate. Its construction does not modify a separate website or publish a GitHub release.
+
 ## [0.4.0] - Unreleased
 
 ### Added

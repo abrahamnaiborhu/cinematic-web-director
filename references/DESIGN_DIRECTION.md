@@ -57,6 +57,8 @@ Use [motion direction](MOTION_DIRECTION.md) to initiate motion ideas during conc
 
 Use representative real content to examine hierarchy, readable text, imagery, spacing, density, scale and navigation. Show enough of the entry, substantive content and smaller-screen experience to judge the proposed direction; a hero alone rarely establishes how case studies or product information will work. Adapt the views to the actual journeys rather than prescribing a fixed number of frames.
 
+Follow [device experience](DEVICE_EXPERIENCE.md) to develop phone and compact-laptop compositions from the beginning, including limited viewport height. A scaled-down large-screen layout or a missing mobile motion sequence does not by itself establish an intentional responsive direction.
+
 Use inspectable sketches, annotated layouts, mockups or other available visual tools. Identify the artifact, actual content and limitations. A textual description remains a proposal, not evidence that a composition looks good. If a coded composition study or motion experiment is needed, first agree on its bounded prototype scope under the workflow. Missing visual tools can permit discussion to continue, but do not waive representative-composition review before production.
 
 Develop the visual language through these studies. Choose typography roles and reading rhythm, palette roles, imagery treatment, geometry and spatial relationships for this direction. Extreme type, asymmetry, restrained color or deliberate grid breaks are possible choices, not universal requirements. Body text must remain comfortable to read; display drama must not obscure necessary content or actions. A familiar font or a useful feature grid is not inherently a failure.

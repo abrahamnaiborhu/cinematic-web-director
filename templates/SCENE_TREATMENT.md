@@ -33,10 +33,14 @@ Use for a page, scene, journey or interaction needing detailed direction. Adapt 
 - If simulation is involved: state authority, collision behavior, reset/replay plan and trade-offs:
 
 ## Responsive and technical treatment
-- Small-screen composition and behavior:
+- Phone, compact-laptop/short-height and larger-screen composition and motion behavior:
+- Breakpoint/input conditions and rationale; what replaces a gated effect:
+- Touch/keyboard controls, orientation/browser-chrome changes and readable exits:
+- UI icon/glyph rendering in supported browsers; reused component and accessible names:
 - Reduced-motion/static alternative and readable content/actions:
 - Progressive enhancement and loading/failure states:
 - Performance risks and observation/measurement conditions:
+- Coverage-matrix rows: actual browser/device versus emulation; observations and untested limits:
 - Relevant architecture/state/data decisions and dependencies:
 - Proposed GSAP skills/plugins or other capabilities, justified by the treatment:
 - Official technical references and runtime verification needed:

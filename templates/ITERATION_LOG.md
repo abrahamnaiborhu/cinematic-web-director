@@ -12,6 +12,7 @@ Record evidence and decisions as work proceeds. The project script and continuit
 - Proposed solution and hypothesis:
 - Expected improvement:
 - Validation method, viewport/device/input conditions and comparison baseline:
+- Actual OS/browser/device or emulation; short-height/motion-preference state and required rows still untested:
 - Actual changes and observed result; untested limits:
 - Decision: accept / refine / reject / defer:
 - Approval required/received for changed intent or scope:

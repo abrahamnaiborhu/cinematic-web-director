@@ -108,9 +108,11 @@ Screenshot paths are relative to the command's working directory. Supply non-int
 
 Desktop width must exceed mobile width. One file cannot stand for both viewports. Valid PNG data still cannot prove capture provenance, page content, timing, accessibility or correct interactions. Check 7 remains UNVERIFIED with `filesystem+attestation` scope when accepted. Attest only after actual rendered QA at the declared representative widths, including the relevant navigation/motion and input alternatives. Keep detailed observations and conditions in the iteration log.
 
+These two PNGs are a technical floor, not a complete device/browser matrix. Follow [device experience](DEVICE_EXPERIENCE.md) for agreed phone, compact-laptop/short-height, larger-screen and platform-specific criteria. Record actual OS/browser/input conditions, emulation and untested rows separately. A successful checker result does not waive an approved iPhone icon, compact-laptop motion or real-device performance criterion.
+
 ## Reports and boundaries
 
-Skill integrity includes the creative workflow, design-direction and motion-direction references, preflight protocol and all four project templates. Missing or blank required guidance blocks the package check even during discovery. This establishes resource availability, not design judgment or creative initiative; behavioral scenarios and rendered trials are separate evaluations.
+Skill integrity includes the creative workflow, design-direction, motion-direction and device-experience references, preflight protocol and all four project templates. Missing or blank required guidance blocks the package check even during discovery. This establishes resource availability, not design judgment, creative initiative or device compatibility; behavioral scenarios and rendered trials are separate evaluations.
 
 ```bash
 python3 scripts/preflight.py --project /path/to/site --agent codex --phase discovery --format json
