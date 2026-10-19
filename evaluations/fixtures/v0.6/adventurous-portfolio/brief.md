@@ -1,0 +1,7 @@
+# Synthetic portfolio brief
+
+Dara Ishan makes type-led posters and graphic identities for self-initiated sound/culture projects. These fixtures do not establish paid clients, awards or event attendance. Two supplied poster studies: After Hours explores compression and contrasting type scale; Sideways explores direction, interruption and offset alignment. Contribution: concept, lettering/composition and final artwork.
+
+Audience: independent labels, cultural organizers and art directors considering a commission. Desired outcome: see the work, recognize Dara's visual judgment and find contact. Character: bold, playful, abrasive at times and slightly absurd. The site can be unconventional; required information and routes must remain usable. The old centered slogan, colors, card grid and section order are open to reinvention. Preserve `/work/after-hours`, `/work/sideways` and a clear contact action. Contact details in the old source are placeholders.
+
+The two SVGs are the available finished artworks. They are static synthetic assets, not documentation of a making process or an instruction to animate their individual shapes. No process footage, portrait, live audio or outside reference was supplied. Propose needed material honestly. Motion appetite is adventurous; no specific behavior, metaphor, effects or library are selected. Phones, short/compact laptop windows and larger screens all matter; exact browser versions are not agreed. No prototype, production coding, dependency install or publication is approved during this discussion.

@@ -1,0 +1,5 @@
+# Synthetic product brief
+
+Ledgerline is a small-team change-log product. Confirmed capabilities: record a change, assign a reviewer and mark a review complete. Visitors are team leads comparing tools and developers seeking documentation. Outcomes: understand scope, compare plans, reach docs and request a demo. Preserve `/product`, `/pricing`, `/docs` and `/demo`, the Ledgerline wordmark and green `#146c43`.
+
+Desired character: calm, direct and readable. This is a deliberate preference for a mostly static site, with ordinary functional feedback allowed. Do not require an animated concept exploration to satisfy a supposed creativity quota. Existing layout/style may change. No real product screenshots, plan prices, customer claims, performance metrics or integrations are supplied. The textual example is conceptual, not product UI. Documentation and demo details need confirmed sources later. Phones, compact/short laptop windows and larger screens matter; exact browser versions are open. No coding, prototypes, installs or publication are approved during discovery.
