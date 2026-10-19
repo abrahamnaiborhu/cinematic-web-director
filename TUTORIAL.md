@@ -1,4 +1,4 @@
-# Cinematic Web Director — Getting Started (v0.5.0 candidate)
+# Cinematic Web Director — Getting Started (v0.5.0 development pre-release)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
@@ -20,13 +20,15 @@ Run one command, not all three unless you use all three agents. The GitHub sourc
 
 ### Install the exact ZIP release
 
-For this unpublished candidate, build the ZIP from this repository revision:
+Download **cinematic-web-director-v0.5.0.zip** and **SHA256SUMS.txt** from the [v0.5.0 release page](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0). The ZIP includes this tutorial and the complete skill. Save the archive and checksum in the same folder.
+
+If you prefer to build the package yourself from the v0.5.0 source checkout:
 
 ```bash
 python3 -B scripts/package_release.py --version 0.5.0 --out dist/v0.5.0
 ```
 
-Use `cinematic-web-director-v0.5.0.zip` and `SHA256SUMS.txt` from that output directory. For a published version, download its matching ZIP and checksum from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases). Substitute that version in the examples below. Save the archive and its matching checksum in the same folder, then run verification from that folder.
+The command produces the same two files in `dist/v0.5.0/`. `SHA256SUMS.txt` verifies the skill ZIP. The optional evaluation-evidence ZIP has its own `EVIDENCE_SHA256SUMS.txt`; it is not needed to install or use the skill.
 
 Check the archive's checksum. On macOS:
 
@@ -64,7 +66,9 @@ Confirm in your agent that it can discover and read `cinematic-web-director/SKIL
 
 ## 2. Begin with what you want to build or improve
 
-Ask the agent to use Cinematic Web Director. For a new site:
+Ask the agent to use Cinematic Web Director. In Codex, you can explicitly invoke it with `$cinematic-web-director`, followed by your request. Use it inside the website project you want to create or redesign.
+
+For a new site:
 
 > Use Cinematic Web Director to help me create a website for my work. I know development but am new to motion design. Help me clarify the structure and creative direction, ask one focused question at a time, and explain your recommendations before production.
 
@@ -216,4 +220,4 @@ Before releasing your website, the agent should observe its actual layouts, moti
 
 ## What this release establishes
 
-v0.5.0 is an unpublished development candidate adding concrete review evidence, asset direction, visitor tasks and runtime acceptance to the existing design, motion and device guidance. The [result report](evaluations/V0_5_RESULTS.md) records six actual discovery trials, an approved rendered study and its limits; [open the study](studies/v0.5-moss/index.html) to compare replay with stillness. Automated checks validate the local checker and archive. Small discovery trials, synthetic reviewers and Chrome emulation do not establish human satisfaction, end-to-end site delivery, cross-host portability or physical-device compatibility. The skill offers a creative process and makes no promise of awards.
+v0.5.0 is a development pre-release adding concrete review evidence, asset direction, visitor tasks and runtime acceptance to the existing design, motion and device guidance. The [result report](evaluations/V0_5_RESULTS.md) records six actual discovery trials, an approved rendered study and its limits; [open the study](studies/v0.5-moss/index.html) to compare replay with stillness. Automated checks validate the local checker and archive. Small discovery trials, synthetic reviewers and Chrome emulation do not establish human satisfaction, end-to-end site delivery, cross-host portability or physical-device compatibility. Creative range and distinctive motion need further development and real-client evaluation. The skill offers a creative process and makes no promise of awards.

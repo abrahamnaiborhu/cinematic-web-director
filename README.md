@@ -4,7 +4,7 @@ An Agent Skills-format creative production partner for creating or redesigning l
 
 The package contains agent instructions and adaptable templates, plus an executable offline eight-check preflight. Creative effectiveness requires real use and rendered website evaluation; the checker does not generate a website or certify its design quality.
 
-This revision prepares the v0.5.0 development candidate; it is not a published release. Previously published packages are available through [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases), including [v0.2.0](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.2.0). Follow the [beginner tutorial](TUTORIAL.md) or read the [changelog](CHANGELOG.md).
+v0.5.0 is a **development pre-release**. [Download the skill ZIP](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/download/v0.5.0/cinematic-web-director-v0.5.0.zip), [verify its checksum](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/download/v0.5.0/SHA256SUMS.txt), then follow the [beginner tutorial](TUTORIAL.md). The [release page](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0) includes the standalone tutorial and optional evaluation evidence. Read the [changelog](CHANGELOG.md) for changes since v0.2.0.
 
 v0.5 focuses on making creative decisions reviewable: a concise client recommendation with actual visual material, asset direction, visitor-understanding tasks and observable runtime cases. The [creative-review guide](references/CREATIVE_REVIEW.md) and [adaptable review package](templates/REVIEW_PACKAGE.md) connect proposals to evidence. Fresh-context discovery trials use synthetic portfolio, landing-page and product briefs; controls and limits are recorded in the [evaluation plan](evaluations/V0_5_PLAN.md). Test results do not promise creative quality or universal device support.
 
@@ -43,7 +43,7 @@ npx skills add https://github.com/abrahamnaiborhu/cinematic-web-director --agent
 
 Add `--global` to reuse the skill across projects. For an exact version, install the extracted release directory as a local source; see the tutorial.
 
-GitHub installation follows the remote default branch. To try this candidate before publication, install a local copy of this revision or its generated ZIP; the commands above do not select this unpublished branch automatically.
+GitHub installation follows the remote default branch. For the exact v0.5.0 package, download and install the extracted release ZIP as described in the tutorial; future changes to the default branch do not change that tagged package.
 
 For manual installation, copy the complete directory to the target agent's configured skills location and confirm that the session can read it. This repository revision does not install the skill or external tools into your agent.
 

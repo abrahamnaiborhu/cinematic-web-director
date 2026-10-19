@@ -2,7 +2,7 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
-## [0.5.0] - Unreleased
+## [0.5.0] - 2026-10-19 (development pre-release)
 
 ### Added
 
@@ -15,9 +15,10 @@ Versioned GitHub releases use three-part tags. v0.2.0 is the first published rel
 - Offline checks validate the checker and archive, not design quality. Behavioral and rendered-study evidence is reported with its actual scope and unresolved criteria.
 - Three baseline and three candidate fresh-context discovery trials are complete; both versions originated motion ideas. Candidate follow-ups made visitor/runtime planning explicit, while baseline product supplied generated visual boards. No causal quality improvement is inferred from these small samples.
 - One client-approved synthetic motion study received a design refinement, 15 passing local Chrome checks and an independent synthetic newcomer review. Human/client adoption and cross-browser/physical-device evidence remain open; see the result report.
-- This is a development candidate. Packaging, installation and public release are separate actions; no live client website is changed by this skill update.
+- Published as a development pre-release with the skill ZIP, standalone tutorial, checksums and optional evaluation-evidence bundle. It incorporates the v0.3, v0.4 and v0.4.1 work that was not released separately.
+- Creative range and distinctive motion remain areas for further development; this release establishes bounded workflow evidence, not outstanding art direction or universal device compatibility. No live client website is changed by this skill update.
 
-## [0.4.1] - Unreleased
+## [0.4.1] - Included in 0.5.0
 
 ### Fixed
 
@@ -41,7 +42,7 @@ Versioned GitHub releases use three-part tags. v0.2.0 is the first published rel
 - Client-supplied screenshot/browser report and fresh public-source inspection grounded the update. Real iPhone reproduction, live website fixes and candidate device-motion trials remain pending.
 - The update is a local skill candidate. Its construction does not modify a separate website or publish a GitHub release.
 
-## [0.4.0] - Unreleased
+## [0.4.0] - Included in 0.5.0
 
 ### Added
 
@@ -65,7 +66,7 @@ Versioned GitHub releases use three-part tags. v0.2.0 is the first published rel
 - The public client website received partial desktop/mobile inspection. Proposed new motion was not implemented or validated; no claim about creative authorship is inferred from the resulting site alone.
 - This is a local development candidate. ZIP construction does not publish a release or update an installation.
 
-## [0.3.0] - Unreleased
+## [0.3.0] - Included in 0.5.0
 
 ### Added
 

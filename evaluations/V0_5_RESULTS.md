@@ -1,6 +1,6 @@
 # v0.5 development candidate — observed results
 
-Date: 2026-10-16. Status: development candidate, not a public release or a certification of creative quality. This report distinguishes independent discovery outputs, the coordinator's implementation checks, an independent synthetic visitor review and decisions still requiring the client.
+Evaluation date: 2026-10-16. Published with the v0.5.0 development pre-release on 2026-10-19. The evaluated candidate is not a certification of creative quality. This report distinguishes independent discovery outputs, the coordinator's implementation checks, an independent synthetic visitor review and decisions still requiring the client.
 
 ## What changed and why
 
@@ -20,7 +20,7 @@ Requested configuration was the current inherited host with no override in all s
 
 Candidate snapshot SHA-256: `8c435c16e1965af06630c2cc95600267caecc609bda9d98c3d8557ef5a4c88df`, computed over sorted `(path, file SHA-256)` pairs for its 21 files. Its manifest and immutable copy are retained in the evidence bundle. Later release documentation and packaging additions are distinct from the evaluated instruction snapshot; instruction resources must match that snapshot when the final package is checked.
 
-Actual local outputs: `dist/evaluations/v0.5/{baseline,candidate}/{portfolio,landing,product}/`, including each `response.md`, `response-02.md` and linked review material. The companion evidence ZIP preserves these outputs, inputs, snapshots and observations. It includes local machine paths in preflight/host records; no live client data or credentials were used. Synthetic fixture biographies/services/products must not become public claims.
+Actual local outputs: `dist/evaluations/v0.5/{baseline,candidate}/{portfolio,landing,product}/`, including each `response.md`, `response-02.md` and linked review material. The companion evidence ZIP preserves these outputs, inputs, snapshots and observations. The public copy normalizes machine-local path prefixes; `PUBLICATION.md` and its manifest record those transformations and hashes. No live client data or credentials were used. Synthetic fixture biographies/services/products must not become public claims.
 
 ## Discovery outcomes
 
@@ -76,4 +76,4 @@ Completion of the approved evaluation work:
 | Offline/package integrity | Pass within the stated scope; optional external validator unavailable |
 | Client design adoption, real-device/cross-browser acceptance | Pending; study authorization does not supply these decisions or results |
 
-The development candidate is reviewable without claiming every follow-up criterion is achieved. Before a public quality claim or production use of the study, obtain the client's judgment, relevant human visitor feedback and the agreed platform/browser evidence. Cross-host and fallback-model behavior need their own authorized trials with disclosed actual configuration. This work does not change `abrahamnaiborhu.com` or publish a GitHub release.
+The development pre-release is available for review without claiming every follow-up criterion is achieved. Before a public quality claim or production use of the study, obtain the client's judgment, relevant human visitor feedback and the agreed platform/browser evidence. Cross-host and fallback-model behavior need their own authorized trials with disclosed actual configuration. Creative distinctiveness remains insufficiently evaluated. The evaluation work did not change `abrahamnaiborhu.com`; publication of the package is a separate authorized action.
