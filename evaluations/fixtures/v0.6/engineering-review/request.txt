@@ -1,0 +1,1 @@
+Review this approved poster-preview change before we ship it. Preserve the agreed interaction and visual character while identifying worthwhile engineering improvements. Read the connected code and report concrete findings with sufficient fixes. This is a source review only: do not edit files, run the page, install tools or publish anything.

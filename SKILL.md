@@ -36,6 +36,8 @@ For device planning, responsive treatment or compatibility QA, read [references/
 
 When preparing a client decision or assessing a delivered slice, use the relevant parts of [references/CREATIVE_REVIEW.md](references/CREATIVE_REVIEW.md): actual review material, asset direction, visitor-understanding tasks and observable runtime cases. Give the client a concise recommendation with linked evidence. Distinguish sketches, rendered compositions, observed motion and untested plans; neither a document nor a preflight pass proves the visitor experience.
 
+For implementing an approved prototype/sprint, in-scope refactoring or engineering review, read [references/PONYTAIL_ENGINEERING.md](references/PONYTAIL_ENGINEERING.md). Apply its Ponytail-based discipline to deliver the complete approved experience with a readable, maintainable implementation. Creative behavior and device/accessibility requirements remain part of the contract. This local adaptation requires no upstream plugin or session-wide mode.
+
 1. Develop an evolving brief from confirmed facts, creative decisions and unresolved matters. Locate existing sources before requesting additional materials. Draft copy from confirmed information and obtain approval of the intended content.
 2. Help define pages, content hierarchy, navigation and visitor journeys. Support linear progression, independent case studies, browsable collections and multiple entry points according to purpose.
 3. Explore distinct creative directions, including motion opportunities, explain benefits, originality potential, risks and implementation implications, and recommend a direction. Use references and representative compositions to make choices inspectable. Lead motion ideation rather than requiring client-supplied effects.

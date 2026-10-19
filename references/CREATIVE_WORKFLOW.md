@@ -134,6 +134,8 @@ Provide a compact transfer record referencing approved facts, creative intent, a
 
 An approved plan authorizes continuous execution through its sufficiently specified sprints. Do not stop at each boundary for ceremonial reapproval. A sprint delivers a coherent improvement to a visitor experience: a scene plus connection, a gallery/detail journey, a product demonstration or an architecture change with validated integration.
 
+Use [Ponytail engineering](PONYTAIL_ENGINEERING.md) for the implementation and engineering review: inspect connected code, prefer adequate reuse/platform features, finish the integration and verify meaningful failure cases. Simplification must preserve the approved creative experience and device/accessibility treatments; it does not reopen discovery or authorize a visual downgrade.
+
 For each sprint:
 
 1. Recheck relevant sources, artifact versions, dependencies, scope and configuration. Run implementation preflight as appropriate.
@@ -155,6 +157,8 @@ Use the relevant [creative-review procedures](CREATIVE_REVIEW.md) to capture vis
 Account for the agreed device coverage, including compact/short laptop windows and reported platform issues. Resized desktop Chrome is viewport emulation, not evidence of iPhone Safari or Android hardware behavior. Keep client captures, agent-run checks and untested rows distinct; two preflight PNGs do not certify the whole matrix.
 
 Assess story/content, composition, originality, continuity, motion, usability/accessibility, responsiveness and technical performance separately. For an issue record creative intent, existing implementation, observed problem/evidence, visitor impact, proposed correction, expected improvement and validation. Distinguish functional defects, unmet creative intent and optional polish. The iteration log holds decisions and observations; the project script and bible hold current approved intent.
+
+Review connected engineering behavior with [Ponytail engineering](PONYTAIL_ENGINEERING.md), including callers, lifecycle, verification and avoidable complexity. Ground findings in a concrete case. Keep code economy distinct from the artistic judgment; complete creative behavior remains a requirement.
 
 Use the design-direction critique questions to check subject specificity, unjustified inherited presentation, access to substantive content and whether motion contributes. Review the actual compositions and observed experience; do not substitute a list of trendy techniques or an invented originality score for judgment.
 

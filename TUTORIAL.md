@@ -1,4 +1,4 @@
-# Cinematic Web Director — Getting Started (v0.5.0 development pre-release)
+# Cinematic Web Director — Getting Started (v0.6.0 candidate)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
@@ -20,15 +20,13 @@ Run one command, not all three unless you use all three agents. The GitHub sourc
 
 ### Install the exact ZIP release
 
-Download **cinematic-web-director-v0.5.0.zip** and **SHA256SUMS.txt** from the [v0.5.0 release page](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0). The ZIP includes this tutorial and the complete skill. Save the archive and checksum in the same folder.
-
-If you prefer to build the package yourself from the v0.5.0 source checkout:
+v0.6.0 is an unpublished candidate. Build its ZIP from this repository revision:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.5.0 --out dist/v0.5.0
+python3 -B scripts/package_release.py --version 0.6.0 --out dist/v0.6.0
 ```
 
-The command produces the same two files in `dist/v0.5.0/`. `SHA256SUMS.txt` verifies the skill ZIP. The optional evaluation-evidence ZIP has its own `EVIDENCE_SHA256SUMS.txt`; it is not needed to install or use the skill.
+Use `cinematic-web-director-v0.6.0.zip` and `SHA256SUMS.txt` in `dist/v0.6.0/`. For a published package, download the matching files from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases), including [v0.5.0](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0), and substitute its version below. Save the skill ZIP and its checksum in the same folder; optional evidence bundles are not needed for installation.
 
 Check the archive's checksum. On macOS:
 
@@ -45,19 +43,19 @@ sha256sum -c SHA256SUMS.txt
 On Windows PowerShell, compare this result with the hash in `SHA256SUMS.txt`:
 
 ```powershell
-Get-FileHash .\cinematic-web-director-v0.5.0.zip -Algorithm SHA256
+Get-FileHash .\cinematic-web-director-v0.6.0.zip -Algorithm SHA256
 ```
 
 Extract into a new folder so different releases stay separate:
 
 ```bash
-unzip cinematic-web-director-v0.5.0.zip -d cinematic-web-director-v0.5.0
+unzip cinematic-web-director-v0.6.0.zip -d cinematic-web-director-v0.6.0
 ```
 
-The extracted package is inside `cinematic-web-director-v0.5.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
+The extracted package is inside `cinematic-web-director-v0.6.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
 
 ```bash
-npx skills add "/absolute/path/to/cinematic-web-director-v0.5.0/cinematic-web-director" --agent codex
+npx skills add "/absolute/path/to/cinematic-web-director-v0.6.0/cinematic-web-director" --agent codex
 ```
 
 Choose `claude-code` or `cursor` instead if appropriate. Add `--global` for a user-wide installation. You may also copy the complete inner package directory to your agent's configured skill location. Keep its references, templates and scripts together.
@@ -164,6 +162,8 @@ A skill cannot force model changes without host support or detect every hidden p
 
 ## 7. Approve a sprint batch and let the agent execute
 
+During approved implementation and engineering review, the director applies [Ponytail engineering](references/PONYTAIL_ENGINEERING.md): inspect the connected code, reuse adequate components/platform features, keep changes readable and verify the actual risks. Your approved choreography, visual direction, device behavior and accessibility remain part of the task. A shorter implementation does not justify replacing them with something simpler. This adaptation is included in the skill; it requires no separate Ponytail plugin, hook or session-wide mode.
+
 A sprint should deliver a coherent visitor experience or a justified technical increment. Review the outcomes, scope, inputs, dependencies, acceptance criteria and permitted refinements. Then approve the identified plan/version, for example:
 
 > I approve plan v3, sprints 1–3, with the listed treatments and model configurations. Continue through those sprints, including in-scope fixes and refinements. Report each outcome. Return for a decision if the creative intent, scope or authorized configuration needs to change.
@@ -220,4 +220,4 @@ Before releasing your website, the agent should observe its actual layouts, moti
 
 ## What this release establishes
 
-v0.5.0 is a development pre-release adding concrete review evidence, asset direction, visitor tasks and runtime acceptance to the existing design, motion and device guidance. The [result report](evaluations/V0_5_RESULTS.md) records six actual discovery trials, an approved rendered study and its limits; [open the study](studies/v0.5-moss/index.html) to compare replay with stillness. Automated checks validate the local checker and archive. Small discovery trials, synthetic reviewers and Chrome emulation do not establish human satisfaction, end-to-end site delivery, cross-host portability or physical-device compatibility. Creative range and distinctive motion need further development and real-client evaluation. The skill offers a creative process and makes no promise of awards.
+v0.6.0 is a development candidate adding phase-scoped engineering discipline. Its expressive-direction work is in progress. The earlier [v0.5 result report](evaluations/V0_5_RESULTS.md) records six discovery trials and an approved rendered study, with their limits; [open that study](studies/v0.5-moss/index.html) to compare replay with stillness. Automated checks validate the local checker and archive. Neither those checks nor Ponytail's upstream benchmark claims establish improved art direction, human usability, cross-host portability or physical-device compatibility here. The skill offers a creative process and makes no promise of awards.

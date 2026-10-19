@@ -1,10 +1,12 @@
-# Cinematic Web Director (v0.5.0)
+# Cinematic Web Director (v0.6.0)
 
 An Agent Skills-format creative production partner for creating or redesigning landing pages, portfolios and product websites. It guides discovery, content and copy, site structure, art direction, purposeful motion, approved experiments, production sprints and critique. It accommodates experienced developers who are new to motion design.
 
 The package contains agent instructions and adaptable templates, plus an executable offline eight-check preflight. Creative effectiveness requires real use and rendered website evaluation; the checker does not generate a website or certify its design quality.
 
-v0.5.0 is a **development pre-release**. [Download the skill ZIP](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/download/v0.5.0/cinematic-web-director-v0.5.0.zip), [verify its checksum](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/download/v0.5.0/SHA256SUMS.txt), then follow the [beginner tutorial](TUTORIAL.md). The [release page](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0) includes the standalone tutorial and optional evaluation evidence. Read the [changelog](CHANGELOG.md) for changes since v0.2.0.
+This branch prepares the **v0.6.0 development candidate**. The [published v0.5.0 development pre-release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0) remains available with its ZIP, tutorial and checksums. Follow the [tutorial](TUTORIAL.md) for local-candidate installation or read the [changelog](CHANGELOG.md).
+
+The candidate adds [Ponytail engineering](references/PONYTAIL_ENGINEERING.md) to approved implementation and engineering review. It favors complete, readable changes and adequate reuse while preserving the approved creative behavior, responsive treatments and accessibility. It is a self-contained workflow adaptation with [upstream attribution](third_party/ponytail/NOTICE.md), not an installation of the full Ponytail plugin. The v0.6 expressive-direction evaluations remain in progress.
 
 v0.5 focuses on making creative decisions reviewable: a concise client recommendation with actual visual material, asset direction, visitor-understanding tasks and observable runtime cases. The [creative-review guide](references/CREATIVE_REVIEW.md) and [adaptable review package](templates/REVIEW_PACKAGE.md) connect proposals to evidence. Fresh-context discovery trials use synthetic portfolio, landing-page and product briefs; controls and limits are recorded in the [evaluation plan](evaluations/V0_5_PLAN.md). Test results do not promise creative quality or universal device support.
 
@@ -43,7 +45,7 @@ npx skills add https://github.com/abrahamnaiborhu/cinematic-web-director --agent
 
 Add `--global` to reuse the skill across projects. For an exact version, install the extracted release directory as a local source; see the tutorial.
 
-GitHub installation follows the remote default branch. For the exact v0.5.0 package, download and install the extracted release ZIP as described in the tutorial; future changes to the default branch do not change that tagged package.
+GitHub installation follows the remote default branch and does not select this unpublished candidate automatically. Install a local copy or its generated ZIP to try v0.6.0; use a tagged release ZIP for an exact published version.
 
 For manual installation, copy the complete directory to the target agent's configured skills location and confirm that the session can read it. This repository revision does not install the skill or external tools into your agent.
 
@@ -55,6 +57,7 @@ For manual installation, copy the complete directory to the target agent's confi
 - [Motion direction](references/MOTION_DIRECTION.md): creative initiative, opportunity discovery, concrete temporal proposals, recommendations, client discussion and motion critique.
 - [Device experience](references/DEVICE_EXPERIENCE.md): audience coverage, phone/compact-laptop/large-screen treatments, input, browser chrome, UI icons and evidence limits.
 - [Creative review](references/CREATIVE_REVIEW.md): decision evidence, imagery, visitor tasks and runtime acceptance; [review package](templates/REVIEW_PACKAGE.md).
+- [Ponytail engineering](references/PONYTAIL_ENGINEERING.md): phase-scoped implementation/review discipline with the approved creative experience as part of the completeness requirement.
 - [Design evaluation scenarios](evaluations/DESIGN_DIRECTION.md): synthetic client requests, minimal materials and separate review criteria for fresh-session trials.
 - [Motion evaluation cases](evaluations/MOTION_DIRECTION.md): absent client ideas, existing client-originated animations, sparse briefs, static-site constraints and approved-sprint scope.
 - [Preflight protocol](references/PREFLIGHT_PROTOCOL.md): evidence meanings, phases, paths, observations and release requirements.
@@ -110,10 +113,10 @@ This skill owns creative direction and production coordination; the official sui
 Update the README version and changelog entry, run the tests, then build the archive:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.5.0 --out dist/v0.5.0
+python3 -B scripts/package_release.py --version 0.6.0 --out dist/v0.6.0
 ```
 
-This produces `dist/v0.5.0/cinematic-web-director-v0.5.0.zip` and `dist/v0.5.0/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts and tests. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
+This produces `dist/v0.6.0/cinematic-web-director-v0.6.0.zip` and `dist/v0.6.0/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts, tests and third-party notices. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
 
 ## Validation scope
 

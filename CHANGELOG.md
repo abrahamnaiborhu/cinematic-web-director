@@ -2,6 +2,18 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
+## [0.6.0] - Unreleased
+
+### Added
+
+- A phase-scoped Ponytail adaptation for approved implementation, in-scope refactoring and engineering review: inspect connected behavior, reuse adequate tools, preserve lifecycle/error handling and verify meaningful failure cases.
+- Explicit preservation of approved creative behavior, device treatments and accessibility while simplifying implementation. Discovery and art direction retain their creative scope.
+- Pinned upstream attribution and MIT license; the adaptation works locally without installing Ponytail's session-wide prompt, hooks or host-specific features.
+
+### In progress
+
+- Expressive-direction diagnostics and comparison against published v0.5.0. This candidate does not yet establish improved creative range or rendered motion quality.
+
 ## [0.5.0] - 2026-10-19 (development pre-release)
 
 ### Added

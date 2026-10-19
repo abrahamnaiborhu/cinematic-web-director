@@ -43,6 +43,7 @@ Use for a page, scene, journey or interaction needing detailed direction. Adapt 
 - Performance risks and observation/measurement conditions:
 - Coverage-matrix rows: actual browser/device versus emulation; observations and untested limits:
 - Relevant architecture/state/data decisions and dependencies:
+- Approved creative behavior and device/accessibility requirements that engineering simplification must preserve; permitted tradeoffs:
 - Proposed GSAP skills/plugins or other capabilities, justified by the treatment:
 - Official technical references and runtime verification needed:
 
