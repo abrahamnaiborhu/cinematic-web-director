@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dara Ishan — Poster wall / motion study</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="study.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+  <header class="masthead">
+    <a href="#work" class="wordmark">Dara<br>Ishan<span class="dot" aria-hidden="true">.</span></a>
+    <p>Type-led posters<br>& graphic identities</p>
+    <nav aria-label="Main"><a href="#work">All work</a><a href="#contact-note">Discuss a commission <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12"/></svg></a></nav>
+  </header>
+  <main id="work">
+    <div class="intro">
+      <p class="eyebrow">Independent studies / 01—02</p>
+      <h1>Good type.<br><span>Bad manners.</span></h1>
+      <p class="intro-note">Two self-initiated studies.<br>Pick one. Give it the floor.</p>
+    </div>
+    <div id="comparison" hidden>
+      <fieldset>
+        <legend>Compare the handoff</legend>
+        <label><input type="radio" name="treatment" value="a" checked> A · Shove</label>
+        <label><input type="radio" name="treatment" value="b"> B · Correct</label>
+        <label><input type="radio" name="treatment" value="still"> Still</label>
+      </fieldset>
+      <button id="replay" type="button" disabled>Replay handoff <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12"/></svg></button>
+      <p id="motion-status" role="status">Choose a poster to compare.</p>
+    </div>
+    <section class="collection" aria-label="Poster studies">
+      <article>
+        <a class="poster-link" id="choose-after-hours" href="#after-hours">
+          <span class="poster-label"><span>01 / After Hours</span><svg class="arrow" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12"/></svg></span>
+          <img src="../../evaluations/fixtures/v0.6/adventurous-portfolio/assets/after-hours.svg" width="600" height="800" alt="After Hours: compressed black lettering on acid yellow">
+        </a>
+        <p class="small">Compression and contrasting type scale.</p>
+      </article>
+      <article>
+        <a class="poster-link" id="choose-sideways" href="#sideways">
+          <span class="poster-label"><span>02 / Sideways</span><svg class="arrow" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12"/></svg></span>
+          <img src="../../evaluations/fixtures/v0.6/adventurous-portfolio/assets/sideways.svg" width="600" height="800" alt="Sideways: offset black lettering and diagonal cream bands on vermilion">
+        </a>
+        <p class="small">Direction, interruption and offset alignment.</p>
+      </article>
+    </section>
+    <div class="details">
+      <section class="detail" id="after-hours" aria-labelledby="title-after-hours">
+        <div class="detail-heading"><a href="#work">All work</a><p class="eyebrow">01 / Self-initiated poster study</p><h2 id="title-after-hours" tabindex="-1">After Hours</h2></div>
+        <div class="stage"><img class="artwork" src="../../evaluations/fixtures/v0.6/adventurous-portfolio/assets/after-hours.svg" width="600" height="800" alt="Complete After Hours poster"></div>
+        <div class="context"><p class="theme">Compression.<br>Contrasting scale.</p><p>Contribution: concept, lettering/composition and final artwork.</p><a href="#sideways">Next study: Sideways <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12"/></svg></a></div>
+      </section>
+      <section class="detail" id="sideways" aria-labelledby="title-sideways">
+        <div class="detail-heading"><a href="#work">All work</a><p class="eyebrow">02 / Self-initiated poster study</p><h2 id="title-sideways" tabindex="-1">Sideways</h2></div>
+        <div class="stage"><img class="artwork" src="../../evaluations/fixtures/v0.6/adventurous-portfolio/assets/sideways.svg" width="600" height="800" alt="Complete Sideways poster"></div>
+        <div class="context"><p class="theme">Direction.<br>Interruption.<br>Offset alignment.</p><p>Contribution: concept, lettering/composition and final artwork.</p><a href="#after-hours">Other study: After Hours <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 16 16 4M4 4h12v12"/></svg></a></div>
+      </section>
+    </div>
+  </main>
+  <footer id="contact-note" tabindex="-1"><p class="eyebrow">Study note / fictional portfolio</p><p>This is a motion comparison, not a live commission service. Dara Ishan and these studies are fictional; no real contact destination is supplied.</p><a href="#work">Back to the work</a></footer>
+</body>
+</html>

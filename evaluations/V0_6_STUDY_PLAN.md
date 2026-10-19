@@ -1,6 +1,8 @@
 # v0.6 poster-wall study — proposal revision 1
 
-Status: **awaiting scoped client approval; no study code authorized yet**. This is the next experiment following the [diagnostic observations](V0_6_RESULTS.md), not approval of a portfolio redesign or the v0.6 release.
+Status: **revision 1 approved by the client, 2026-10-19** (reply: “Approve the bounded study”). This is the next experiment following the [diagnostic observations](V0_6_RESULTS.md), not approval of a portfolio redesign or the v0.6 release.
+
+Outcome: the [comparison](../studies/v0.6-poster-wall/index.html) is implemented, with both permitted refinement rounds used and 15 passing local Chrome check groups. [Study notes](../studies/v0.6-poster-wall/README.md) distinguish actual observations from artistic/device limits. Client design adoption remains pending.
 
 ## Decision and source material
 
@@ -42,4 +44,4 @@ Build one initial comparison, then allow **at most two design refinement rounds*
 
 Show the client A, B and stillness with these viewing prompts: Which feels more deliberate, amusing, bland or distracting? Does the interruption strengthen the poster, or draw attention away from it? Does the phone retain the character? Capture the client's actual reaction before recommending adopt/revise/reject. If neither succeeds, record that outcome and use it to propose the next narrow instruction or craft change.
 
-Approval record: pending for **revision 1**. Approval permits this experiment and its bounded refinements, not adoption of a final design.
+Approval record: **revision 1 approved, 2026-10-19**, with the inherited configuration, four viewport cases and at most two refinement rounds described above. Approval permits this experiment and its bounded refinements, not adoption of a final design.

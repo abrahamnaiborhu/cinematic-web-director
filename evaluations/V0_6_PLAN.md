@@ -42,4 +42,4 @@ The release claim must match the evidence: discovery trials establish proposal b
 
 ## Next concrete step
 
-The two baseline diagnostics are complete. The [poster-wall study proposal revision 1](V0_6_STUDY_PLAN.md) names the actual content, two contrasting rhythms and still alternative, permitted files/dependencies, configuration, four viewport cases and two-round refinement boundary. It awaits scoped approval before coding. Use the moving result and client reaction to identify a supported instruction change; a candidate comparison and transfer trial follow only if such a change is warranted.
+The two baseline diagnostics and approved [poster-wall study revision 1](V0_6_STUDY_PLAN.md) are complete within their boundaries. Review the actual [moving comparison](../studies/v0.6-poster-wall/index.html) and [observed results](V0_6_RESULTS.md), then capture the client's artistic judgment. The two allowed design refinement rounds have been used. Use that reaction to identify a supported instruction change; a candidate comparison and transfer trial follow only if such a change is warranted. Further coded study scope needs its own agreement.
