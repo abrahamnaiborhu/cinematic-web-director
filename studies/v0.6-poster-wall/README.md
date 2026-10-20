@@ -42,10 +42,10 @@ The default Chrome binary is the macOS application path. Override `CINEMATIC_CHR
 
 Relevant API sources consulted: [Element.animate](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate), [Animation.cancel](https://developer.mozilla.org/en-US/docs/Web/API/Animation/cancel), [hashchange](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event). Existing host configuration was inherited without a model override; exact model/version/reasoning remains unverified. No new dependency, model handoff, public release or live-site change occurred.
 
-## Decision still open
+## Client decision and scope
 
-The coordinator inspected representative captures and actual temporal/state samples. They show different trajectories and settlement; they do not establish that either feels eccentric, funny or compelling. No independent artistic judgment, human newcomer response or client design adoption has been recorded.
+On 2026-10-20 the client preferred **B · Correct** for this particular situation, explaining that other situations need a different handoff. This establishes an actual contextual preference, not a universal overshoot recipe, approval of the whole portfolio design or a mandate to intensify every movement. The comparison retains both variants and stillness for inspection.
 
-Tell us whether **A, B, stillness or neither** serves the work. Which feels deliberate, amusing, bland or distracting? Does the phone retain the character? Your actual reaction should inform the next narrow craft/instruction change; it must not be inferred from the technical pass.
+The coordinator's inspected captures and temporal samples establish different trajectories and settlement. The client's reaction supports B here; no human newcomer task or broader audience response is inferred. The resulting skill change distinguishes selecting a connection mechanism from tuning its rhythm, and scopes reuse to the relationship it serves. Cross-context discovery still needs its own observation.
 
-Viewport/touch checks are Chrome emulation. No physical Android/iPhone, Safari, Firefox, Edge, assistive-technology, production-network or field-performance result is claimed. The skill's expressive-direction comparison and held-out landing trial remain pending a supported instruction change.
+Viewport/touch checks are Chrome emulation. No physical Android/iPhone, Safari, Firefox, Edge, assistive-technology, production-network or field-performance result is claimed. Subsequent contextual discovery comparisons, including a new landing brief, are recorded in the [v0.6 result report](../../evaluations/V0_6_RESULTS.md); they do not establish broader rendered quality or compatibility.

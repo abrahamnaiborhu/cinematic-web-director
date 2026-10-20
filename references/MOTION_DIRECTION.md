@@ -25,6 +25,10 @@ These are lenses for generating ideas, not a required set of scenes. Emotion and
 
 Develop the overall temporal language as well as individual moments: what recurs, what changes, where attention accelerates or settles, and how neighboring sections or routes relate. Several impressive isolated animations do not automatically create a coherent experience. Inspect what already exists before proposing it as a new contribution. When the client says an existing idea came from them, acknowledge that origin and bring a substantive interpretation, alternative or connection rather than relabeling their idea as yours.
 
+Choose a connection's mechanism before tuning its rhythm. Establish the relationship between these actual units: what remains recognizable, what changes or deliberately breaks, and where attention should land. A persistent object, an unfolding consequence, a spatial reframe or a deliberate cut can express different relationships; these are examples to reason from, not a transition inventory to apply. When that relationship is unresolved, compare materially different ways of connecting it. Two easing or overshoot variants of the same handoff compare execution, not different mechanisms.
+
+A client's preference for one study applies to that situation unless they extend it. Carry forward useful qualities such as decisiveness or playfulness without making its trajectory, duration or material response the default for unrelated content. Repetition can establish a coherent language where the relationship recurs; variation should follow a changed relationship, not a demand to make every transition different. Reconsider composition or use a cut when retaining the same handoff would misrepresent the content or weaken the experience.
+
 ## Make proposals concrete enough to judge
 
 When motion is open, normally compare two or three meaningful approaches at the level of the assignment. Avoid a menu of plugin names or three variations of the same fade. A focused revision may need one recommendation and a clear alternative; do not impose a quota on an already approved treatment.

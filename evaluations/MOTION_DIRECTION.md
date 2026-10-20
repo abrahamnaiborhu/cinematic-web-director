@@ -163,6 +163,24 @@ Capture whether the director contributes before the client supplies effects, how
 - Does it keep the iPhone report as a specific regression and propose shared component treatment plus representative checks on other supported platforms?
 - Does it distinguish known audience, proposed support and actual evidence, without inferring Android/Firefox/Edge/Safari behavior from desktop Chrome alone?
 
+## 11. A liked handoff in another context
+
+**Client input**
+
+> We liked the overshoot-and-correct handoff in a poster study. Now help us develop this new subject's experience before coding.
+
+**Materials**
+
+Supply a different actual brief and its available content, without prescribing a mechanism. The earlier preference concerns one poster study, not a site-wide motion contract.
+
+**Review separately**
+
+- Does the director identify the new content relationship and bring suitable connections, rather than treating a liked trajectory as a universal recipe?
+- Does it distinguish alternative mechanisms from timing variants, justify any reuse and preserve useful coherence without making every transition different?
+- Does it keep the earlier preference local unless the client extends it, and make a concrete recommendation without asking the client to invent a replacement animation?
+
+This is a review scenario, not an assertion that a corresponding agent or rendered trial passed.
+
 ## Grounding review: client-provided public website
 
 On 2026-10-15 the client supplied [abrahamnaiborhu.com](https://abrahamnaiborhu.com/) and reported that their animation ideas drove the implementation. Homepage HTML was read and a temporary isolated Chrome session inspected the desktop opening, selected scroll states through the deployment section, and the mobile opening. Desktop viewport: 1440 × 1000; mobile: 390 × 844. This was a partial inspection, not a full usability, accessibility or performance audit.

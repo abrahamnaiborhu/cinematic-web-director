@@ -2,7 +2,9 @@
 
 Status: diagnostics authorized by the client's “oke continue,” 2026-10-19. Baseline: published v0.5.0 at `42fe52d`. This plan concerns the skill; it does not approve a website build, motion prototype, new model configuration or publication.
 
-Diagnostic update: both baseline sessions and their follow-ups are complete; see [actual observations](V0_6_RESULTS.md). v0.5 already proposed expressive behavior and contrasting rhythms when the brief invited them, while respecting the calm control. Do not rewrite the instructions to fix a proposal failure these trials did not demonstrate. Moving evidence is the next useful investigation.
+Diagnostic update: both baseline sessions and their follow-ups are complete; see [actual observations](V0_6_RESULTS.md). v0.5 already proposed expressive behavior and contrasting rhythms when the brief invited them, while respecting the calm control. Do not rewrite the instructions to fix a proposal failure these trials did not demonstrate. At that stage, moving evidence was the next useful investigation.
+
+Update, 2026-10-20: the approved moving study is complete and the client prefers B for that situation, emphasizing that other situations need different handoffs. A narrow contextual-mechanism clarification and three fresh candidate discovery trials are complete; actual findings and limits are in the result report. This does not establish a universal motion style or authorize a public release.
 
 ## Problem and intended improvement
 
@@ -42,4 +44,4 @@ The release claim must match the evidence: discovery trials establish proposal b
 
 ## Next concrete step
 
-The two baseline diagnostics and approved [poster-wall study revision 1](V0_6_STUDY_PLAN.md) are complete within their boundaries. Review the actual [moving comparison](../studies/v0.6-poster-wall/index.html) and [observed results](V0_6_RESULTS.md), then capture the client's artistic judgment. The two allowed design refinement rounds have been used. Use that reaction to identify a supported instruction change; a candidate comparison and transfer trial follow only if such a change is warranted. Further coded study scope needs its own agreement.
+The diagnostics, approved [poster-wall study revision 1](V0_6_STUDY_PLAN.md), client reaction and supported discovery comparisons are complete within their boundaries. Use the contextual guidance on the next actual brief and review proposed mechanisms against that content, then observe the approved implementation before judging craft. B remains the preference for this poster situation. The study's two refinement rounds have been used; further coded study scope needs its own agreement. Public release, broader client adoption and cross-host/physical-device claims remain separate decisions/evidence.

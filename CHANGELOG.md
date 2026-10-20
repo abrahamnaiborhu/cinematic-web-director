@@ -9,6 +9,7 @@ Versioned GitHub releases use three-part tags. v0.2.0 is the first published rel
 - A phase-scoped Ponytail adaptation for approved implementation, in-scope refactoring and engineering review: inspect connected behavior, reuse adequate tools, preserve lifecycle/error handling and verify meaningful failure cases.
 - Explicit preservation of approved creative behavior, device treatments and accessibility while simplifying implementation. Discovery and art direction retain their creative scope.
 - Pinned upstream attribution and MIT license; the adaptation works locally without installing Ponytail's session-wide prompt, hooks or host-specific features.
+- Contextual handoff direction: choose the content relationship and connection mechanism before timing variants; scope client preferences to the situation and justify recurrence or variation. A poster-study preference for B does not establish an overshoot default elsewhere.
 
 ### In progress
 

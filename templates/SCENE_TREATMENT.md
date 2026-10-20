@@ -13,6 +13,7 @@ Use for a page, scene, journey or interaction needing detailed direction. Adapt 
 - Specific content/evidence and connection to the chosen direction:
 - Existing presentation retained or changed, if consequential, and why:
 - Connection to the wider site and onward navigation:
+- Relationship this connection expresses and chosen mechanism; why it fits here; rhythm variants versus different mechanisms; scope of any client preference carried forward:
 - Motion idea: client input and director's proposed interpretation/alternative; recommendation and decision:
 
 ## Storyboard and motion beats

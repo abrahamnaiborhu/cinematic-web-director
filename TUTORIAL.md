@@ -215,6 +215,7 @@ Before releasing your website, the agent should observe its actual layouts, moti
 | Alternatives look like the same template | Compare content framing, composition and visitor behavior, using representative real content |
 | Agent adds effects from a style recipe | Ask for each effect's purpose and compare a calmer alternative before expanding the treatment |
 | Agent waits for you to invent every animation | Point to motion direction: it should bring content-specific alternatives, a recommendation and an informed experiential question |
+| Agent repeats a handoff you liked in another context | Ask which relationship it expresses here; compare different connection mechanisms before tuning timing, while retaining useful coherence |
 | Motion only works on a large screen | Review width and height gates; ask for an authored phone/compact-laptop treatment and the relevant runtime evidence |
 | Link arrows render as emoji | Confirm the reported OS/browser and actual glyphs; reuse deliberate vector icons and verify in those environments |
 

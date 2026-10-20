@@ -2,7 +2,7 @@
 
 Status: **revision 1 approved by the client, 2026-10-19** (reply: “Approve the bounded study”). This is the next experiment following the [diagnostic observations](V0_6_RESULTS.md), not approval of a portfolio redesign or the v0.6 release.
 
-Outcome: the [comparison](../studies/v0.6-poster-wall/index.html) is implemented, with both permitted refinement rounds used and 15 passing local Chrome check groups. [Study notes](../studies/v0.6-poster-wall/README.md) distinguish actual observations from artistic/device limits. Client design adoption remains pending.
+Outcome: the [comparison](../studies/v0.6-poster-wall/index.html) is implemented, with both permitted refinement rounds used and 15 passing local Chrome check groups. On 2026-10-20 the client preferred B for this situation and emphasized that other situations need different handoffs. [Study notes](../studies/v0.6-poster-wall/README.md) record that contextual preference and artistic/device limits; whole-site adoption is not inferred.
 
 ## Decision and source material
 
