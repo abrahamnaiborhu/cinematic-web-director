@@ -2,7 +2,7 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
-## [0.6.0] - Unreleased
+## [0.6.0] - 2026-10-20 (development pre-release)
 
 ### Added
 
@@ -11,9 +11,13 @@ Versioned GitHub releases use three-part tags. v0.2.0 is the first published rel
 - Pinned upstream attribution and MIT license; the adaptation works locally without installing Ponytail's session-wide prompt, hooks or host-specific features.
 - Contextual handoff direction: choose the content relationship and connection mechanism before timing variants; scope client preferences to the situation and justify recurrence or variation. A poster-study preference for B does not establish an overshoot default elsewhere.
 
-### In progress
+### Validation and limits
 
-- Expressive-direction diagnostics and comparison against published v0.5.0. This candidate does not yet establish improved creative range or rendered motion quality.
+- Two baseline and three updated fresh-context discovery sessions, each with a client continuation; contextual mechanisms and rhythm variants were distinguished while the calm product control stayed static. These small written trials do not establish causal artistic improvement.
+- One approved poster-motion comparison, two design refinements and 15 passing local Chrome check groups at phone, compact-laptop and larger viewports. The client preferred B for that poster situation; the choice is not a universal overshoot recipe or whole-site adoption.
+- An independent source-review trial found incomplete listener teardown while preserving approved choreography. It is bounded evidence, not proof of general review effectiveness or upstream benchmark savings.
+- Published with the complete skill ZIP, tutorial, separate checksums and optional evaluation-evidence bundle. The package includes v0.6 reports, fixtures and the inspectable motion study; machine-local prefixes are normalized in public evidence.
+- Broader rendered art direction, real-client outcomes, cross-host/fallback-model behavior and physical-device/cross-browser compatibility need further evidence. The full Ponytail plugin, session modes and hooks are not installed by this skill.
 
 ## [0.5.0] - 2026-10-19 (development pre-release)
 

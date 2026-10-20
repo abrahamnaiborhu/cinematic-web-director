@@ -4,11 +4,13 @@ An Agent Skills-format creative production partner for creating or redesigning l
 
 The package contains agent instructions and adaptable templates, plus an executable offline eight-check preflight. Creative effectiveness requires real use and rendered website evaluation; the checker does not generate a website or certify its design quality.
 
-This branch prepares the **v0.6.0 development candidate**. The [published v0.5.0 development pre-release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0) remains available with its ZIP, tutorial and checksums. Follow the [tutorial](TUTORIAL.md) for local-candidate installation or read the [changelog](CHANGELOG.md).
+**v0.6.0 is a development pre-release**, published on 2026-10-20. Download its ZIP, tutorial and checksums from the [v0.6.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.6.0), follow the [tutorial](TUTORIAL.md), or read the [changelog](CHANGELOG.md). The earlier [v0.5.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0) remains available.
 
-The candidate adds [Ponytail engineering](references/PONYTAIL_ENGINEERING.md) to approved implementation and engineering review. It favors complete, readable changes and adequate reuse while preserving the approved creative behavior, responsive treatments and accessibility. It is a self-contained workflow adaptation with [upstream attribution](third_party/ponytail/NOTICE.md), not an installation of the full Ponytail plugin. The v0.6 expressive-direction evaluations remain in progress.
+The release adds [Ponytail engineering](references/PONYTAIL_ENGINEERING.md) to approved implementation and engineering review. It favors complete, readable changes and adequate reuse while preserving the approved creative behavior, responsive treatments and accessibility. It is a self-contained workflow adaptation with [upstream attribution](third_party/ponytail/NOTICE.md), not an installation of the full Ponytail plugin.
 
 Motion direction now distinguishes choosing a connection mechanism from tuning its rhythm. A client's preference for one study stays local unless extended; other content relationships can justify another connection or a deliberate cut. Coherence can still justify repeating a mechanism. This is guidance for contextual judgment, not a required transition menu or a claim that every handoff must be different.
+
+The [v0.6 results](evaluations/V0_6_RESULTS.md) record two baseline and three updated discovery sessions, a source-review trial and an approved [poster motion comparison](studies/v0.6-poster-wall/index.html). The comparison received two refinements and 15 passing local Chrome check groups. The client preferred B for that poster situation; broader artistic quality, cross-host behavior and physical-device compatibility remain unestablished. The optional evidence ZIP preserves actual outputs and captures with machine-local path prefixes normalized.
 
 v0.5 focuses on making creative decisions reviewable: a concise client recommendation with actual visual material, asset direction, visitor-understanding tasks and observable runtime cases. The [creative-review guide](references/CREATIVE_REVIEW.md) and [adaptable review package](templates/REVIEW_PACKAGE.md) connect proposals to evidence. Fresh-context discovery trials use synthetic portfolio, landing-page and product briefs; controls and limits are recorded in the [evaluation plan](evaluations/V0_5_PLAN.md). Test results do not promise creative quality or universal device support.
 
@@ -47,7 +49,7 @@ npx skills add https://github.com/abrahamnaiborhu/cinematic-web-director --agent
 
 Add `--global` to reuse the skill across projects. For an exact version, install the extracted release directory as a local source; see the tutorial.
 
-GitHub installation follows the remote default branch and does not select this unpublished candidate automatically. Install a local copy or its generated ZIP to try v0.6.0; use a tagged release ZIP for an exact published version.
+GitHub installation follows the remote default branch. Use the v0.6.0 release ZIP for that exact version; later default-branch updates may differ.
 
 For manual installation, copy the complete directory to the target agent's configured skills location and confirm that the session can read it. This repository revision does not install the skill or external tools into your agent.
 

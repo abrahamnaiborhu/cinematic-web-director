@@ -1,4 +1,4 @@
-# Cinematic Web Director — Getting Started (v0.6.0 candidate)
+# Cinematic Web Director — Getting Started (v0.6.0 development pre-release)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
@@ -20,13 +20,13 @@ Run one command, not all three unless you use all three agents. The GitHub sourc
 
 ### Install the exact ZIP release
 
-v0.6.0 is an unpublished candidate. Build its ZIP from this repository revision:
+Download **cinematic-web-director-v0.6.0.zip** and **SHA256SUMS.txt** from the [v0.6.0 release page](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.6.0). The ZIP includes the tutorial and complete skill. To build the same package from the v0.6.0 source checkout:
 
 ```bash
 python3 -B scripts/package_release.py --version 0.6.0 --out dist/v0.6.0
 ```
 
-Use `cinematic-web-director-v0.6.0.zip` and `SHA256SUMS.txt` in `dist/v0.6.0/`. For a published package, download the matching files from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases), including [v0.5.0](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0), and substitute its version below. Save the skill ZIP and its checksum in the same folder; optional evidence bundles are not needed for installation.
+The command produces those files in `dist/v0.6.0/`. Save the skill ZIP and its checksum in the same folder. The optional evidence ZIP has its own **EVIDENCE_SHA256SUMS.txt** and is not needed for installation. Earlier versions remain available from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases); substitute the matching version if installing one of them.
 
 Check the archive's checksum. On macOS:
 
@@ -221,4 +221,4 @@ Before releasing your website, the agent should observe its actual layouts, moti
 
 ## What this release establishes
 
-v0.6.0 is a development candidate adding phase-scoped engineering discipline. Its expressive-direction work is in progress. The earlier [v0.5 result report](evaluations/V0_5_RESULTS.md) records six discovery trials and an approved rendered study, with their limits; [open that study](studies/v0.5-moss/index.html) to compare replay with stillness. Automated checks validate the local checker and archive. Neither those checks nor Ponytail's upstream benchmark claims establish improved art direction, human usability, cross-host portability or physical-device compatibility here. The skill offers a creative process and makes no promise of awards.
+v0.6.0 is a development pre-release adding phase-scoped engineering discipline and contextual handoff direction. The [v0.6 result report](evaluations/V0_6_RESULTS.md) records five discovery sessions, a source-review trial and an approved [poster comparison](studies/v0.6-poster-wall/index.html), with their limits. The client preferred its B treatment for that situation. The earlier [v0.5 results](evaluations/V0_5_RESULTS.md) and [Moss study](studies/v0.5-moss/index.html) remain included. Automated checks validate the local checker and archive. Neither those checks nor Ponytail's upstream benchmarks establish broad artistic improvement, human usability, cross-host portability or physical-device compatibility here. The skill offers a creative process and makes no promise of awards.
