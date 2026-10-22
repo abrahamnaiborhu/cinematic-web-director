@@ -115,7 +115,7 @@ class PreflightTests(unittest.TestCase):
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(source.read_bytes())
         for name in ('DESIGN_DIRECTION.md', 'MOTION_DIRECTION.md', 'DEVICE_EXPERIENCE.md',
-                     'CREATIVE_REVIEW.md', 'PONYTAIL_ENGINEERING.md'):
+                     'CREATIVE_REVIEW.md', 'PONYTAIL_ENGINEERING.md', 'JCODEMUNCH_WORKFLOW.md'):
             guidance = skill / 'references' / name
             original = guidance.read_bytes()
             for state in ('missing', 'blank'):

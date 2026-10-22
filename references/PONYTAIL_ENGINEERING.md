@@ -12,6 +12,8 @@ When the direction is unresolved, use discovery and art direction to develop it.
 
 Before editing, inspect the touched code and connected callers, state/data ownership, tests, fixtures and configuration. Identify the real change boundary and expected use/load. A small diff can still break an untouched caller or leave event listeners active after navigation.
 
+Use the required [jcodemunch workflow](JCODEMUNCH_WORKFLOW.md) for supported source discovery and connected-code retrieval, then verify live edit contents and refresh the index. Its coverage limits do not justify missing caller/lifecycle checks, and an index result does not replace tests or creative review.
+
 Prefer an adequate existing component/pattern, then suitable platform/standard-library features and installed dependencies. Add a dependency or abstraction when the approved behavior, lifecycle or maintainability justifies it. Compare actual capabilities and total implementation burden; a clever one-liner or a hand-built replacement for a useful library can be harder to maintain.
 
 Use shared fixes for shared causes, preserve the project's working interfaces and finish the affected integration. Avoid speculative configuration, unused extension points and unrelated rewrites. Keep code readable. Reuse implementation where it fits without inheriting presentation the client intended to replace.

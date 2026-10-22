@@ -24,6 +24,8 @@ python3 scripts/preflight.py --project /absolute/path/to/site --agent codex --ph
 
 The checker supplies local evidence. Its gate is technical and scoped; the agent must separately establish creative approval, live capabilities and runtime behavior. **8/8 reviewed means coverage, not eight successful installations.** Never turn a file, package declaration or model name into evidence of a capability you have not observed.
 
+For source-dependent work, follow [references/JCODEMUNCH_WORKFLOW.md](references/JCODEMUNCH_WORKFLOW.md). jcodemunch is required for supported code exploration: verify the current repository/index, retrieve focused context and refresh after edits. Missing session access requires repair or an explicitly approved scoped fallback; creative discovery can continue. Confirm applicable licensing before activation.
+
 ## Creative and production workflow
 
 Read the relevant stages in [references/CREATIVE_WORKFLOW.md](references/CREATIVE_WORKFLOW.md). It contains the discovery conversation, redesign intake, readiness gates, prototype agreement, sprint execution, model handoff and critique procedures.

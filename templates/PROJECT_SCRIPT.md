@@ -1,6 +1,8 @@
 # Project Script — [project name]
 
 Status: DRAFT — not approved
+
+Code-exploration readiness when source work is needed: jcodemunch connection/repo identity/freshness and coverage evidence, or approved fallback scope; applicable license/use basis:
 Version / date:
 
 The director maintains this evolving brief with the client. Adapt fields to the assignment and preserve equivalent existing documents. Empty fields and a filename are not approvals.

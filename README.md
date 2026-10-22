@@ -1,10 +1,12 @@
-# Cinematic Web Director (v0.6.0)
+# Cinematic Web Director (v0.7.0)
 
 An Agent Skills-format creative production partner for creating or redesigning landing pages, portfolios and product websites. It guides discovery, content and copy, site structure, art direction, purposeful motion, approved experiments, production sprints and critique. It accommodates experienced developers who are new to motion design.
 
 The package contains agent instructions and adaptable templates, plus an executable offline eight-check preflight. Creative effectiveness requires real use and rendered website evaluation; the checker does not generate a website or certify its design quality.
 
-**v0.6.0 is a development pre-release**, published on 2026-10-20. Download its ZIP, tutorial and checksums from the [v0.6.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.6.0), follow the [tutorial](TUTORIAL.md), or read the [changelog](CHANGELOG.md). The earlier [v0.5.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.5.0) remains available.
+This branch prepares the **v0.7.0 development candidate** with a required [jcodemunch code-exploration workflow](references/JCODEMUNCH_WORKFLOW.md). The MCP server is separately installed/licensed; the offline checker cannot verify its live connection. Shared client setup, required usage and per-project index readiness are distinct. See the [integration record](evaluations/JCODEMUNCH_INTEGRATION_PLAN.md).
+
+The [v0.6.0 development pre-release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.6.0), published on 2026-10-20, remains the latest published version. Follow the [tutorial](TUTORIAL.md) for published or local-candidate installation, or read the [changelog](CHANGELOG.md). Its tag and release artifacts remain unchanged.
 
 The release adds [Ponytail engineering](references/PONYTAIL_ENGINEERING.md) to approved implementation and engineering review. It favors complete, readable changes and adequate reuse while preserving the approved creative behavior, responsive treatments and accessibility. It is a self-contained workflow adaptation with [upstream attribution](third_party/ponytail/NOTICE.md), not an installation of the full Ponytail plugin.
 
@@ -49,7 +51,7 @@ npx skills add https://github.com/abrahamnaiborhu/cinematic-web-director --agent
 
 Add `--global` to reuse the skill across projects. For an exact version, install the extracted release directory as a local source; see the tutorial.
 
-GitHub installation follows the remote default branch. Use the v0.6.0 release ZIP for that exact version; later default-branch updates may differ.
+GitHub installation follows the remote default branch and does not select this unpublished candidate automatically. Use the v0.6.0 release ZIP for that published version, or build/install this branch's local v0.7.0 ZIP.
 
 For manual installation, copy the complete directory to the target agent's configured skills location and confirm that the session can read it. This repository revision does not install the skill or external tools into your agent.
 
@@ -117,10 +119,10 @@ This skill owns creative direction and production coordination; the official sui
 Update the README version and changelog entry, run the tests, then build the archive:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.6.0 --out dist/v0.6.0
+python3 -B scripts/package_release.py --version 0.7.0 --out dist/v0.7.0
 ```
 
-This produces `dist/v0.6.0/cinematic-web-director-v0.6.0.zip` and `dist/v0.6.0/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts, tests and third-party notices. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
+This produces `dist/v0.7.0/cinematic-web-director-v0.7.0.zip` and `dist/v0.7.0/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts, tests and third-party notices. The jcodemunch server itself is not redistributed. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
 
 ## Validation scope
 

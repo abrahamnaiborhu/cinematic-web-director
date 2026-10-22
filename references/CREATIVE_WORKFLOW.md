@@ -134,6 +134,8 @@ Provide a compact transfer record referencing approved facts, creative intent, a
 
 An approved plan authorizes continuous execution through its sufficiently specified sprints. Do not stop at each boundary for ceremonial reapproval. A sprint delivers a coherent improvement to a visitor experience: a scene plus connection, a gallery/detail journey, a product demonstration or an architecture change with validated integration.
 
+For source-dependent work, verify the required [jcodemunch connection/index](JCODEMUNCH_WORKFLOW.md) or the client's existing scoped fallback before proceeding. Use focused retrieval and refresh after changes. Pure creative planning is not blocked by a missing code index.
+
 Use [Ponytail engineering](PONYTAIL_ENGINEERING.md) for the implementation and engineering review: inspect connected code, prefer adequate reuse/platform features, finish the integration and verify meaningful failure cases. Simplification must preserve the approved creative experience and device/accessibility treatments; it does not reopen discovery or authorize a visual downgrade.
 
 For each sprint:

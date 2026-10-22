@@ -19,6 +19,7 @@ RELEASE_FILES = (
     'references/DEVICE_EXPERIENCE.md',
     'references/CREATIVE_REVIEW.md', 'templates/REVIEW_PACKAGE.md',
     'references/PONYTAIL_ENGINEERING.md',
+    'references/JCODEMUNCH_WORKFLOW.md', 'evaluations/JCODEMUNCH_INTEGRATION_PLAN.md',
     'third_party/ponytail/LICENSE', 'third_party/ponytail/NOTICE.md',
     'evaluations/PONYTAIL_INTEGRATION.md',
     'evaluations/fixtures/v0.6/engineering-review/request.txt',

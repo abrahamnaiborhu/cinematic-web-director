@@ -1,6 +1,8 @@
-# Cinematic Web Director — Getting Started (v0.6.0 development pre-release)
+# Cinematic Web Director — Getting Started (v0.7.0 candidate)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
+
+This checkout is an unpublished v0.7.0 candidate adding a separately installed/licensed [jcodemunch requirement](references/JCODEMUNCH_WORKFLOW.md) for source-dependent work. Build it with `python3 -B scripts/package_release.py --version 0.7.0 --out dist/v0.7.0`, then install the extracted local directory. The published v0.6.0 instructions below remain available for that exact release; its ZIP does not contain this new requirement. Installing the skill alone does not configure either client's MCP server.
 
 ## 1. Install the skill
 

@@ -13,13 +13,15 @@ The checker is offline and read-only unless `--out` is supplied. It reports loca
 | 1 | AI agent identification | Explicit declaration or tentative environment inference | Confirm the active agent and permissions in-session; declarations/inferences remain UNVERIFIED in the script |
 | 2 | Cinematic Web Director Skill | Readable entry point, required references and templates; basic name metadata | Confirm loaded instructions; an incomplete package blocks every phase |
 | 3 | Official GreenSock Skills | Relevant readable skill files in configured roots | Confirm active access and read relevant resources; missing required topics block GSAP prototype/production unless scoped access evidence or an approved docs fallback is supplied |
-| 4 | Project environment | Individual manifests or a static `index.html`; selected application root | Confirm real sources, architecture and unusual layouts; ambiguity blocks coding until a source is selected |
+| 4 | Project environment | Individual manifests or a static `index.html`; selected application root | Confirm real sources and architecture; verify required jcodemunch access, repo identity/freshness for source work under `JCODEMUNCH_WORKFLOW.md`. Missing access blocks dependent code work pending repair or approved fallback; creative-only/empty-project scope may defer it |
 | 5 | Project script | Readable nonempty script/brief, including an explicitly supplied path | Read facts, readiness, approval versions and scope; missing brief is normal in discovery and blocks coding; file presence never proves approval |
 | 6 | GSAP runtime | Valid GSAP package metadata for the declaring application, including project-local hoisting | Verify real imports/CDN and required plugins; a declaration alone is UNVERIFIED; missing runtime blocks GSAP coding unless actual scoped runtime observation is supplied |
 | 7 | Browser and visual testing | Potential tools; supplied PNG structure and dimensions | Perform real rendered QA; release requires distinct desktop/mobile capture widths plus explicit attestation that navigation, relevant motion/interactions and accessibility alternatives were checked |
 | 8 | Optional creative tools | Declared optional libraries and executable locations | Select and verify tools only where the approved treatment needs them; absence does not block or degrade readiness |
 
 The inventory keeps application dependencies separate. It does not assume that a sibling app's GSAP installation, framework or state library belongs to the selected website. Relevant framework guidance is inferred from the selected manifest, not proof that the app runs.
+
+For [jcodemunch](JCODEMUNCH_WORKFLOW.md), check 4's live connection/index requirement is agent-side. The offline checker continues to inspect local project files only; its VERIFIED environment result is not an MCP attestation or permission to bypass the required tool. Record actual queries and coverage, or the client's bounded fallback agreement, with the project evidence.
 
 ## Status and gate meanings
 
