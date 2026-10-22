@@ -2,10 +2,12 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
-## [0.7.0] - Unreleased
+## [0.7.0] - 2026-10-22 (development pre-release)
 
 ### Added
 
+- Whole-experience planning before detailed choreography: real readiness/loading, visitor control, recovery, route/return and lifecycle ownership. Optional loaders have explicit release and bounded recovery behavior.
+- Project-specific measurable performance budgets and an early connected production slice, with proportionate planning for simple sites and explicit runtime-evidence limits.
 - Required jcodemunch-first supported source exploration for code-dependent work, with project identity/freshness checks, focused retrieval and incremental refresh. Unsupported material/live edit confirmation can use targeted native reads; unavailable MCP access requires repair or an approved bounded fallback.
 - Shared Codex/Claude Code setup guidance and explicit licensing/environment boundaries. Creative-only work and empty projects may defer indexing. The separately installed server is not included in the skill ZIP.
 - An agent-side index readiness requirement within project-environment check 4, preserving eight preflight categories. The offline checker verifies the guidance resource, not a live MCP connection.

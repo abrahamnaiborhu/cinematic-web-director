@@ -1,8 +1,8 @@
-# Cinematic Web Director — Getting Started (v0.7.0 candidate)
+# Cinematic Web Director — Getting Started (v0.7.0 development pre-release)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
-This checkout is an unpublished v0.7.0 candidate adding a separately installed/licensed [jcodemunch requirement](references/JCODEMUNCH_WORKFLOW.md) for source-dependent work. Build it with `python3 -B scripts/package_release.py --version 0.7.0 --out dist/v0.7.0`, then install the extracted local directory. The published v0.6.0 instructions below remain available for that exact release; its ZIP does not contain this new requirement. Installing the skill alone does not configure either client's MCP server.
+v0.7.0 adds whole-experience planning and a separately installed/licensed [jcodemunch requirement](references/JCODEMUNCH_WORKFLOW.md) for source-dependent work. Installing the skill alone does not configure either client's MCP server. Creative discussion can begin before code tools are available.
 
 ## 1. Install the skill
 
@@ -22,13 +22,13 @@ Run one command, not all three unless you use all three agents. The GitHub sourc
 
 ### Install the exact ZIP release
 
-Download **cinematic-web-director-v0.6.0.zip** and **SHA256SUMS.txt** from the [v0.6.0 release page](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.6.0). The ZIP includes the tutorial and complete skill. To build the same package from the v0.6.0 source checkout:
+Download **cinematic-web-director-v0.7.0.zip** and **SHA256SUMS.txt** from the [v0.7.0 release page](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.7.0). The ZIP includes the tutorial and complete skill. To build the same package from the v0.7.0 source checkout:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.6.0 --out dist/v0.6.0
+python3 -B scripts/package_release.py --version 0.7.0 --out dist/v0.7.0
 ```
 
-The command produces those files in `dist/v0.6.0/`. Save the skill ZIP and its checksum in the same folder. The optional evidence ZIP has its own **EVIDENCE_SHA256SUMS.txt** and is not needed for installation. Earlier versions remain available from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases); substitute the matching version if installing one of them.
+The command produces those files in `dist/v0.7.0/`. Save the skill ZIP and its checksum in the same folder. The optional evidence ZIP has its own **EVIDENCE_SHA256SUMS.txt** and is not needed for installation. Earlier versions remain available from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases); substitute the matching version if installing one of them.
 
 Check the archive's checksum. On macOS:
 
@@ -45,24 +45,65 @@ sha256sum -c SHA256SUMS.txt
 On Windows PowerShell, compare this result with the hash in `SHA256SUMS.txt`:
 
 ```powershell
-Get-FileHash .\cinematic-web-director-v0.6.0.zip -Algorithm SHA256
+Get-FileHash .\cinematic-web-director-v0.7.0.zip -Algorithm SHA256
 ```
 
 Extract into a new folder so different releases stay separate:
 
 ```bash
-unzip cinematic-web-director-v0.6.0.zip -d cinematic-web-director-v0.6.0
+unzip cinematic-web-director-v0.7.0.zip -d cinematic-web-director-v0.7.0
 ```
 
-The extracted package is inside `cinematic-web-director-v0.6.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
+The extracted package is inside `cinematic-web-director-v0.7.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
 
 ```bash
-npx skills add "/absolute/path/to/cinematic-web-director-v0.6.0/cinematic-web-director" --agent codex
+npx skills add "/absolute/path/to/cinematic-web-director-v0.7.0/cinematic-web-director" --agent codex
 ```
 
 Choose `claude-code` or `cursor` instead if appropriate. Add `--global` for a user-wide installation. You may also copy the complete inner package directory to your agent's configured skill location. Keep its references, templates and scripts together.
 
 Confirm in your agent that it can discover and read `cinematic-web-director/SKILL.md`; reopen the session if needed. An installation command succeeding does not prove that a particular session has loaded the skill.
+
+### Set up code exploration separately
+
+For non-commercial source work, install the pinned MCP server with `uv tool install jcodemunch-mcp==1.108.384` if uv is available. Resolve the installed executable (for example `~/.local/bin/jcodemunch-mcp` on a uv installation that uses that directory); do not assume that example is your actual binary path. If uv is absent, follow [upstream installation and client setup](https://github.com/jgravelle/jcodemunch-mcp/blob/main/CLIENTS.md). Commercial work requires an applicable upstream license before use.
+
+For Codex, add a user-level entry to `~/.codex/config.toml`, preserving other settings:
+
+```toml
+[mcp_servers.jcodemunch]
+command = "/absolute/path/to/jcodemunch-mcp"
+startup_timeout_sec = 20
+tool_timeout_sec = 90
+
+[mcp_servers.jcodemunch.env]
+JCODEMUNCH_SHARE_SAVINGS = "0"
+JCODEMUNCH_USE_AI_SUMMARIES = "false"
+JCODEMUNCH_ALLOW_REMOTE_SUMMARIZER = "false"
+JCODEMUNCH_ALLOW_PAID_SUMMARIES = "false"
+JCODEMUNCH_TOOL_SURFACE = "counter"
+```
+
+For Claude Code, merge the following named entry into the existing user-level `mcpServers` map in `~/.claude.json`. Back up settings first; do not replace the whole configuration:
+
+```json
+{
+  "jcodemunch": {
+    "type": "stdio",
+    "command": "/absolute/path/to/jcodemunch-mcp",
+    "args": [],
+    "env": {
+      "JCODEMUNCH_SHARE_SAVINGS": "0",
+      "JCODEMUNCH_USE_AI_SUMMARIES": "false",
+      "JCODEMUNCH_ALLOW_REMOTE_SUMMARIZER": "false",
+      "JCODEMUNCH_ALLOW_PAID_SUMMARIES": "false",
+      "JCODEMUNCH_TOOL_SURFACE": "counter"
+    }
+  }
+}
+```
+
+Reopen each client, then ask the agent to verify actual jcodemunch access, the current repository folder/ID and index freshness. Registration alone is insufficient. This skill already requires the workflow when loaded. To apply the same source-work policy beyond this skill, add an appropriately scoped instruction to Codex's user `AGENTS.md` and Claude Code's user `CLAUDE.md`; follow [the workflow reference](references/JCODEMUNCH_WORKFLOW.md) for licensing, coverage and unavailable-tool behavior. Other hosts need their own MCP setup. User-level availability does not authorize indexing every project automatically.
 
 ## 2. Begin with what you want to build or improve
 
@@ -107,6 +148,8 @@ The director should help establish three checkpoints:
 1. **Brief and structure:** purpose, visitors, content, pages and important journeys.
 2. **Creative direction:** the selected concept, representative compositions, visual language and continuity.
 3. **Upcoming production batch:** detailed treatments, architecture changes, model responsibilities, acceptance criteria and sprint scope.
+
+Before detailed choreography, expect the director to connect loading/readiness, visitor control, failure recovery, navigation and return, and propose measurable resource/performance budgets for the project. A loader is optional; it must not hide a permanently locked or half-initialized site. Agree an early connected production slice alongside scene-level treatments. Simple sites can keep this plan very short.
 
 A landing page can use a focused sequence. A portfolio can use independent case studies and exploratory browsing. A product website can offer several routes. A dramatic climax, a single CTA and scroll-driven scenes are optional.
 
@@ -223,4 +266,4 @@ Before releasing your website, the agent should observe its actual layouts, moti
 
 ## What this release establishes
 
-v0.6.0 is a development pre-release adding phase-scoped engineering discipline and contextual handoff direction. The [v0.6 result report](evaluations/V0_6_RESULTS.md) records five discovery sessions, a source-review trial and an approved [poster comparison](studies/v0.6-poster-wall/index.html), with their limits. The client preferred its B treatment for that situation. The earlier [v0.5 results](evaluations/V0_5_RESULTS.md) and [Moss study](studies/v0.5-moss/index.html) remain included. Automated checks validate the local checker and archive. Neither those checks nor Ponytail's upstream benchmarks establish broad artistic improvement, human usability, cross-host portability or physical-device compatibility here. The skill offers a creative process and makes no promise of awards.
+v0.7.0 is a development pre-release adding whole-experience planning and required supported-source exploration. The [v0.7 results](evaluations/V0_7_RESULTS.md) separate synthetic planning trials, offline checks and MCP connection evidence from untested website runtime behavior. The [v0.6 result report](evaluations/V0_6_RESULTS.md) records five discovery sessions, a source-review trial and an approved [poster comparison](studies/v0.6-poster-wall/index.html), with their limits. The client preferred its B treatment for that situation. The earlier [v0.5 results](evaluations/V0_5_RESULTS.md) and [Moss study](studies/v0.5-moss/index.html) remain included. Automated checks validate the local checker and archive. Neither those checks nor Ponytail's upstream benchmarks establish broad artistic improvement, human usability, cross-host portability or physical-device compatibility here. The skill offers a creative process and makes no promise of awards.

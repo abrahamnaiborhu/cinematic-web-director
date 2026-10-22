@@ -1,6 +1,6 @@
 # jcodemunch-mcp integration — local verification record
 
-Client authorization, 2026-10-20: shared setup for **Codex and Claude Code**, for **non-commercial projects only**. Implemented on `feature/jcodemunch-workflow` as a local v0.7.0 candidate. Published v0.6.0 remains unchanged; this work has not been published.
+Client authorization, 2026-10-20: shared setup for **Codex and Claude Code**, for **non-commercial projects only**. Initially implemented on `feature/jcodemunch-workflow` as a local v0.7.0 candidate; included in the v0.7.0 development pre-release. Published v0.6.0 remains unchanged.
 
 ## Installed scope
 
@@ -15,7 +15,7 @@ Actual MCP SDK stdio initialization exposed six compact-surface tools, including
 
 Coverage is incomplete: Markdown is excluded, CSS analysis is limited and some HTML files have no extracted symbols. Targeted native reads remain required for those materials and live edit confirmation. Cached verification alone is insufficient: an earlier retrieval retained old line offsets after a source edit, which the final refresh corrected.
 
-Both client CLIs recognize the user-level registration. Claude Code's connection check reports Connected. Codex reports its entry enabled. This ongoing Codex conversation does not expose jcodemunch tools; new/reloaded sessions must confirm actual tool availability before dependent source work. SDK protocol success and host registration are recorded separately from session exposure.
+Both client CLIs recognize the user-level registration. Claude Code's connection check reports Connected. Codex reports its entry enabled. At initial setup the Codex conversation did not expose the tools. On 2026-10-22, actual Codex-session guide/catalog, incremental indexing and focused context retrieval succeeded against the verified repository folder/ID. Other sessions must confirm availability before dependent source work. SDK protocol success and host registration are recorded separately from session exposure.
 
 The skill now routes code preflight, implementation and engineering review through [the required workflow](../references/JCODEMUNCH_WORKFLOW.md). Readiness is an agent responsibility within preflight check 4; the offline checker cannot attest MCP access. Creative work and empty projects can defer indexing. Unavailable source access requires repair or an explicitly approved bounded fallback.
 
@@ -23,6 +23,6 @@ The offline suite passes **45 tests**, including missing/blank required-guidance
 
 ## Distribution and licensing
 
-The candidate package contains workflow guidance, not upstream server software. The [upstream license](https://github.com/jgravelle/jcodemunch-mcp/blob/main/LICENSE) permits free non-commercial use and requires an applicable license for commercial work. No commercial license was purchased or assumed.
+The release package contains workflow guidance, not upstream server software. The [upstream license](https://github.com/jgravelle/jcodemunch-mcp/blob/main/LICENSE) permits free non-commercial use and requires an applicable license for commercial work. No commercial license was purchased or assumed.
 
 Configuration basis: [official Codex MCP documentation](https://developers.openai.com/codex/mcp) and [upstream client setup](https://github.com/jgravelle/jcodemunch-mcp/blob/main/CLIENTS.md). Other machines need separate installation and connection verification. User policy requires usage; it is not an automatic enforcement hook.

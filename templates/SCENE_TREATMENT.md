@@ -41,6 +41,7 @@ Use for a page, scene, journey or interaction needing detailed direction. Adapt 
 - Reported platform regression and representative checks on other supported platforms:
 - Reduced-motion/static alternative and readable content/actions:
 - Progressive enhancement and loading/failure states:
+- Whole-experience plan reference; this unit's required/deferred resources, readiness/lock release and recovery; lifecycle owner on interruption/departure/return:
 - Performance risks and observation/measurement conditions:
 - Coverage-matrix rows: actual browser/device versus emulation; observations and untested limits:
 - Relevant architecture/state/data decisions and dependencies:

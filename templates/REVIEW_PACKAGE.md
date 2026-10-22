@@ -44,6 +44,8 @@ Keep the intended answer out of the reviewer's task. Label human/client/syntheti
 
 Choose relevant load, movement, interruption/return, resize/input, reduced-motion and performance cases from the treatment. Source inspection, screenshots and exercised interactions establish different things.
 
+For a connected production slice, record arrival/readiness → use → departure/return as relevant, including slow/failing resources and lock recovery where material. Compare measured resource/responsiveness results with the agreed budgets and conditions; label untested cleanup or device behavior explicitly.
+
 ## Decision and continuation
 
 - Client decision / material and version / date; superseded choice if any:

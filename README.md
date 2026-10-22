@@ -4,11 +4,11 @@ An Agent Skills-format creative production partner for creating or redesigning l
 
 The package contains agent instructions and adaptable templates, plus an executable offline eight-check preflight. Creative effectiveness requires real use and rendered website evaluation; the checker does not generate a website or certify its design quality.
 
-This branch prepares the **v0.7.0 development candidate** with a required [jcodemunch code-exploration workflow](references/JCODEMUNCH_WORKFLOW.md). The MCP server is separately installed/licensed; the offline checker cannot verify its live connection. Shared client setup, required usage and per-project index readiness are distinct. See the [integration record](evaluations/JCODEMUNCH_INTEGRATION_PLAN.md).
+**v0.7.0 is a development pre-release**, published on 2026-10-22. Download its ZIP, tutorial and checksums from the [v0.7.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.7.0). See the [tutorial](TUTORIAL.md), [changelog](CHANGELOG.md) and [validation results](evaluations/V0_7_RESULTS.md).
 
-The [v0.6.0 development pre-release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.6.0), published on 2026-10-20, remains the latest published version. Follow the [tutorial](TUTORIAL.md) for published or local-candidate installation, or read the [changelog](CHANGELOG.md). Its tag and release artifacts remain unchanged.
+This version adds [whole-experience planning](references/EXPERIENCE_SYSTEM.md): readiness/loading, input and navigation, interruption/recovery, resource budgets and an early connected production slice. It also requires the separately installed/licensed [jcodemunch workflow](references/JCODEMUNCH_WORKFLOW.md) for source-dependent work. The offline checker cannot verify a live MCP connection. See the [integration record](evaluations/JCODEMUNCH_INTEGRATION_PLAN.md). The [v0.6.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.6.0) remains available unchanged.
 
-The release adds [Ponytail engineering](references/PONYTAIL_ENGINEERING.md) to approved implementation and engineering review. It favors complete, readable changes and adequate reuse while preserving the approved creative behavior, responsive treatments and accessibility. It is a self-contained workflow adaptation with [upstream attribution](third_party/ponytail/NOTICE.md), not an installation of the full Ponytail plugin.
+The package also includes v0.6's [Ponytail engineering](references/PONYTAIL_ENGINEERING.md) to approved implementation and engineering review. It favors complete, readable changes and adequate reuse while preserving the approved creative behavior, responsive treatments and accessibility. It is a self-contained workflow adaptation with [upstream attribution](third_party/ponytail/NOTICE.md), not an installation of the full Ponytail plugin.
 
 Motion direction now distinguishes choosing a connection mechanism from tuning its rhythm. A client's preference for one study stays local unless extended; other content relationships can justify another connection or a deliberate cut. Coherence can still justify repeating a mechanism. This is guidance for contextual judgment, not a required transition menu or a claim that every handoff must be different.
 
@@ -51,7 +51,7 @@ npx skills add https://github.com/abrahamnaiborhu/cinematic-web-director --agent
 
 Add `--global` to reuse the skill across projects. For an exact version, install the extracted release directory as a local source; see the tutorial.
 
-GitHub installation follows the remote default branch and does not select this unpublished candidate automatically. Use the v0.6.0 release ZIP for that published version, or build/install this branch's local v0.7.0 ZIP.
+GitHub installation follows the remote default branch. Use the v0.7.0 release ZIP for that exact version; later default-branch updates may differ.
 
 For manual installation, copy the complete directory to the target agent's configured skills location and confirm that the session can read it. This repository revision does not install the skill or external tools into your agent.
 
@@ -133,6 +133,8 @@ python3 -B -m unittest discover -s tests -v
 ```
 
 They cover release packaging and phase gates, custom/agent skill locations, static and multi-application projects, scoped observations, selected GSAP requirements, runtime metadata, release evidence and CLI behavior. Fixtures and generated PNGs validate checker behavior, not a real website's creative quality.
+
+The [v0.7 results](evaluations/V0_7_RESULTS.md) record bounded synthetic planning trials and the scope of live MCP and offline package verification. No v0.7 website runtime or physical-device study was performed.
 
 Earlier revisions were reviewed against the scenarios below. This historical record is a manual instruction walkthrough, distinct from the actual bounded v0.5 trials:
 

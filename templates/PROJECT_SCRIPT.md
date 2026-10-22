@@ -82,6 +82,16 @@ For redesigns, distinguish requirements and useful evidence from inherited prese
 - Selected temporal character and representative beats; deliberately static direction if chosen:
 - Composition changes implied by motion; provisional choices and affected approvals:
 
+## Whole-experience plan
+Keep this proportionate; link existing treatments. See [experience-system guidance](../references/EXPERIENCE_SYSTEM.md).
+
+- Arrival/return/direct entry; immediately usable content/actions; introduction replay policy:
+- Required readiness versus deferred resources; waiting feedback; any lock owner, release conditions and timeout/failure/skip recovery:
+- Scroll/input/navigation interruptions, state ownership and departure/resize/hidden-tab/resume cleanup:
+- Essential-content fallback and recovery when assets/scripts/data/graphics are unavailable:
+- Resource/performance budgets: target and unit, baseline, device/browser/network/cache conditions, measurement method and over-budget response:
+- Early connected production slice and runtime acceptance evidence; approval reference and remaining uncertainty:
+
 ## Architecture and feasibility
 | Requirement | Existing solution / alternatives | Recommendation and reason | Migration/integration/deployment effects | Validation |
 |---|---|---|---|---|
