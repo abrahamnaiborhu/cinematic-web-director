@@ -37,6 +37,8 @@ A coherent story can be a curated body of work, an argument supported by evidenc
 
 ## Explore different ways of presenting the subject
 
+Use the workflow's [discovery readiness check](CREATIVE_WORKFLOW.md#1-intake-and-adaptive-discovery) before a full concept pitch. Clarify consequential visual preferences and motion experience alongside purpose/content; distinguish a small illustration used to ask a question from a developed direction. Explicit requests for immediate provisional ideas or delegated choices remain valid. Do not replace unanswered discovery with a polished concept document.
+
 When the direction is open, normally offer two or three meaningful alternatives, scaling the exploration to the assignment. A client-selected or already approved direction does not need an artificial concept contest. Give each candidate:
 
 - A specific organizing idea and intended visitor takeaway.

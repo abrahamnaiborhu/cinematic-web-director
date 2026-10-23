@@ -18,6 +18,12 @@ The director maintains this evolving brief with the client. Adapt fields to the 
 - Constraints and required existing functionality:
 - Confirmed facts and claims needing validation:
 
+## Discovery readiness
+- Purpose/content, visual character and motion experience: client answers or inspected sources, explicitly delegated choices, consequential unknowns:
+- Follow-up that changed or clarified the brief; next unresolved question if still in discovery:
+- Brief summary and client confirmation/correction, or explicit request for provisional concepts; remaining assumptions:
+- Existing approvals and answered questions to preserve when resuming:
+
 ## Audience devices and coverage
 - Known audience/device priorities or stated assumptions; phone and compact-laptop design alongside larger screens:
 - Platform/browser families considered: Android, iOS/iPadOS, Windows, macOS and Linux where relevant; supported versions and reasons for scope choices:

@@ -2,6 +2,14 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
+## [0.7.1] - Unreleased
+
+### Changed
+
+- Strengthened discovery readiness before full concepts: distinguish answered, delegated and consequential unknown decisions; deepen ambiguous answers and discuss visual/motion experience instead of silently choosing defaults.
+- Kept short illustrative ideas available for teaching and questions, with explicit exceptions for immediate provisional concepts, complete briefs and approved work. Direct sitemap/copy-placement requests remain answerable without a forced design interview.
+- Added a concise discovery-readiness record to the project script. Local conversational checks supplement the earlier one-shot planning trials; published v0.7.0 is unchanged.
+
 ## [0.7.0] - 2026-10-22 (development pre-release)
 
 ### Added
