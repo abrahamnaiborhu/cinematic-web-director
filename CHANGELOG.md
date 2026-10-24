@@ -2,7 +2,15 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
-## [0.7.5] - Unreleased
+## [0.8.0] - 2026-10-24 (development pre-release)
+
+### Added
+
+- A standalone motion companion comparing persistent recognition, collection reorganization and a deliberate immediate cut, using original fictional artwork and optional stillness. Playback is opt-in with pause/replay/finish, return, direct/history entry, reduced motion and responsive composition.
+- An interpretation workflow connecting confirmed input, recommendations, the visitor experience and uncertainty. Demo reactions remain distinct from client concepts, bounded prototype approval and production authorization.
+- Local browser/lifecycle verification and continuing-conversation evaluation alongside package-integrity checks. No public release or client website deployment is implied.
+
+## [0.7.5] - Unreleased; first published in 0.8.0
 
 ### Added
 
@@ -10,7 +18,7 @@ Versioned GitHub releases use three-part tags. v0.2.0 is the first published rel
 - Local copyable provisional notes, no-script access, print notes and dependency-free browser verification. The guide uses no remote fonts/assets, tracking or answer persistence.
 - Taste-discovery routing, project-script fields, package-integrity checks and an evaluation record. Static samples do not claim motion evidence; ambitious preferences retain accessibility/device/performance requirements.
 
-## [0.7.1] - Unreleased
+## [0.7.1] - Unreleased; first published in 0.8.0
 
 ### Changed
 

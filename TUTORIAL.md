@@ -1,10 +1,10 @@
-# Cinematic Web Director — Getting Started (v0.7.5 local development candidate)
+# Cinematic Web Director — Getting Started (v0.8.0 development pre-release)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
 v0.7.0 adds whole-experience planning and a separately installed/licensed [jcodemunch requirement](references/JCODEMUNCH_WORKFLOW.md) for source-dependent work. Installing the skill alone does not configure either client's MCP server. Creative discussion can begin before code tools are available.
 
-This branch includes the unpublished discovery correction and v0.7.5 taste guide: resolve consequential visual and motion preferences through real follow-up conversation before a full concept, while respecting direct planning requests and explicitly delegated choices. Build with `python3 -B scripts/package_release.py --version 0.7.5 --out dist/v0.7.5` and install the extracted local source for this candidate. The release-download instructions below refer to the unchanged published v0.7.0 package.
+v0.8.0 adds a motion companion for judging movement, alongside the taste guide and discovery correction first published in this release: resolve consequential visual and motion preferences through real follow-up conversation before a full concept, while respecting direct planning requests and explicitly delegated choices.
 
 ## 1. Install the skill
 
@@ -24,13 +24,13 @@ Run one command, not all three unless you use all three agents. The GitHub sourc
 
 ### Install the exact ZIP release
 
-Download **cinematic-web-director-v0.7.0.zip** and **SHA256SUMS.txt** from the [v0.7.0 release page](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.7.0). The ZIP includes the tutorial and complete skill. To build the same package from the v0.7.0 source checkout:
+Download **cinematic-web-director-v0.8.0.zip** and **SHA256SUMS.txt** from the [v0.8.0 release page](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.8.0). The ZIP includes the tutorial and complete skill. To build the same package from the v0.8.0 source checkout:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.7.0 --out dist/v0.7.0
+python3 -B scripts/package_release.py --version 0.8.0 --out dist/v0.8.0
 ```
 
-The command produces those files in `dist/v0.7.0/`. Save the skill ZIP and its checksum in the same folder. The optional evidence ZIP has its own **EVIDENCE_SHA256SUMS.txt** and is not needed for installation. Earlier versions remain available from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases); substitute the matching version if installing one of them.
+The command produces those files in `dist/v0.8.0/`. Save the skill ZIP and its checksum in the same folder. The optional evidence ZIP has its own **EVIDENCE_SHA256SUMS.txt** and is not needed for installation. Earlier versions remain available from [GitHub releases](https://github.com/abrahamnaiborhu/cinematic-web-director/releases); substitute the matching version if installing one of them.
 
 Check the archive's checksum. On macOS:
 
@@ -47,19 +47,19 @@ sha256sum -c SHA256SUMS.txt
 On Windows PowerShell, compare this result with the hash in `SHA256SUMS.txt`:
 
 ```powershell
-Get-FileHash .\cinematic-web-director-v0.7.0.zip -Algorithm SHA256
+Get-FileHash .\cinematic-web-director-v0.8.0.zip -Algorithm SHA256
 ```
 
 Extract into a new folder so different releases stay separate:
 
 ```bash
-unzip cinematic-web-director-v0.7.0.zip -d cinematic-web-director-v0.7.0
+unzip cinematic-web-director-v0.8.0.zip -d cinematic-web-director-v0.8.0
 ```
 
-The extracted package is inside `cinematic-web-director-v0.7.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
+The extracted package is inside `cinematic-web-director-v0.8.0/cinematic-web-director/`. From your website project, install that local source (replace the example path):
 
 ```bash
-npx skills add "/absolute/path/to/cinematic-web-director-v0.7.0/cinematic-web-director" --agent codex
+npx skills add "/absolute/path/to/cinematic-web-director-v0.8.0/cinematic-web-director" --agent codex
 ```
 
 Choose `claude-code` or `cursor` instead if appropriate. Add `--global` for a user-wide installation. You may also copy the complete inner package directory to your agent's configured skill location. Keep its references, templates and scripts together.
@@ -144,6 +144,8 @@ This helps distinguish confirmed information, mandatory constraints and inspirat
 ## 4. Develop and approve the direction
 
 If examples help you describe your taste, open [the bundled HTML guide](assets/taste-guide.html) in a browser. It contains eight fictional still studies. You can say “the type of 04, the clarity of 01, neither palette,” choose maximum eccentricity or artistry, reject all examples, or ask for other references. Use the notes action to select/copy a provisional summary into your conversation; the page does not save or send answers. The agent should ask why qualities appeal, relate them to your actual story and discuss motion separately. These examples do not demonstrate animation or approve a design.
+
+To compare motion, open [the companion](assets/motion-companion.html). Play A and B, pause/replay or finish them, compare the immediate cut in C, and turn animated movement off for a still comparison. These are different relationships, not a menu to copy onto your site. Tell the director what you noticed and why. Expect it to explain what it heard, recommend a content-specific approach, describe your visitor's experience and identify uncertainty. Approving a direction still leaves any new coded study needing an explicitly bounded agreement.
 
 Spend time understanding the choices. Ask for alternatives, annotated compositions or representative storyboard states when a verbal description is unclear. You can reject, combine or revisit ideas.
 
@@ -270,4 +272,4 @@ Before releasing your website, the agent should observe its actual layouts, moti
 
 ## What this release establishes
 
-v0.7.0 is a development pre-release adding whole-experience planning and required supported-source exploration. The [v0.7 results](evaluations/V0_7_RESULTS.md) separate synthetic planning trials, offline checks and MCP connection evidence from untested website runtime behavior. The [v0.6 result report](evaluations/V0_6_RESULTS.md) records five discovery sessions, a source-review trial and an approved [poster comparison](studies/v0.6-poster-wall/index.html), with their limits. The client preferred its B treatment for that situation. The earlier [v0.5 results](evaluations/V0_5_RESULTS.md) and [Moss study](studies/v0.5-moss/index.html) remain included. Automated checks validate the local checker and archive. Neither those checks nor Ponytail's upstream benchmarks establish broad artistic improvement, human usability, cross-host portability or physical-device compatibility here. The skill offers a creative process and makes no promise of awards.
+v0.8.0 is a development pre-release adding the motion companion, its interpretation workflow and the taste guide. The [v0.8 results](evaluations/V0_8_RESULTS.md) record 19 local Chrome check groups and a four-turn synthetic conversation, with their limits. v0.7.0 added whole-experience planning and required supported-source exploration. The [v0.7 results](evaluations/V0_7_RESULTS.md) separate synthetic planning trials, offline checks and MCP connection evidence from untested website runtime behavior. The [v0.6 result report](evaluations/V0_6_RESULTS.md) records five discovery sessions, a source-review trial and an approved [poster comparison](studies/v0.6-poster-wall/index.html), with their limits. The client preferred its B treatment for that situation. The earlier [v0.5 results](evaluations/V0_5_RESULTS.md) and [Moss study](studies/v0.5-moss/index.html) remain included. Automated checks validate the local checker and archive. Neither those checks nor Ponytail's upstream benchmarks establish broad artistic improvement, human usability, cross-host portability or physical-device compatibility here. The skill offers a creative process and makes no promise of awards.

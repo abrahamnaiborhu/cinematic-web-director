@@ -1,10 +1,10 @@
-# Cinematic Web Director (v0.7.5)
+# Cinematic Web Director (v0.8.0)
 
 An Agent Skills-format creative production partner for creating or redesigning landing pages, portfolios and product websites. It guides discovery, content and copy, site structure, art direction, purposeful motion, approved experiments, production sprints and critique. It accommodates experienced developers who are new to motion design.
 
 The package contains agent instructions and adaptable templates, plus an executable offline eight-check preflight. Creative effectiveness requires real use and rendered website evaluation; the checker does not generate a website or certify its design quality.
 
-**v0.7.5 is an unpublished local development candidate** adding a bundled [HTML taste guide](assets/taste-guide.html) and [taste-discovery guidance](references/TASTE_DISCOVERY.md), alongside the conversational discovery correction. See the [discovery correction and bounded checks](evaluations/V0_7_RESULTS.md#unreleased-discovery-depth-correction). The latest published version is **v0.7.0**, a development pre-release published on 2026-10-22. Download its ZIP, tutorial and checksums from the [v0.7.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.7.0). See the [tutorial](TUTORIAL.md), [changelog](CHANGELOG.md) and [validation results](evaluations/V0_7_RESULTS.md).
+**v0.8.0 is a development pre-release**, published on 2026-10-24. It adds a [motion companion](assets/motion-companion.html) and [interpretation workflow](references/MOTION_COMPANION.md), and is the first published version to include the visual [taste guide](assets/taste-guide.html) and conversational discovery correction. Download its ZIP, tutorial and checksums from the [v0.8.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.8.0). See the [tutorial](TUTORIAL.md), [changelog](CHANGELOG.md) and [validation results](evaluations/V0_8_RESULTS.md).
 
 This version adds [whole-experience planning](references/EXPERIENCE_SYSTEM.md): readiness/loading, input and navigation, interruption/recovery, resource budgets and an early connected production slice. It also requires the separately installed/licensed [jcodemunch workflow](references/JCODEMUNCH_WORKFLOW.md) for source-dependent work. The offline checker cannot verify a live MCP connection. See the [integration record](evaluations/JCODEMUNCH_INTEGRATION_PLAN.md). The [v0.6.0 release](https://github.com/abrahamnaiborhu/cinematic-web-director/releases/tag/v0.6.0) remains available unchanged.
 
@@ -51,7 +51,7 @@ npx skills add https://github.com/abrahamnaiborhu/cinematic-web-director --agent
 
 Add `--global` to reuse the skill across projects. For an exact version, install the extracted release directory as a local source; see the tutorial.
 
-GitHub installation follows the remote default branch and does not select this unpublished patch branch. Use the v0.7.0 release ZIP for that exact published version, or build this branch locally for the v0.7.5 candidate.
+GitHub installation follows the remote default branch. Use the v0.8.0 release ZIP for that exact published version.
 
 For manual installation, copy the complete directory to the target agent's configured skills location and confirm that the session can read it. This repository revision does not install the skill or external tools into your agent.
 
@@ -119,14 +119,18 @@ This skill owns creative direction and production coordination; the official sui
 Update the README version and changelog entry, run the tests, then build the archive:
 
 ```bash
-python3 -B scripts/package_release.py --version 0.7.5 --out dist/v0.7.5
+python3 -B scripts/package_release.py --version 0.8.0 --out dist/v0.8.0
 ```
 
-This produces `dist/v0.7.5/cinematic-web-director-v0.7.5.zip` and `dist/v0.7.5/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts, tests and third-party notices. The jcodemunch server itself is not redistributed. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
+This produces `dist/v0.8.0/cinematic-web-director-v0.8.0.zip` and `dist/v0.8.0/SHA256SUMS.txt`. The ZIP contains one `cinematic-web-director/` directory with the skill, tutorial, references, templates, evaluation scenarios, scripts, tests and third-party notices. The jcodemunch server itself is not redistributed. Packaging uses an explicit file list and reproducible archive metadata; Git metadata, secrets, caches and previous build output are excluded. Creating the archive does not publish a GitHub release or update an installed skill.
 
 ## Taste guide
 
 Open [assets/taste-guide.html](assets/taste-guide.html) in a browser. Compare eight fictional static studies, mark which qualities appeal or repel, and discuss eccentricity, artistry and motion appetite separately. Mixtures, outside references and uncertainty are welcome. The page generates provisional notes to copy into the client conversation; it does not send/save answers or approve concepts. See the [workflow](references/TASTE_DISCOVERY.md) and [candidate checks](evaluations/V0_7_5_RESULTS.md).
+
+## Motion companion
+
+Open [assets/motion-companion.html](assets/motion-companion.html) to compare three original treatments of a fictional collection-to-project journey: keep the object, rebuild its context or cut into another room. Playback is opt-in, with pause/replay/finish, return and stillness/reduced-motion access. Use the [interpretation workflow](references/MOTION_COMPANION.md) to turn reactions into client-specific proposals; a favorite demo does not authorize a prototype. See the [candidate results and limits](evaluations/V0_8_RESULTS.md).
 
 ## Validation scope
 
