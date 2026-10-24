@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Find your kind of different — Cinematic Web Director</title>
+<style>
+  :root { --paper:#f4f1e9; --ink:#29251f; --muted:#625c53; --line:#cec7ba; --accent:#964126; --serif:Georgia,'Times New Roman',serif; --sans:Arial,Helvetica,sans-serif; --mono:'Courier New',monospace; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:auto; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.55 var(--sans); overflow-wrap:anywhere; }
+  a { color:inherit; text-underline-offset:.2em; }
+  button,select,input,textarea { font:inherit; color:inherit; }
+  button,select,input { min-height:44px; }
+  button { background:var(--ink); color:var(--paper); border:1px solid var(--ink); padding:.7rem 1rem; cursor:pointer; }
+  button:hover { background:var(--accent); }
+  :focus-visible { outline:3px solid #9b3a1a; outline-offset:4px; }
+  [hidden] { display:none !important; }
+  .skip { position:absolute; left:1rem; top:-6rem; z-index:2; padding:.7rem; background:white; }
+  .skip:focus { top:1rem; }
+  .wrap { max-width:1320px; padding-inline:clamp(1rem,4vw,4rem); margin-inline:auto; }
+  .masthead { display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; padding-block:1.2rem; border-bottom:1px solid var(--line); }
+  .masthead > span { flex:1 1 20ch; }
+  .eyebrow,.index,.meta { font:.75rem/1.5 var(--mono); letter-spacing:.07em; text-transform:uppercase; }
+  .masthead a { white-space:nowrap; }
+  .hero { display:grid; grid-template-columns:1.6fr 1fr; gap:3rem; padding-block:4rem 3rem; align-items:end; }
+  h1 { font:normal clamp(3.25rem,6.8vw,6.7rem)/.96 var(--serif); letter-spacing:-.055em; margin:.8rem 0 0; max-width:11ch; }
+  h1 em { color:var(--accent); font-weight:normal; }
+  .hero p { max-width:39rem; margin:1rem 0; }
+  .intro-note { font-size:.88rem; color:var(--muted); }
+  .directory { display:flex; flex-wrap:wrap; column-gap:1.4rem; row-gap:.5rem; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:1rem 0; margin-bottom:2.5rem; }
+  .directory a { font-size:.875rem; padding:.25rem 0; }
+  .section-heading { display:flex; justify-content:space-between; gap:1rem; align-items:baseline; margin:2rem 0 1.5rem; }
+  h2 { font:normal 2rem/1.15 var(--serif); margin:0; letter-spacing:-.025em; }
+  .studies { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:2rem; row-gap:3.5rem; }
+  .study { min-width:0; scroll-margin-top:1rem; }
+  .study-heading { display:flex; gap:1rem; align-items:baseline; border-top:1px solid var(--ink); padding:.8rem 0; }
+  h3 { font:normal 1.45rem/1.2 var(--serif); margin:0; }
+  .index { color:var(--accent); }
+  figure { margin:0; }
+  .preview { min-height:355px; padding:1.5rem; position:relative; isolation:isolate; overflow:hidden; }
+  .preview p { margin:0; }
+  .preview svg { display:block; max-width:100%; height:auto; }
+  .sample-nav { display:flex; justify-content:space-between; gap:.75rem; font:.64rem/1.5 var(--mono); text-transform:uppercase; letter-spacing:.06em; padding-bottom:.8rem; border-bottom:1px solid currentColor; }
+  .sample-foot { display:flex; justify-content:space-between; gap:1rem; font:.65rem/1.5 var(--mono); margin-top:1rem; }
+  .preview .sample-title { line-height:.98; letter-spacing:-.05em; }
+  figcaption { font:.75rem/1.5 var(--mono); padding:.65rem 0 .3rem; color:var(--muted); }
+  .study p.description { margin:.4rem 0 .9rem; font-size:.92rem; }
+  .study .look { margin:.35rem 0 1rem; font-size:.86rem; color:var(--muted); }
+  .reaction { display:grid; grid-template-columns:1fr 1.55fr; gap:.8rem; }
+  .reaction > label { min-width:0; }
+  label { display:block; font-size:.8rem; font-weight:bold; }
+  select,input,textarea { width:100%; border:1px solid #aaa193; background:#fffdf7; border-radius:0; margin-top:.35rem; padding:.65rem; }
+  input::placeholder,textarea::placeholder { color:#756d62; opacity:1; }
+  .editorial { background:#e8e0d1; color:#2a332b; }
+  .editorial-body { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.7rem; align-items:end; }
+  .editorial .sample-title { font:normal clamp(2.1rem,3.5vw,3.7rem)/1 var(--serif); }
+  .editorial .small-copy { font:.75rem/1.45 var(--sans); margin-top:1rem; max-width:19ch; }
+  .plan { border:1px solid #898979; background:#c3ad89; padding:.5rem; }
+  .brutal { background:#c4f66c; color:#172014; border:3px solid #172014; padding:1.2rem; }
+  .brutal .sample-title { font:900 clamp(3.4rem,6.6vw,6.4rem)/.79 var(--sans); margin:1.5rem 0; letter-spacing:-.09em; }
+  .brutal .radio-row { display:grid; grid-template-columns:3rem 1fr; border-top:2px solid; font:.78rem/1.25 var(--mono); padding:.6rem 0; }
+  .brutal .radio-row:last-child { border-bottom:2px solid; }
+  .gallery { background:#faf9f5; color:#34342e; }
+  .gallery .sample-nav { border:0; }
+  .gallery-body { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:1rem; padding-top:.5rem; }
+  .gallery .sample-title { font:normal clamp(1.9rem,3.2vw,3.2rem)/1.08 var(--serif); }
+  .gallery svg { width:100%; max-height:215px; }
+  .gallery .sample-foot { border-top:1px solid #d8d6cd; padding-top:.8rem; }
+  .type { background:#ee432b; color:#211c19; }
+  .type .sample-title { font:900 clamp(3rem,5.5vw,5.4rem)/.82 var(--sans); margin-top:1.6rem; position:relative; z-index:1; }
+  .type .type-turn { display:block; margin-left:15%; font-family:var(--serif); font-style:italic; font-weight:normal; letter-spacing:-.07em; }
+  .type-disc { width:8.5rem; height:8.5rem; border-radius:50%; border:1px solid; position:absolute; right:1.5rem; bottom:2.6rem; background:#fff4d1; }
+  .type .sample-foot { position:relative; z-index:1; margin-top:1.5rem; }
+  .playful { background:#d9cdf1; color:#302040; }
+  .playful .sample-title { font:normal clamp(2.1rem,3.6vw,3.7rem)/1 var(--serif); margin:1.3rem 0 .6rem; max-width:10ch; }
+  .book-stack { display:flex; justify-content:flex-end; align-items:center; gap:.5rem; min-height:115px; padding-right:.5rem; }
+  .book { display:grid; place-items:center; text-align:center; border:1px solid; width:92px; min-height:115px; padding:.6rem; font:italic 1.25rem/1 var(--serif); }
+  .book:first-child { transform:rotate(-12deg); background:#ffed8c; }
+  .book:nth-child(2) { transform:rotate(7deg); background:#e46037; color:#211b1a; }
+  .book:last-child { transform:rotate(-3deg); background:#f8f1e6; font-family:var(--mono); font-size:.95rem; }
+  .tactile { background:#ece4cc; color:#3b472b; }
+  .tactile-body { display:grid; grid-template-columns:1.1fr 1fr; gap:1rem; margin-top:1.5rem; align-items:center; }
+  .tactile .sample-title { font:italic clamp(1.9rem,3.2vw,3.3rem)/1.05 var(--serif); }
+  .tactile svg { max-height:195px; }
+  .tactile .sample-foot { border-block:1px dashed; padding:.6rem 0; }
+  .technical { background:#172c35; color:#e1f3e9; }
+  .technical .sample-title { font:normal clamp(2rem,3.1vw,3rem)/1.08 var(--mono); letter-spacing:-.06em; margin:1.3rem 0; }
+  .technical .path { display:flex; align-items:center; margin:1.7rem 0; }
+  .technical .node { border:1px solid #91b7ab; padding:.75rem .4rem; flex:1; text-align:center; font:.65rem/1.2 var(--mono); }
+  .technical .node:nth-of-type(2) { background:#c0f29b; color:#172c35; }
+  .technical .wire { width:1.25rem; border-top:1px solid #c0f29b; }
+  .technical .sample-foot { color:#c0f29b; }
+  .experimental { background:#282236; color:#f5e4cf; }
+  .experimental .sample-nav { position:relative; z-index:1; }
+  .experimental svg { width:70%; height:210px; margin:-.25rem 0 -1rem auto; }
+  .experimental .sample-title { font:normal clamp(1.9rem,3.1vw,3.2rem)/.95 var(--serif); max-width:10ch; margin-top:-2.8rem; position:relative; }
+  .experimental .sample-foot { position:relative; }
+  .discussion { margin-top:4rem; padding:2.5rem 0; border-block:1px solid var(--ink); display:grid; grid-template-columns:1fr 1.6fr; gap:2rem; }
+  .discussion p { color:var(--muted); max-width:32rem; }
+  fieldset { min-width:0; margin:0 0 1.5rem; padding:0; border:0; }
+  legend { font:normal 1.25rem/1.2 var(--serif); padding:0; margin-bottom:.75rem; }
+  .choices { display:flex; flex-wrap:wrap; gap:.5rem 1.2rem; }
+  .choices label { display:flex; align-items:center; gap:.5rem; font-size:.9rem; font-weight:normal; cursor:pointer; min-height:44px; }
+  input[type=radio] { width:1.1rem; height:1.1rem; min-height:0; margin:0; accent-color:var(--accent); }
+  .notes { padding-block:3rem; display:grid; grid-template-columns:1fr 1.6fr; gap:2rem; }
+  .notes h2 { margin-bottom:1rem; }
+  .notes p { color:var(--muted); max-width:32rem; }
+  textarea { min-height:8rem; resize:vertical; line-height:1.5; }
+  #summary { min-height:20rem; font:.85rem/1.6 var(--mono); }
+  .buttons { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem; }
+  .buttons .secondary { color:var(--ink); background:transparent; }
+  #status { min-height:1.6em; font-size:.85rem; }
+  footer { border-top:1px solid var(--line); padding:1.5rem 0 2.5rem; color:var(--muted); font:.75rem/1.5 var(--mono); }
+  @media (min-width:1600px) { .preview { min-height:375px; } }
+  @media (max-width:800px) {
+    .hero { grid-template-columns:1fr; gap:1rem; padding-block:2.5rem 1.5rem; }
+    h1 { max-width:12ch; font-size:clamp(3.1rem,10vw,5.5rem); }
+    .hero p { max-width:40rem; }
+    .studies { grid-template-columns:1fr; row-gap:2.5rem; }
+    .preview { min-height:340px; }
+    .editorial .sample-title { font-size:clamp(2.1rem,7vw,3.7rem); }
+    .brutal .sample-title { font-size:clamp(3.5rem,13vw,6.4rem); }
+    .gallery .sample-title,.tactile .sample-title { font-size:clamp(1.9rem,6vw,3.2rem); }
+    .type .sample-title { font-size:clamp(3.1rem,12vw,5.4rem); }
+    .playful .sample-title,.technical .sample-title,.experimental .sample-title { font-size:clamp(2rem,7vw,3.7rem); }
+    .discussion,.notes { grid-template-columns:1fr; gap:1.25rem; }
+    .section-heading { flex-wrap:wrap; }
+  }
+  @media (max-width:380px) {
+    .preview { padding:1rem; min-height:325px; }
+    .reaction { grid-template-columns:1fr; gap:.6rem; }
+    .masthead { font-size:.65rem; }
+    .book { width:76px; min-height:105px; }
+    .gallery-body,.tactile-body { gap:.5rem; }
+    .sample-nav { font-size:.6rem; }
+  }
+  @media print {
+    body { background:white; font-size:11pt; }
+    .skip,.directory,.buttons,.masthead a { display:none; }
+    .wrap { max-width:none; padding:0; }
+    .hero { padding:1rem 0; }
+    h1 { font-size:40pt; }
+    .studies { display:block; }
+    .study { break-inside:avoid; margin-bottom:1.5rem; }
+    .preview { print-color-adjust:exact; -webkit-print-color-adjust:exact; min-height:300px; }
+    .discussion,.notes { display:block; }
+    textarea { height:auto; }
+    label[for=summary],#summary { display:none; }
+    #print-notes { display:block !important; white-space:pre-wrap; overflow-wrap:anywhere; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#studies">Skip to the visual studies</a>
+<div class="wrap">
+  <header class="masthead eyebrow"><span>Cinematic Web Director / Taste library</span><a href="#your-notes">Your notes</a></header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div><span class="eyebrow">A starting point for a conversation</span><h1 id="title">Find your kind of <em>different.</em></h1></div>
+      <div><p>You don’t need to know the names. Look at the examples. Notice what pulls you in, what puts you off, and which details you’d borrow.</p><p class="intro-note">Eight fictional studies, made for this guide. These are still compositions, not real client work or animation previews. You can mix qualities, dislike every example, or bring something else.</p></div>
+    </section>
+    <nav class="directory" aria-label="Taste examples"><a href="#editorial">01 Editorial</a><a href="#brutalist">02 Brutalist</a><a href="#gallery">03 Gallery</a><a href="#typographic">04 Typographic</a><a href="#playful">05 Playful</a><a href="#tactile">06 Tactile</a><a href="#technical">07 Technical</a><a href="#experimental">08 Experimental</a></nav>
+    <section id="studies" aria-labelledby="studies-title">
+      <div class="section-heading"><h2 id="studies-title">A few ways a website can feel.</h2><span class="eyebrow">Borrow qualities. Keep your own story.</span></div>
+      <div class="studies">
+        <article class="study" id="editorial" data-title="01 Editorial / architectural practice">
+          <div class="study-heading"><span class="index">01</span><h3>Editorial &amp; considered</h3></div>
+          <figure><div class="preview editorial"><div class="sample-nav"><span>Margin / Architects</span><span>Work &amp; approach</span></div><div class="editorial-body"><div><p class="sample-title">Space,<br>considered.</p><p class="small-copy">A practice interested in how places become part of everyday life.</p></div><div class="plan"><svg viewBox="0 0 180 210" aria-hidden="true"><g fill="none" stroke="#30372f" stroke-width="2"><path d="M12 14h155v180H12zM20 22h67v82H20zM96 22h63v82H96zM20 113h139v73H20zM47 104v9m72-9v9M87 64h9M67 113v73"/><path d="M96 148h44v26H96zM29 32h44v14H29zM105 32h44v14h-44z" stroke-width="1"/><path d="M20 104a36 36 0 0 1 36-36m-36 36V68" stroke-width="1"/><path d="M0 202h180M4 198v8m172-8v8"/></g></svg></div></div><div class="sample-foot"><span>Selected spaces / 01—06</span><span>Inhabiting, thoughtfully.</span></div></div><figcaption>Fictional architecture practice / illustrated plan</figcaption></figure>
+          <p class="description">Reading rhythm, a clear hierarchy and room for the subject to breathe.</p><p class="look">Notice the type contrast and measured spacing. Would this feel assured, or too reserved?</p>
+          <div class="reaction"><label>Your reaction<select id="reaction-editorial" data-reaction><option value="Unreviewed">Not reviewed yet</option><option>Curious</option><option>Avoid</option><option>Mixed</option></select></label><label>Which qualities? <input id="note-editorial" data-note placeholder="Spacing yes; palette maybe not" autocomplete="off"></label></div>
+        </article>
+        <article class="study" id="brutalist" data-title="02 Brutalist / independent radio">
+          <div class="study-heading"><span class="index">02</span><h3>Raw &amp; structural</h3></div>
+          <figure><div class="preview brutal"><div class="sample-nav"><span>Public Record</span><span>Independent radio</span></div><p class="sample-title">LOUD<br>&amp; CLEAR.</p><div class="radio-row"><span>01</span><span>Voices outside the usual</span></div><div class="radio-row"><span>02</span><span>Field recordings &amp; conversations</span></div></div><figcaption>Fictional radio archive / brutalist interpretation</figcaption></figure>
+          <p class="description">Exposed structure, assertive typography and very little visual politeness.</p><p class="look">Is the appeal the force, the visible grid, or the roughness? Those can be chosen separately.</p>
+          <div class="reaction"><label>Your reaction<select id="reaction-brutalist" data-reaction><option value="Unreviewed">Not reviewed yet</option><option>Curious</option><option>Avoid</option><option>Mixed</option></select></label><label>Which qualities? <input id="note-brutalist" data-note placeholder="Strong type, quieter color" autocomplete="off"></label></div>
+        </article>
+        <article class="study" id="gallery" data-title="03 Gallery / ceramic artist">
+          <div class="study-heading"><span class="index">03</span><h3>Quiet &amp; object-led</h3></div>
+          <figure><div class="preview gallery"><div class="sample-nav"><span>Forme</span><span>Objects / Studio</span></div><div class="gallery-body"><p class="sample-title">Objects<br>for the<br>everyday.</p><svg viewBox="0 0 200 240" aria-hidden="true"><ellipse cx="105" cy="220" rx="67" ry="6" fill="#e4e1d7"/><path d="M72 27q33-9 66 0l-8 47c-1 12 30 47 31 90 0 41-24 53-56 53s-56-12-56-53c1-43 32-78 31-90z" fill="#a57554"/><path d="M72 27q33 11 66 0" fill="none" stroke="#75533d" stroke-width="3"/><path d="M84 86c-13 32-28 77-16 103" fill="none" stroke="#c89a75" stroke-width="7"/><path d="M51 167q55 19 107 0" fill="none" stroke="#966949"/></svg></div><div class="sample-foot"><span>Stoneware studies</span><span>Form, held simply.</span></div></div><figcaption>Fictional ceramic artist / original vector illustration</figcaption></figure>
+          <p class="description">The work has the floor. The interface recedes through restraint and generous space.</p><p class="look">Do you like the focus on the object, the stillness, or both? A quiet composition can still move boldly.</p>
+          <div class="reaction"><label>Your reaction<select id="reaction-gallery" data-reaction><option value="Unreviewed">Not reviewed yet</option><option>Curious</option><option>Avoid</option><option>Mixed</option></select></label><label>Which qualities? <input id="note-gallery" data-note placeholder="Object focus; less empty space" autocomplete="off"></label></div>
+        </article>
+        <article class="study" id="typographic" data-title="04 Typographic / type exhibition">
+          <div class="study-heading"><span class="index">04</span><h3>Expressive &amp; typographic</h3></div>
+          <figure><div class="preview type"><div class="sample-nav"><span>Off/Set</span><span>A type exhibition</span></div><div class="type-disc" aria-hidden="true"></div><p class="sample-title">TYPE<br><span class="type-turn">takes</span>SPACE.</p><div class="sample-foot"><span>Letters as material</span><span>Read / Look / Question</span></div></div><figcaption>Fictional exhibition / scale and type contrast</figcaption></figure>
+          <p class="description">Words become the image. Scale and rhythm give the page a strong authored voice.</p><p class="look">Would this energy suit your message? Which information must stay quiet and easy to read?</p>
+          <div class="reaction"><label>Your reaction<select id="reaction-typographic" data-reaction><option value="Unreviewed">Not reviewed yet</option><option>Curious</option><option>Avoid</option><option>Mixed</option></select></label><label>Which qualities? <input id="note-typographic" data-note placeholder="Huge type; not the red" autocomplete="off"></label></div>
+        </article>
+        <article class="study" id="playful" data-title="05 Playful / independent bookshop">
+          <div class="study-heading"><span class="index">05</span><h3>Playful &amp; eclectic</h3></div>
+          <figure><div class="preview playful"><div class="sample-nav"><span>Odd Hours</span><span>Books &amp; good company</span></div><p class="sample-title">Good books.<br>Odd company.</p><div class="book-stack" aria-hidden="true"><div class="book">A small<br>detour</div><div class="book">Off the<br>record</div><div class="book">NOTES<br>FROM<br>HERE</div></div><div class="sample-foot"><span>A shelf of discoveries</span><span>Stay a little longer.</span></div></div><figcaption>Fictional bookshop / a composed visual jumble</figcaption></figure>
+          <p class="description">Unexpected pairings and small irregularities make the page feel sociable and personal.</p><p class="look">Does the looseness feel inviting or distracting? You can borrow its warmth without the collage.</p>
+          <div class="reaction"><label>Your reaction<select id="reaction-playful" data-reaction><option value="Unreviewed">Not reviewed yet</option><option>Curious</option><option>Avoid</option><option>Mixed</option></select></label><label>Which qualities? <input id="note-playful" data-note placeholder="Personal feel; fewer objects" autocomplete="off"></label></div>
+        </article>
+        <article class="study" id="tactile" data-title="06 Tactile / community garden">
+          <div class="study-heading"><span class="index">06</span><h3>Tactile &amp; handmade</h3></div>
+          <figure><div class="preview tactile"><div class="sample-nav"><span>Field Notes</span><span>A community garden</span></div><div class="tactile-body"><p class="sample-title">A little dirt.<br>A lot of<br>possibility.</p><svg viewBox="0 0 180 220" aria-hidden="true"><g fill="none" stroke="#53613d" stroke-width="1.5"><path d="M84 207C64 149 113 92 88 13M82 174c-42 5-64-26-64-48 42-1 67 21 64 48zM90 134c44-3 69-31 62-63-42 14-66 29-62 63zM89 89C58 90 35 67 43 35c37 8 50 24 46 54zM88 14l-7 35m7 40L44 41m46 93 55-53M82 174l-57-40M48 198l79-2M40 204l97 3"/><path d="M54 195l-3-12m14 12 5-14m38 15 5-13m10 14 8-9"/></g><circle cx="142" cy="33" r="17" fill="#b26337"/><path d="M34 72l-6 7m-2-14-8 3" stroke="#b26337" stroke-width="2"/></svg></div><div class="sample-foot"><span>Grow / Gather / Share</span><span>Made together.</span></div></div><figcaption>Fictional garden project / original drawn illustration</figcaption></figure>
+          <p class="description">Illustration, material color and irregular marks bring a human hand into the interface.</p><p class="look">Is it the texture, the intimacy or the imperfections you like? This needn’t mean a rustic brand.</p>
+          <div class="reaction"><label>Your reaction<select id="reaction-tactile" data-reaction><option value="Unreviewed">Not reviewed yet</option><option>Curious</option><option>Avoid</option><option>Mixed</option></select></label><label>Which qualities? <input id="note-tactile" data-note placeholder="Drawn details; different palette" autocomplete="off"></label></div>
+        </article>
+        <article class="study" id="technical" data-title="07 Technical / developer-tool concept">
+          <div class="study-heading"><span class="index">07</span><h3>Precise &amp; systematic</h3></div>
+          <figure><div class="preview technical"><div class="sample-nav"><span>Relay / Concept</span><span>Developer tools</span></div><p class="sample-title">Make the<br>path visible.</p><div class="path"><span class="node">REQUEST</span><i class="wire" aria-hidden="true"></i><span class="node">VERIFY</span><i class="wire" aria-hidden="true"></i><span class="node">RELEASE</span></div><div class="sample-foot"><span>A workflow, explained</span><span>01 / System view</span></div></div><figcaption>Fictional product study / illustrative workflow</figcaption></figure>
+          <p class="description">Alignment, labels and visible relationships express order and technical confidence.</p><p class="look">Would this help your subject feel understandable, or too clinical? Precision can carry personality too.</p>
+          <div class="reaction"><label>Your reaction<select id="reaction-technical" data-reaction><option value="Unreviewed">Not reviewed yet</option><option>Curious</option><option>Avoid</option><option>Mixed</option></select></label><label>Which qualities? <input id="note-technical" data-note placeholder="Diagram clarity; warmer type" autocomplete="off"></label></div>
+        </article>
+        <article class="study" id="experimental" data-title="08 Experimental / digital art exhibition">
+          <div class="study-heading"><span class="index">08</span><h3>Experimental &amp; art-led</h3></div>
+          <figure><div class="preview experimental"><div class="sample-nav"><span>Elsewhere</span><span>Digital art exhibition</span></div><svg viewBox="0 0 350 230" aria-hidden="true"><ellipse cx="193" cy="114" rx="128" ry="43" transform="rotate(-35 193 114)" fill="#f29b75"/><path d="M115 15 324 146 136 211z" fill="#a4afd7"/><ellipse cx="207" cy="122" rx="118" ry="58" transform="rotate(30 207 122)" fill="none" stroke="#f4e1cb" stroke-width="2"/><circle cx="89" cy="109" r="38" fill="#df563e"/><path d="M46 195h269M55 187v16m250-16v16" stroke="#f4e1cb"/></svg><p class="sample-title">An exhibition<br>without a centre.</p><div class="sample-foot"><span>Image leads. Meaning unfolds.</span><span>Enter elsewhere.</span></div></div><figcaption>Fictional art exhibition / original abstract composition</figcaption></figure>
+          <p class="description">An image-led composition invites interpretation, with familiar order deliberately interrupted.</p><p class="look">Do you want this much ambiguity? Where should visitors still get a completely direct answer?</p>
+          <div class="reaction"><label>Your reaction<select id="reaction-experimental" data-reaction><option value="Unreviewed">Not reviewed yet</option><option>Curious</option><option>Avoid</option><option>Mixed</option></select></label><label>Which qualities? <input id="note-experimental" data-note placeholder="Art direction yes; clearer navigation" autocomplete="off"></label></div>
+        </article>
+      </div>
+    </section>
+    <section class="discussion" aria-labelledby="appetite-title">
+      <div><span class="eyebrow">Separate choices</span><h2 id="appetite-title">How far should we push?</h2><p>You can want precise structure and maximum eccentricity. A bold look can have quiet motion. These preferences help the director ask better questions; they don’t choose a template or approve a build.</p><p class="intro-note">“Maximum” invites ambitious ideas and explicit tradeoffs. Readability, access, phone usability and resource limits still need deliberate solutions.</p></div>
+      <div id="appetite">
+        <fieldset><legend>Eccentricity / willingness to surprise</legend><div class="choices"><label><input type="radio" name="eccentricity" value="Uncertain — discuss" checked>Not sure yet</label><label><input type="radio" name="eccentricity" value="Subtle surprises">Subtle surprises</label><label><input type="radio" name="eccentricity" value="Distinctive and unexpected">Distinctive</label><label><input type="radio" name="eccentricity" value="Maximum — explore the unusual">Maximum</label></div></fieldset>
+        <fieldset><legend>Artistic expression / how much the site is the work</legend><div class="choices"><label><input type="radio" name="artistry" value="Uncertain — discuss" checked>Not sure yet</label><label><input type="radio" name="artistry" value="Support the content">Support the content</label><label><input type="radio" name="artistry" value="A strong authored voice">Strong authored voice</label><label><input type="radio" name="artistry" value="Maximum — an artwork or exhibition">Maximum</label></div></fieldset>
+        <fieldset><legend>Motion appetite / a separate conversation</legend><div class="choices"><label><input type="radio" name="motion" value="Uncertain — explain possibilities" checked>Explain possibilities</label><label><input type="radio" name="motion" value="Limited or static">Limited or static</label><label><input type="radio" name="motion" value="Expressive">Expressive</label><label><input type="radio" name="motion" value="Maximum — propose and test">Maximum</label></div></fieldset>
+        <p class="intro-note">This guide does not demonstrate animation, pacing or interaction feel. Those need discussion and, when agreed, a bounded motion study.</p>
+      </div>
+    </section>
+    <section class="notes" id="your-notes" aria-labelledby="notes-title">
+      <div><span class="eyebrow">Bring this back to the director</span><h2 id="notes-title">Your taste, in your words.</h2><p>For example: “The clarity of 01, the scale of 04, none of the red. Very eccentric, but let people browse freely.”</p><p>Every example is a starting point. Other tastes, your own references, contradictions and “I’m not sure” are all useful.</p><p class="intro-note">This page does not send or save answers. Copy your notes before closing it. You can also discuss the examples without filling anything in.</p><noscript><p>The visual studies work without JavaScript. Automatic notes are unavailable; write or copy your preferences manually.</p></noscript></div>
+      <div>
+        <label for="other-notes">Something else, a combination, or a hard no<textarea id="other-notes" autocomplete="off" placeholder="Describe what you like, what you want to avoid, or another reference. Why does it appeal?"></textarea></label>
+        <div id="summary-tools" hidden><label for="summary">Provisional discussion notes<textarea id="summary" readonly></textarea></label><pre id="print-notes" hidden></pre><div class="buttons"><button id="select-notes" type="button">Select notes to copy</button><button class="secondary" id="print-guide" type="button">Print / save PDF</button></div><p id="status" role="status" aria-live="polite"></p></div>
+      </div>
+    </section>
+  </main>
+  <footer>Eight original fictional studies / Cinematic Web Director v0.7.5<br>Static taste examples. Preferences remain open to discussion; no concept or production approval is recorded.</footer>
+</div>
+<script>
+  const studies = [...document.querySelectorAll('.study')];
+  const summary = document.querySelector('#summary');
+  const status = document.querySelector('#status');
+  function updateNotes() {
+    const lines = ['TASTE DISCUSSION — PROVISIONAL', 'Static examples only. No concept, motion treatment or production approval.', '', 'Examples and qualities:'];
+    let reviewed = 0;
+    for (const study of studies) {
+      const reaction = study.querySelector('[data-reaction]').value;
+      const note = study.querySelector('[data-note]').value.trim();
+      if (reaction === 'Unreviewed' && !note) continue;
+      reviewed++;
+      lines.push(`${study.dataset.title}: ${reaction}${note ? ' — ' + note : ''}`);
+    }
+    if (!reviewed) lines.push('No examples chosen yet; no style preference inferred.');
+    lines.push('', 'Separate preferences:');
+    for (const name of ['eccentricity', 'artistry', 'motion']) {
+      lines.push(`${name}: ${document.querySelector(`input[name="${name}"]:checked`).value}`);
+    }
+    const other = document.querySelector('#other-notes').value.trim();
+    if (other) lines.push('', 'Other qualities, references or limits:', other);
+    lines.push('', 'Next: discuss why these qualities fit the subject; clarify tensions and visitor control.');
+    summary.value = lines.join('\n');
+    document.querySelector('#print-notes').textContent = summary.value;
+  }
+  document.querySelector('main').addEventListener('input', updateNotes);
+  document.querySelector('main').addEventListener('change', updateNotes);
+  document.querySelector('#select-notes').addEventListener('click', () => {
+    updateNotes(); summary.focus(); summary.select();
+    status.textContent = 'Notes selected. Copy them and paste them into your conversation with the director.';
+  });
+  document.querySelector('#print-guide').addEventListener('click', () => window.print());
+  document.querySelector('#summary-tools').hidden = false;
+  updateNotes();
+</script>
+</body>
+</html>
