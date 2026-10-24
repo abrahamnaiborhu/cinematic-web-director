@@ -97,7 +97,7 @@ class PreflightTests(unittest.TestCase):
 
     def test_complete_package_integrity_includes_all_four_templates(self):
         skill = self.base / 'skill'
-        for source in [*preflight.SKILL_DIR.rglob('*.md'), preflight.SKILL_DIR / 'assets/taste-guide.html']:
+        for source in [*preflight.SKILL_DIR.rglob('*.md'), *(preflight.SKILL_DIR / 'assets').glob('*.html')]:
             if source.name == 'README.md':
                 continue
             target = skill / source.relative_to(preflight.SKILL_DIR)
@@ -110,12 +110,12 @@ class PreflightTests(unittest.TestCase):
 
     def test_missing_or_blank_direction_guidance_blocks_discovery(self):
         skill = self.base / 'skill'
-        for source in [*preflight.SKILL_DIR.rglob('*.md'), preflight.SKILL_DIR / 'assets/taste-guide.html']:
+        for source in [*preflight.SKILL_DIR.rglob('*.md'), *(preflight.SKILL_DIR / 'assets').glob('*.html')]:
             target = skill / source.relative_to(preflight.SKILL_DIR)
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(source.read_bytes())
         for name in ('DESIGN_DIRECTION.md', 'MOTION_DIRECTION.md', 'DEVICE_EXPERIENCE.md',
-                     'CREATIVE_REVIEW.md', 'PONYTAIL_ENGINEERING.md', 'JCODEMUNCH_WORKFLOW.md', 'EXPERIENCE_SYSTEM.md', 'TASTE_DISCOVERY.md'):
+                     'CREATIVE_REVIEW.md', 'PONYTAIL_ENGINEERING.md', 'JCODEMUNCH_WORKFLOW.md', 'EXPERIENCE_SYSTEM.md', 'TASTE_DISCOVERY.md', 'MOTION_COMPANION.md'):
             guidance = skill / 'references' / name
             original = guidance.read_bytes()
             for state in ('missing', 'blank'):
@@ -133,29 +133,30 @@ class PreflightTests(unittest.TestCase):
 
     def test_missing_or_blank_taste_guide_reports_incomplete_package(self):
         skill = self.base / 'skill'
-        for source in [*preflight.SKILL_DIR.rglob('*.md'), preflight.SKILL_DIR / 'assets/taste-guide.html']:
+        for source in [*preflight.SKILL_DIR.rglob('*.md'), *(preflight.SKILL_DIR / 'assets').glob('*.html')]:
             target = skill / source.relative_to(preflight.SKILL_DIR)
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(source.read_bytes())
-        guide = skill / 'assets/taste-guide.html'
         with patch('preflight.SKILL_DIR', skill):
             self.assertFalse(self.result()['blockers'])
-        original = guide.read_bytes()
-        for state in ('missing', 'blank'):
-            with self.subTest(state=state):
-                if state == 'missing':
-                    guide.unlink()
-                else:
-                    guide.write_text(' \n')
-                with patch('preflight.SKILL_DIR', skill):
-                    report = self.result()
-                self.assertIn('Cinematic Web Director Skill', report['blockers'])
-                self.assertIn('Missing: assets/taste-guide.html', report['results'][1]['evidence'])
-            guide.write_bytes(original)
+        for filename in ('taste-guide.html', 'motion-companion.html'):
+            guide = skill / 'assets' / filename
+            original = guide.read_bytes()
+            for state in ('missing', 'blank'):
+                with self.subTest(resource=filename, state=state):
+                    if state == 'missing':
+                        guide.unlink()
+                    else:
+                        guide.write_text(' \n')
+                    with patch('preflight.SKILL_DIR', skill):
+                        report = self.result()
+                    self.assertIn('Cinematic Web Director Skill', report['blockers'])
+                    self.assertIn(f'Missing: assets/{filename}', report['results'][1]['evidence'])
+                guide.write_bytes(original)
 
     def test_missing_review_template_blocks_discovery(self):
         skill = self.base / 'skill'
-        for source in [*preflight.SKILL_DIR.rglob('*.md'), preflight.SKILL_DIR / 'assets/taste-guide.html']:
+        for source in [*preflight.SKILL_DIR.rglob('*.md'), *(preflight.SKILL_DIR / 'assets').glob('*.html')]:
             target = skill / source.relative_to(preflight.SKILL_DIR)
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(source.read_bytes())

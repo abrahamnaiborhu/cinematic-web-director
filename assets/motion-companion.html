@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>What movement means — Motion companion</title>
+<style>
+  :root { --paper:#eeeee6; --ink:#242622; --line:#bec2b6; --blue:#2344c5; --acid:#d5ee9a; --mono:'Courier New',monospace; --sans:Arial,Helvetica,sans-serif; --serif:Georgia,serif; --scene-h:clamp(330px,57svh,500px); }
+  * { box-sizing:border-box; }
+  body { margin:0; font:1rem/1.5 var(--sans); background:var(--paper); color:var(--ink); overflow-wrap:anywhere; }
+  a { color:inherit; text-underline-offset:.2em; }
+  button,input,select,textarea { font:inherit; color:inherit; }
+  button,select { min-height:44px; }
+  button { padding:.65rem 1rem; border:1px solid currentColor; background:transparent; cursor:pointer; }
+  button:hover:not(:disabled) { background:var(--acid); color:var(--ink); }
+  button:disabled { cursor:default; color:#656b60; border-color:#a9afa1; }
+  button.primary { background:var(--ink); color:var(--paper); }
+  button.primary:hover { background:var(--blue); color:white; }
+  :focus-visible { outline:3px solid #2344c5; outline-offset:4px; }
+  [hidden] { display:none !important; }
+  .wrap { max-width:1232px; margin:auto; padding-inline:clamp(1rem,4vw,3rem); }
+  .skip { position:absolute; top:-5rem; left:1rem; z-index:10; padding:.5rem; background:white; }
+  .skip:focus { top:1rem; }
+  .eyebrow { font:.75rem/1.5 var(--mono); text-transform:uppercase; letter-spacing:.06em; }
+  .masthead { display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; border-bottom:1px solid var(--ink); padding-block:1.2rem; }
+  .hero { display:grid; grid-template-columns:1.45fr 1fr; gap:3rem; align-items:end; padding:3rem 0 2rem; }
+  h1 { font:800 clamp(2.8rem,6.6vw,6.1rem)/.91 var(--sans); letter-spacing:-.07em; margin:.6rem 0 0; max-width:12ch; }
+  h1 em { font:italic normal 1em/.9 var(--serif); color:var(--blue); }
+  .hero p { max-width:38rem; }
+  .small { font-size:.86rem; color:#52584b; }
+  h2 { font:normal 2rem/1.1 var(--serif); letter-spacing:-.03em; margin:0 0 1rem; }
+  h3 { margin:.2rem 0 .5rem; font-size:1rem; }
+  .controls { border-top:1px solid var(--ink); padding:1.2rem 0; }
+  fieldset { border:0; padding:0; margin:0; min-width:0; }
+  legend { font:.75rem/1.5 var(--mono); text-transform:uppercase; margin-bottom:.7rem; }
+  .choices { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.6rem; }
+  .choice { display:flex; gap:.6rem; align-items:start; padding:.85rem; border:1px solid var(--line); cursor:pointer; }
+  .choice:has(input:checked) { border-color:var(--ink); background:var(--acid); }
+  .choice input { margin:.25rem 0 0; accent-color:var(--ink); width:1.1rem; height:1.1rem; flex:none; }
+  .choice strong { display:block; font-size:.95rem; }
+  .choice small { display:block; color:#52584b; }
+  .settings { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-top:1rem; }
+  .settings label { display:flex; align-items:center; gap:.5rem; font-size:.9rem; min-height:44px; }
+  select { background:#fcfcf4; border:1px solid var(--line); padding:.5rem; max-width:100%; }
+  input[type=checkbox] { accent-color:var(--blue); width:1.2rem; height:1.2rem; }
+  .viewer { border:1px solid var(--ink); scroll-margin-top:1rem; }
+  .scene { position:relative; min-height:var(--scene-h); background:#e5e4db; overflow:hidden; isolation:isolate; }
+  .collection { padding:1.25rem 2rem; min-height:var(--scene-h); }
+  .scene-header { display:flex; justify-content:space-between; gap:1rem; font:.65rem/1.5 var(--mono); text-transform:uppercase; }
+  .collection-title { font:normal clamp(1.4rem,3vw,2.6rem)/1.05 var(--serif); margin:.7rem 0 1rem; letter-spacing:-.04em; }
+  .collection-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; max-width:850px; margin:auto; }
+  .project { display:block; text-decoration:none; min-width:0; }
+  .project:focus-visible { outline-offset:3px; }
+  .project:hover .project-title { text-decoration:underline; }
+  .poster { width:100%; aspect-ratio:4/5; overflow:hidden; background:#d55d39; }
+  .poster[data-work=structure] { background:#bed1c8; }
+  .poster[data-work=intervals] { background:#dba0ad; }
+  .poster svg { width:100%; height:100%; display:block; }
+  .collection .poster { width:min(100%,clamp(92px,23svh,175px)); margin:auto; }
+  .project-title { font-size:.85rem; margin:.45rem 0 0; text-align:center; }
+  .project-title span { font:.65rem/1.3 var(--mono); color:#5a5e51; display:block; }
+  .detail { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:1.5rem; align-items:center; min-height:var(--scene-h); padding:1.7rem 2.5rem; position:relative; }
+  .detail-art { width:min(100%,clamp(145px,36svh,280px)); margin:auto; }
+  .detail-copy { position:relative; max-width:26rem; z-index:1; }
+  .detail-title { font:normal clamp(2rem,4.5vw,4.5rem)/.96 var(--serif); letter-spacing:-.06em; margin:.65rem 0; }
+  .detail-copy p { font-size:.9rem; margin:.7rem 0; }
+  .related { display:none; gap:.7rem; margin-top:1rem; }
+  .related-item .poster { width:42px; }
+  .related-item span { display:block; font:.6rem/1.2 var(--mono); margin-top:.25rem; }
+  .stage-word { display:none; position:absolute; top:24%; left:-.06em; font:900 clamp(5rem,16vw,14rem)/.7 var(--sans); letter-spacing:-.1em; white-space:nowrap; color:#d5ee9a24; pointer-events:none; }
+  .scene[data-treatment=context][data-view=detail] { background:#212c29; color:#edf3e4; }
+  .scene[data-treatment=context] .detail-title { font-family:var(--sans); font-weight:900; text-transform:uppercase; }
+  .scene[data-treatment=context][data-view=detail] .stage-word { display:block; }
+  .scene[data-treatment=context] .related { display:flex; }
+  .scene[data-treatment=cut][data-view=detail] { background:#3b2d51; color:#f1e7cd; }
+  .scene[data-treatment=cut] .detail { grid-template-columns:1.4fr 1fr; }
+  .scene[data-treatment=cut] .detail-copy { order:-1; }
+  .scene[data-treatment=cut] .detail-title { font-family:var(--sans); font-weight:900; text-transform:uppercase; }
+  .scene[data-treatment=cut] .detail-art { width:min(85%,220px); transform:rotate(12deg); }
+  .overlay { position:absolute; inset:0; z-index:3; pointer-events:none; }
+  .flight { position:absolute; margin:0; transform-origin:0 0; will-change:transform,opacity; }
+  .transport { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; padding:1rem; background:#f9f9f1; }
+  .transport button { font-size:.86rem; }
+  #status { border-top:1px solid var(--line); padding:.7rem 1rem; margin:0; background:#f9f9f1; font:.75rem/1.5 var(--mono); min-height:2.8rem; }
+  .explanation { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin:2rem 0; }
+  .explanation p { margin:.4rem 0 1rem; }
+  .question { border-left:4px solid var(--blue); padding-left:1rem; }
+  .static-cases { margin:2rem 0; }
+  .static-case { display:grid; grid-template-columns:140px 1fr; gap:1.5rem; padding:1.5rem 0; border-top:1px solid var(--line); }
+  .enhanced .static-cases { display:none; }
+  .notes { border-top:1px solid var(--ink); padding:2rem 0; display:grid; grid-template-columns:1fr 1.3fr; gap:2rem; }
+  label.note-label { display:block; font-weight:bold; font-size:.85rem; }
+  textarea { display:block; width:100%; border:1px solid var(--line); border-radius:0; background:#fcfcf4; padding:.75rem; margin:.5rem 0 1rem; min-height:7rem; resize:vertical; }
+  #summary { font:.8rem/1.6 var(--mono); min-height:13rem; }
+  footer { border-top:1px solid var(--line); padding:1.5rem 0; font:.75rem/1.5 var(--mono); color:#52584b; }
+  @media(max-width:700px) {
+    .hero { grid-template-columns:1fr; gap:.7rem; padding-top:2rem; }
+    h1 { font-size:clamp(2.8rem,12vw,5rem); }
+    .choices { grid-template-columns:1fr; gap:.35rem; }
+    .choice { padding:.6rem .8rem; }
+    .choice small { display:inline; }
+    .settings label { flex-wrap:wrap; }
+    .collection { padding:1rem; }
+    .scene-header { font-size:.6rem; }
+    .collection-grid { gap:.6rem; }
+    .project-title { font-size:.75rem; }
+    .detail { grid-template-columns:1fr; gap:.7rem; padding:1.1rem 1.5rem; }
+    .detail-art { width:min(42%,145px); }
+    .detail-title { font-size:clamp(1.7rem,7vw,2.6rem); }
+    .detail-copy { max-width:none; }
+    .detail-copy p { font-size:.8rem; }
+    .related { position:absolute; right:0; top:0; margin:0; }
+    .related-item .poster { width:30px; }
+    .related-item span { font-size:.55rem; }
+    .scene[data-treatment=context] .detail-copy { padding-right:80px; }
+    .scene[data-treatment=context] .detail-title { font-size:clamp(1.25rem,6.4vw,2.6rem); }
+    .scene[data-treatment=cut] .detail { grid-template-columns:1fr; }
+    .scene[data-treatment=cut] .detail-copy { order:0; }
+    .scene[data-treatment=cut] .detail-art { width:min(40%,140px); }
+    .transport { padding:.6rem; gap:.4rem; }
+    .transport button { flex:1 1 auto; padding:.6rem; }
+    .explanation,.notes { grid-template-columns:1fr; gap:1rem; }
+    .static-case { grid-template-columns:85px 1fr; gap:1rem; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#comparison">Skip to the comparison</a>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
+  <symbol id="art-afterimage" viewBox="0 0 400 500"><rect width="400" height="500" fill="#dc633c"/><circle cx="194" cy="217" r="130" fill="#f0dba9"/><path d="M194 87a130 130 0 0 1 0 260z" fill="#2b3430"/><path d="M45 340 355 141v38L45 378z" fill="#eaa484"/><path d="M45 402h310M60 391v23m280-23v23" stroke="#282f2c" stroke-width="2"/></symbol>
+  <symbol id="art-structure" viewBox="0 0 400 500"><rect width="400" height="500" fill="#bed1c8"/><g fill="none" stroke="#293d36" stroke-width="4"><path d="m79 177 119-72 125 72v155l-125 72-119-72zM79 177l119 72 125-72M198 249v155M198 105v144M79 332l119-83 125 83"/><ellipse cx="198" cy="251" rx="69" ry="112" transform="rotate(-30 198 251)"/></g><circle cx="198" cy="249" r="22" fill="#d8e993"/></symbol>
+  <symbol id="art-intervals" viewBox="0 0 400 500"><rect width="400" height="500" fill="#dba0ad"/><g fill="#3b2d51"><path d="M48 90h34v320H48zM101 140h34v220h-34zM154 60h34v380h-34zM207 170h34v160h-34zM260 110h34v280h-34zM313 90h34v320h-34z"/></g><circle cx="201" cy="250" r="96" fill="#e8c88b"/><path d="M48 250h299" stroke="#3b2d51" stroke-width="3"/></symbol>
+</defs></svg>
+<div class="wrap">
+  <header class="masthead eyebrow"><span>CWD / Motion companion</span><a href="taste-guide.html">Back to visual taste</a></header>
+  <main>
+    <section class="hero" aria-labelledby="title"><div><span class="eyebrow">One journey. Different meanings.</span><h1 id="title">See what<br><em>movement</em><br>means.</h1></div><div><p>Going from a collection to a project can feel like focusing, discovering a relationship, or entering another world. Try the same imaginary work in three ways.</p><p class="small">Original fictional artwork, made for this guide. This is a bounded demonstration, not a template for your website. Nothing plays until you open or replay a work.</p></div></section>
+    <section id="comparison" aria-label="Motion comparison">
+      <div class="controls" id="controls" hidden>
+        <fieldset><legend>Choose a relationship to explore</legend><div class="choices">
+          <label class="choice"><input type="radio" name="treatment" value="hold" checked><span><strong>A / Keep the object</strong><small>Recognition carries you through.</small></span></label>
+          <label class="choice"><input type="radio" name="treatment" value="context"><span><strong>B / Rebuild the context</strong><small>The collection becomes a constellation.</small></span></label>
+          <label class="choice"><input type="radio" name="treatment" value="cut"><span><strong>C / Enter another room</strong><small>A decisive cut creates a boundary.</small></span></label>
+        </div></fieldset>
+        <div class="settings"><label>Selected work <select id="work"><option value="afterimage">Afterimage</option><option value="structure">Soft Structure</option><option value="intervals">Intervals</option></select></label><label><input type="checkbox" id="motion">Enable animated movement</label><span class="small" id="motion-note">Motion starts only on your input.</span></div>
+      </div>
+      <div class="viewer">
+        <div class="scene" id="scene" data-view="collection" data-treatment="hold" data-phase="collection">
+          <div class="collection" id="collection"><div class="scene-header"><span>Fieldwork / Objects &amp; installations</span><span>Fictional studio</span></div><p class="collection-title">Objects with another life.</p><div class="collection-grid">
+            <a class="project" data-work="afterimage" href="#case-afterimage"><div class="poster" data-work="afterimage"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#art-afterimage"/></svg></div><p class="project-title">Afterimage<span>01 / Light study</span></p></a>
+            <a class="project" data-work="structure" href="#case-structure"><div class="poster" data-work="structure"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#art-structure"/></svg></div><p class="project-title">Soft Structure<span>02 / Object study</span></p></a>
+            <a class="project" data-work="intervals" href="#case-intervals"><div class="poster" data-work="intervals"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#art-intervals"/></svg></div><p class="project-title">Intervals<span>03 / Sound study</span></p></a>
+          </div></div>
+          <span class="stage-word" id="stage-word" aria-hidden="true">AFTERIMAGE</span>
+          <div class="detail" id="detail" hidden><div class="poster detail-art" id="detail-art"></div><div class="detail-copy"><span class="eyebrow" id="detail-category"></span><h2 class="detail-title" id="detail-title"></h2><p id="detail-description"></p><div class="related" id="related" aria-label="Other works in this fictional collection"></div></div></div>
+          <div class="overlay" id="overlay" aria-hidden="true" inert></div>
+        </div>
+        <div class="transport" id="transport" hidden><button class="primary" id="play" type="button">Open selected work</button><button id="pause" type="button" disabled>Pause</button><button id="finish" type="button" disabled>Finish now</button><button id="back" type="button" disabled>Back to collection</button></div>
+        <p id="status" role="status" aria-live="polite">Without JavaScript, use a project link to read its still case below.</p>
+      </div>
+      <div class="explanation"><div><span class="eyebrow" id="mechanism-label">A / Keep the object</span><h2 id="mechanism-title">A recognizable thread.</h2><p id="meaning">The selected object grows into its project view while neighboring objects recede. Your eye has something to follow.</p></div><div><h3>What to notice</h3><p id="tradeoff">This favors recognition and orientation. It needs reliable geometry and layout; movement is not a substitute for clear project information.</p><p class="small" id="phone-treatment">On a phone the object moves into a stacked composition, rather than a compressed desktop layout.</p><p class="question" id="question">What in your own work should stay recognizable when the surrounding story changes?</p></div></div>
+    </section>
+    <section class="static-cases" aria-label="Still project descriptions">
+      <article class="static-case" id="case-afterimage" data-work="afterimage"><div class="poster" data-work="afterimage"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#art-afterimage"/></svg></div><div><span class="eyebrow">01 / Light study</span><h2>Afterimage</h2><p>A fictional arrangement of a disc, a frame and an interruption of light. The illustration explores what remains recognizable as context changes.</p></div></article>
+      <article class="static-case" id="case-structure" data-work="structure"><div class="poster" data-work="structure"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#art-structure"/></svg></div><div><span class="eyebrow">02 / Object study</span><h2>Soft Structure</h2><p>A fictional object study built from a rigid frame and a softer curved shape. The illustration puts different kinds of structure into one relationship.</p></div></article>
+      <article class="static-case" id="case-intervals" data-work="intervals"><div class="poster" data-work="intervals"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#art-intervals"/></svg></div><div><span class="eyebrow">03 / Sound study</span><h2>Intervals</h2><p>A fictional installation study represented by interrupted bars and a circular opening. This is an illustration of rhythm, not recorded sound or a real installation.</p></div></article>
+    </section>
+    <section class="notes" aria-labelledby="notes-title"><div><span class="eyebrow">From a reaction to a conversation</span><h2 id="notes-title">What did it make you notice?</h2><p>Describe a quality, not just a letter: “I like B’s rearrangement, but want more time to read,” or “the cut gives each work its own identity.” None of these is also useful.</p><p class="small">A preference here approves no concept, animation library or production work. Your subject may need another mechanism entirely. Notes are not sent or saved by this page.</p><noscript><p>Automatic notes and playback need JavaScript. The collection, still cases and questions remain available.</p></noscript></div><div><label class="note-label" for="reaction">Your reaction, including uncertainty<textarea id="reaction" placeholder="What felt right or wrong? What should a visitor control?"></textarea></label><div id="note-tools" hidden><label class="note-label" for="summary">Provisional discussion notes<textarea id="summary" readonly></textarea></label><button id="copy" type="button">Select notes to copy</button><p class="small" id="copy-status" role="status"></p></div></div></section>
+  </main><footer>Cinematic Web Director v0.8.0 / Original fictional motion study.<br>Compare mechanisms, then develop a direction from your own content. Desktop emulation is not physical-device proof.</footer>
+</div>
+<script>
+(() => {
+  const scene=document.querySelector('#scene'), collection=document.querySelector('#collection'), detail=document.querySelector('#detail');
+  const art=document.querySelector('#detail-art'), related=document.querySelector('#related'), overlay=document.querySelector('#overlay');
+  const play=document.querySelector('#play'), pause=document.querySelector('#pause'), finish=document.querySelector('#finish'), back=document.querySelector('#back');
+  const motion=document.querySelector('#motion'), work=document.querySelector('#work'), status=document.querySelector('#status');
+  const preference=matchMedia('(prefers-reduced-motion: reduce)');
+  const projects=Object.fromEntries([...document.querySelectorAll('.static-case')].map(el=>[el.dataset.work,{title:el.querySelector('h2').textContent,category:el.querySelector('.eyebrow').textContent,description:el.querySelector('p').textContent,poster:el.querySelector('.poster')}]));
+  const treatments={
+    hold:{label:'A / Keep the object',title:'A recognizable thread.',meaning:'The selected object grows into its project view while neighboring objects recede, then its title and description arrive. Your eye has something to follow.',tradeoff:'This favors recognition and orientation. It needs reliable geometry and layout; movement is not a substitute for clear project information.',phone:'On a phone the object moves into a stacked composition, rather than a compressed desktop layout.',question:'What in your own work should stay recognizable when the surrounding story changes?'},
+    context:{label:'B / Rebuild the context',title:'The index becomes a constellation.',meaning:'All three objects leave their index positions. The chosen work takes the foreground while its neighbors become reference points and its name occupies the room.',tradeoff:'The rearrangement expresses a relationship to a body of work. Its large gestures can compete with reading; this demonstration stops moving and leaves the information usable.',phone:'The phone version stacks the main work and text, with two small related works beside the description. The same relationships remain visible.',question:'Does showing neighboring work help explain this project, or would that relationship be misleading for your material?'},
+    cut:{label:'C / Enter another room',title:'A boundary, deliberately drawn.',meaning:'An immediate cut changes the room: background, scale and composition give the selected project an independent identity. No object travels between positions.',tradeoff:'The cut is intentionally instantaneous. There is no animation to pause. A clear title and return path provide orientation instead of a continuous trajectory.',phone:'The new room keeps its bold type but stacks the work and description on a phone. No scroll interception or long pinned scene is needed.',question:'Should this project feel like part of a continuous collection, or deserve its own distinct world?'}
+  };
+  let selected='afterimage', treatment='hold', animations=[], generation=0;
+  const setStatus=text=>{status.textContent=text;};
+  function notes() {
+    const reaction=document.querySelector('#reaction').value.trim();
+    document.querySelector('#summary').value=['MOTION DISCUSSION — PROVISIONAL',treatments[treatment].label,`Fictional work selected: ${projects[selected].title}`,`Animated movement enabled: ${motion.checked ? 'yes' : 'no'}`, 'Selection/playback is not approval of a concept, prototype, library or production.',reaction ? 'My reaction: '+reaction : 'No reaction recorded; no preference inferred.','Discuss what transfers to the actual content and what remains uncertain.'].join('\n');
+  }
+  function controls() {
+    const active=animations.length>0;
+    pause.disabled=!active; finish.disabled=!active; back.disabled=detail.hidden;
+    pause.textContent=scene.dataset.phase==='paused' ? 'Resume' : 'Pause';
+    play.textContent=detail.hidden ? 'Open selected work' : 'Replay opening';
+    notes();
+  }
+  function clearMotion() {
+    generation++;
+    for (const animation of animations) animation.cancel();
+    animations=[]; overlay.replaceChildren();
+    for (const el of detail.querySelectorAll('.poster')) el.style.visibility='';
+    document.querySelector('#stage-word').getAnimations().forEach(animation=>animation.cancel());
+  }
+  function settle(message) {
+    clearMotion(); scene.dataset.phase=detail.hidden ? 'collection' : 'settled';
+    setStatus(message); controls();
+  }
+  function renderDetail() {
+    const project=projects[selected];
+    document.querySelector('#detail-title').textContent=project.title;
+    document.querySelector('#detail-category').textContent=project.category;
+    document.querySelector('#detail-description').textContent=project.description;
+    document.querySelector('#stage-word').textContent=project.title.toUpperCase();
+    art.dataset.work=selected; art.replaceChildren(project.poster.querySelector('svg').cloneNode(true));
+    related.replaceChildren();
+    for (const [id,other] of Object.entries(projects)) {
+      if(id===selected) continue;
+      const item=document.createElement('div'); item.className='related-item'; item.dataset.work=id;
+      const label=document.createElement('span'); label.textContent=other.category.slice(0,2);
+      item.append(other.poster.cloneNode(true),label); related.append(item);
+    }
+    collection.hidden=true; detail.hidden=false; scene.dataset.view='detail';
+  }
+  function showCollection(message='Collection ready. Choose a work or open the selected one.') {
+    clearMotion(); detail.hidden=true; collection.hidden=false; scene.dataset.view='collection'; scene.dataset.phase='collection';
+    setStatus(message); controls();
+  }
+  function explanation() {
+    const t=treatments[treatment]; scene.dataset.treatment=treatment;
+    for (const [selector,value] of Object.entries({'#mechanism-label':t.label,'#mechanism-title':t.title,'#meaning':t.meaning,'#tradeoff':t.tradeoff,'#phone-treatment':t.phone,'#question':t.question})) document.querySelector(selector).textContent=value;
+    notes();
+  }
+  function animate(el,frames,options) {
+    const animation=el.animate(frames,{fill:'both',...options});
+    animations.push(animation); return animation;
+  }
+  function openWork(id,{record=true,focusReturn=false}={}) {
+    if(!Object.hasOwn(projects,id)) return;
+    showCollection(); selected=id; work.value=id;
+    const beforeScroll=scrollY;
+    const from=[...collection.querySelectorAll('.project')].map(link=>({id:link.dataset.work,poster:link.querySelector('.poster'),rect:link.querySelector('.poster').getBoundingClientRect().toJSON()}));
+    renderDetail();
+    const viewer=document.querySelector('.viewer'), frame=viewer.getBoundingClientRect();
+    // An explicit playback action may frame its own demonstration; never lock scroll.
+    if(frame.height<=innerHeight-16 && (frame.top<8 || frame.bottom>innerHeight-8)) viewer.scrollIntoView({block:'center',behavior:'auto'});
+    const scrollDelta=scrollY-beforeScroll;
+    for(const item of from) item.rect.top-=scrollDelta;
+    if(record && location.hash!=='#'+id) history.pushState({fromCompanion:true},'','#'+id);
+    back.disabled=false;
+    if(focusReturn) back.focus({preventScroll:true});
+    if(!motion.checked || treatment==='cut' || typeof art.animate!=='function') {
+      settle(treatment==='cut' ? 'C: immediate cut. There is no running timeline; title and return path keep orientation.' : 'Still view. The selected project is available without animated movement.'); return;
+    }
+    const token=generation, base=scene.getBoundingClientRect();
+    scene.dataset.phase='playing';
+    try {
+      for (const item of from) {
+        const target=item.id===selected ? art : related.querySelector(`[data-work="${item.id}"] .poster`);
+        if(treatment==='hold' && item.id!==selected) {
+          const clone=item.poster.cloneNode(true); clone.classList.add('flight'); overlay.append(clone);
+          Object.assign(clone.style,{left:(item.rect.left-base.left)+'px',top:(item.rect.top-base.top)+'px',width:item.rect.width+'px',height:item.rect.height+'px'});
+          animate(clone,[{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.55)'}],{duration:600,easing:'ease-out'}); continue;
+        }
+        const to=target.getBoundingClientRect(); target.style.visibility='hidden';
+        const clone=item.poster.cloneNode(true); clone.classList.add('flight'); overlay.append(clone);
+        Object.assign(clone.style,{left:(item.rect.left-base.left)+'px',top:(item.rect.top-base.top)+'px',width:item.rect.width+'px',height:item.rect.height+'px'});
+        const dx=to.left-item.rect.left,dy=to.top-item.rect.top,sx=to.width/item.rect.width,sy=to.height/item.rect.height;
+        const end=`translate(${dx}px,${dy}px) rotate(0deg) scale(${sx},${sy})`;
+        const frames=treatment==='hold' ? [{transform:'none'},{transform:end}] : [{transform:'none'},{transform:`translate(${dx*.45+(item.id===selected ? 60 : -40)}px,${dy*.3-65}px) rotate(${item.id===selected ? -28 : 36}deg) scale(.85)`,offset:.45},{transform:end}];
+        // A travels evenly so the eye can follow it; B keeps its sweep but leaves time to read.
+        animate(clone,frames,treatment==='hold' ? {duration:1400,easing:'cubic-bezier(.45,0,.25,1)'} : {duration:2000,easing:'cubic-bezier(.2,.8,.2,1)'});
+      }
+      if(treatment==='hold') animate(document.querySelector('.detail-copy'),[{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'none'}],{duration:450,delay:1150,easing:'ease-out'});
+      if(treatment==='context') animate(document.querySelector('#stage-word'),[{opacity:0,transform:'translateX(-30%) rotate(-8deg)'},{opacity:1,transform:'none'}],{duration:2000,easing:'cubic-bezier(.2,.8,.2,1)'});
+      Promise.all(animations.map(animation=>animation.finished.catch(()=>null))).then(()=>{
+        if(token===generation) settle('Settled. Compare the relationship, then replay, try another treatment or return.');
+      });
+      setStatus(treatment==='hold' ? 'A playing: follow the object while its neighbors recede.' : 'B playing: the collection is reorganizing around the selected work.'); controls();
+    } catch {
+      settle('Motion could not start. The still project and navigation remain available.');
+    }
+  }
+  function route() {
+    const id=location.hash.slice(1).replace(/^case-/,'');
+    clearMotion();
+    if(Object.hasOwn(projects,id)) {selected=id;work.value=id;renderDetail();settle('Direct entry or history return: settled project, without an invented arrival.');}
+    else showCollection();
+  }
+  motion.checked=!preference.matches;
+  document.querySelector('#motion-note').textContent=preference.matches ? 'Reduced motion detected. You can keep every treatment still.' : 'Nothing moves until you open or replay.';
+  for(const link of collection.querySelectorAll('.project')) link.addEventListener('click',event=>{event.preventDefault();openWork(link.dataset.work,{focusReturn:true});});
+  for(const radio of document.querySelectorAll('input[name=treatment]')) radio.addEventListener('change',()=>{treatment=radio.value;explanation();showCollection('Treatment changed. Open a work to compare; nothing starts automatically.');history.replaceState(null,'','#collection');});
+  work.addEventListener('change',()=>{selected=work.value;showCollection('Selected work changed. Open it when ready.');history.replaceState(null,'','#collection');});
+  play.addEventListener('click',()=>openWork(selected));
+  pause.addEventListener('click',()=>{
+    if(!animations.length) return;
+    const resume=scene.dataset.phase==='paused';
+    for(const animation of animations) resume ? animation.play() : animation.pause();
+    scene.dataset.phase=resume ? 'playing' : 'paused'; setStatus(resume ? 'Resumed. You can pause or finish at any time.' : 'Paused. Resume, finish now or return; the page remains usable.');controls();
+  });
+  finish.addEventListener('click',()=>{settle('Finished on request. The settled project remains available.');play.focus({preventScroll:true});});
+  back.addEventListener('click',()=>{
+    const link=collection.querySelector(`[data-work="${selected}"]`);
+    showCollection();
+    // Chrome clears focus when history returns to a non-focusable fragment; restore it afterwards.
+    if(history.state?.fromCompanion){addEventListener('hashchange',()=>link.focus({preventScroll:true}),{once:true});history.back();}
+    else history.replaceState(null,'','#collection');
+    link.focus({preventScroll:true});
+  });
+  motion.addEventListener('change',()=>settle(motion.checked ? 'Motion enabled for the next explicit opening or replay.' : 'Animated movement disabled. Current content stays available.'));
+  preference.addEventListener('change',event=>{if(event.matches){motion.checked=false;settle('Reduced motion enabled. Movement stopped; still content remains available.');}});
+  addEventListener('popstate',route); addEventListener('hashchange',route);
+  addEventListener('resize',()=>{if(animations.length) settle('Layout changed. Motion finished safely in the new composition.');});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden && animations.length && scene.dataset.phase==='playing'){for(const animation of animations) animation.pause();scene.dataset.phase='paused';setStatus('Paused while the tab is hidden. Resume when you are ready.');controls();}});
+  document.querySelector('#reaction').addEventListener('input',notes);
+  document.querySelector('#copy').addEventListener('click',()=>{notes();const summary=document.querySelector('#summary');summary.focus();summary.select();document.querySelector('#copy-status').textContent='Notes selected. Copy and paste them into your conversation before closing the page.';});
+  document.querySelector('#controls').hidden=false;document.querySelector('#transport').hidden=false;document.querySelector('#note-tools').hidden=false;
+  document.documentElement.classList.add('enhanced'); explanation();route();
+})();
+</script>
+</body>
+</html>

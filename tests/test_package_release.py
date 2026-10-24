@@ -20,6 +20,8 @@ CONTENTS = (
     'evaluations/V0_7_RESULTS.md', 'evaluations/V0_7_5_RESULTS.md',
     'references/TASTE_DISCOVERY.md', 'assets/taste-guide.html',
     'studies/v0.7.5-taste-guide/check-browser.mjs',
+    'assets/motion-companion.html', 'references/MOTION_COMPANION.md',
+    'studies/v0.8-motion-companion/check-browser.mjs', 'evaluations/V0_8_RESULTS.md',
     'references/CREATIVE_REVIEW.md', 'templates/REVIEW_PACKAGE.md',
     'references/PONYTAIL_ENGINEERING.md',
     'references/JCODEMUNCH_WORKFLOW.md', 'evaluations/JCODEMUNCH_INTEGRATION_PLAN.md',

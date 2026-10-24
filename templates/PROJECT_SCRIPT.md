@@ -29,6 +29,8 @@ The director maintains this evolving brief with the client. Adapt fields to the 
 - Eccentricity, artistic expression and motion appetite considered separately; client response, explicit delegation or uncertainty:
 - How these qualities relate to the actual subject/visitors; conflicts and agreed tradeoffs:
 - Provisional preference notes and next question; no concept, motion-study or production approval inferred:
+- Motion companion/reference actually viewed or source-only; specific relationship/pacing/control reactions and their intended transfer to the client's own content:
+- Consequential proposal: what was heard, recommendation/alternative, visitor experience and remaining uncertainty; next review or explicitly bounded experiment:
 
 ## Audience devices and coverage
 - Known audience/device priorities or stated assumptions; phone and compact-laptop design alongside larger screens:

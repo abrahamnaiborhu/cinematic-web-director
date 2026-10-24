@@ -20,6 +20,8 @@ Take "maximum" seriously. Develop subject-specific ambitious alternatives, expla
 
 Static samples cannot establish animation feel, timing or choreography. Discuss motion separately using [motion direction](MOTION_DIRECTION.md): describe concrete start/change/settled states and compare movement roles, pace and visitor control. A client choosing expressive type has not selected a marquee, scroll lock or transition library. Coded motion studies keep their existing explicit bounded approval requirements.
 
+For a small observed comparison, offer the [motion companion](MOTION_COMPANION.md) when useful. It makes different relationships inspectable with playback/stillness controls. Carry specific reactions into the client's content rather than selecting a demo as a template; verbal descriptions remain distinct from viewed motion.
+
 ## Carry preferences into the client's own direction
 
 Record qualities and reasons, rejected qualities, separate ambition preferences, explicit delegation and unresolved tensions in the project script or existing equivalent. The guide's generated notes are provisional client input, not creative-direction or implementation approval. Do not infer consent to frameworks, migrations or new features from them.

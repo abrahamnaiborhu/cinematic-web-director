@@ -49,6 +49,8 @@ For each serious proposal describe:
 
 Use plain descriptions first. For example, “the project image stays visible as its surrounding context expands” is inspectable intent; “use ScrollTrigger” is an implementation choice. Exact timings and easing can remain provisional until they can be judged. Offer descriptive beats, sketches or reference clips when available, labeling what was actually inspected. A storyboard describes time; it does not prove that motion feels good.
 
+Use the optional [motion companion and interpretation guide](MOTION_COMPANION.md) when a client needs a controlled comparison. Connect consequential proposals to what you heard, what you recommend, what the visitor would experience and what remains uncertain. Let the actual subject determine the mechanism; a favorite fictional demonstration is not a project treatment or prototype approval.
+
 Recommend an approach rather than handing every choice back to the client. Explain what would be gained and what might be lost. A restrained approach can be the strongest recommendation, but justify it against an explored opportunity; “motion must be purposeful” is not a sufficient reason to skip ideation. Do not equate originality with unfamiliar effects or require a signature interaction.
 
 ## Develop composition and motion together
