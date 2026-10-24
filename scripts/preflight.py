@@ -385,10 +385,12 @@ def run(project: Path, agent_arg: str, phase: str, allow_docs_fallback: bool,
     resources = [SKILL_DIR / 'references' / name for name in
                  ('PREFLIGHT_PROTOCOL.md', 'CREATIVE_WORKFLOW.md', 'DESIGN_DIRECTION.md',
                   'MOTION_DIRECTION.md', 'DEVICE_EXPERIENCE.md', 'CREATIVE_REVIEW.md',
-                  'PONYTAIL_ENGINEERING.md', 'JCODEMUNCH_WORKFLOW.md', 'EXPERIENCE_SYSTEM.md')]
+                  'PONYTAIL_ENGINEERING.md', 'JCODEMUNCH_WORKFLOW.md', 'EXPERIENCE_SYSTEM.md',
+                  'TASTE_DISCOVERY.md')]
     resources += [SKILL_DIR / 'templates' / name for name in
                   ('PROJECT_SCRIPT.md', 'CONTINUITY_BIBLE.md', 'SCENE_TREATMENT.md',
                    'ITERATION_LOG.md', 'REVIEW_PACKAGE.md')]
+    resources += [SKILL_DIR / 'assets' / 'taste-guide.html']
     missing = [str(p.relative_to(SKILL_DIR)) for p in [skill_main] + resources if not p.is_file()]
     body = read_document(skill_main)
     missing += [str(p.relative_to(SKILL_DIR)) for p in resources

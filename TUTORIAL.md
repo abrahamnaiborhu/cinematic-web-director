@@ -1,10 +1,10 @@
-# Cinematic Web Director — Getting Started (v0.7.1 local patch candidate)
+# Cinematic Web Director — Getting Started (v0.7.5 local development candidate)
 
 This guide is for people who can develop websites but want help with storytelling, visual direction and motion. You can start a landing page, portfolio or product website, or improve an existing one. You do not need to arrive with a storyboard, animation vocabulary or a chosen GSAP plugin.
 
 v0.7.0 adds whole-experience planning and a separately installed/licensed [jcodemunch requirement](references/JCODEMUNCH_WORKFLOW.md) for source-dependent work. Installing the skill alone does not configure either client's MCP server. Creative discussion can begin before code tools are available.
 
-This branch adds an unpublished v0.7.1 discovery correction: resolve consequential visual and motion preferences through real follow-up conversation before a full concept, while respecting direct planning requests and explicitly delegated choices. Build with `python3 -B scripts/package_release.py --version 0.7.1 --out dist/v0.7.1` and install the extracted local source for this candidate. The release-download instructions below refer to the unchanged published v0.7.0 package.
+This branch includes the unpublished discovery correction and v0.7.5 taste guide: resolve consequential visual and motion preferences through real follow-up conversation before a full concept, while respecting direct planning requests and explicitly delegated choices. Build with `python3 -B scripts/package_release.py --version 0.7.5 --out dist/v0.7.5` and install the extracted local source for this candidate. The release-download instructions below refer to the unchanged published v0.7.0 package.
 
 ## 1. Install the skill
 
@@ -142,6 +142,8 @@ For example:
 This helps distinguish confirmed information, mandatory constraints and inspiration. The agent should clarify conflicts and draft copy from confirmed facts. It should not invent projects, achievements or product capabilities.
 
 ## 4. Develop and approve the direction
+
+If examples help you describe your taste, open [the bundled HTML guide](assets/taste-guide.html) in a browser. It contains eight fictional still studies. You can say “the type of 04, the clarity of 01, neither palette,” choose maximum eccentricity or artistry, reject all examples, or ask for other references. Use the notes action to select/copy a provisional summary into your conversation; the page does not save or send answers. The agent should ask why qualities appeal, relate them to your actual story and discuss motion separately. These examples do not demonstrate animation or approve a design.
 
 Spend time understanding the choices. Ask for alternatives, annotated compositions or representative storyboard states when a verbal description is unclear. You can reject, combine or revisit ideas.
 

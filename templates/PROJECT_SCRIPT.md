@@ -24,6 +24,12 @@ The director maintains this evolving brief with the client. Adapt fields to the 
 - Brief summary and client confirmation/correction, or explicit request for provisional concepts; remaining assumptions:
 - Existing approvals and answered questions to preserve when resuming:
 
+## Taste discussion, when useful
+- Inspected guide examples or other references; liked/rejected qualities and reasons, including mixtures or preferences outside the guide:
+- Eccentricity, artistic expression and motion appetite considered separately; client response, explicit delegation or uncertainty:
+- How these qualities relate to the actual subject/visitors; conflicts and agreed tradeoffs:
+- Provisional preference notes and next question; no concept, motion-study or production approval inferred:
+
 ## Audience devices and coverage
 - Known audience/device priorities or stated assumptions; phone and compact-laptop design alongside larger screens:
 - Platform/browser families considered: Android, iOS/iPadOS, Windows, macOS and Linux where relevant; supported versions and reasons for scope choices:

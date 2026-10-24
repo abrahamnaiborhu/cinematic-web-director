@@ -51,6 +51,8 @@ Different names, palettes or fonts on the same hero and card layout do not estab
 
 Study references by quality: hierarchy, image treatment, transitions, atmosphere, material, density or pacing. Record what was actually inspected, what the client values and how the quality will be interpreted for this subject. Avoid copying a reference's whole composition. Familiar techniques are acceptable when well suited; unfamiliarity alone is not a quality criterion.
 
+Use [taste discovery](TASTE_DISCOVERY.md) and its bundled static studies when the client needs examples to explain preferences. Treat a style label as a starting point: ask which qualities appeal, allow combinations or other tastes, and preserve their stated appetite for eccentricity/artistic expression. A chosen example is not a preset layout, stack or motion treatment.
+
 For example, if confirmed work supports the thesis “I make complex systems understandable,” an architect's portfolio might explore a relationship map that reveals how projects connect, or an editorial collection exposing decisions and tradeoffs in independent case studies. These are illustrative possibilities, not required metaphors, layouts or claims for engineering portfolios.
 
 ## Develop composition alongside motion intent

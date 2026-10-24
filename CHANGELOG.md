@@ -2,6 +2,14 @@
 
 Versioned GitHub releases use three-part tags. v0.2.0 is the first published release of the revised v0.2 package and is marked as a development pre-release.
 
+## [0.7.5] - Unreleased
+
+### Added
+
+- A bundled standalone HTML taste guide with eight original fictional static compositions, mixed reactions/reasons and separate eccentricity, artistry and motion preferences. Outside preferences and uncertainty remain valid; no style score, preset selection or approval is inferred.
+- Local copyable provisional notes, no-script access, print notes and dependency-free browser verification. The guide uses no remote fonts/assets, tracking or answer persistence.
+- Taste-discovery routing, project-script fields, package-integrity checks and an evaluation record. Static samples do not claim motion evidence; ambitious preferences retain accessibility/device/performance requirements.
+
 ## [0.7.1] - Unreleased
 
 ### Changed
